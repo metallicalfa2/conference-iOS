@@ -11,6 +11,6 @@ import XLPagerTabStrip
 
 class Day2ViewController:UIViewController, IndicatorInfoProvider{
 	func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-		return IndicatorInfo(title: "day 2")
+		return IndicatorInfo(title: "Day 2")
 	}
 }
