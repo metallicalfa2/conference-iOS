@@ -18,6 +18,7 @@
 		517643B51EDB5DC7008CC752 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517643B41EDB5DC7008CC752 /* DayViewController.swift */; };
 		517643B71EDB5E12008CC752 /* Day2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517643B61EDB5E12008CC752 /* Day2ViewController.swift */; };
 		517643B91EDB6270008CC752 /* day3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517643B81EDB6270008CC752 /* day3ViewController.swift */; };
+		51C69C091EE0A686004A4ED7 /* SF UI Font License.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 51C69C081EE0A686004A4ED7 /* SF UI Font License.rtf */; };
 		F0E4B6034A6EDE8C015CEA7A /* Pods_Conference.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAF33166A7A6E00B324A6D2 /* Pods_Conference.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		517643B41EDB5DC7008CC752 /* DayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
 		517643B61EDB5E12008CC752 /* Day2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day2ViewController.swift; sourceTree = "<group>"; };
 		517643B81EDB6270008CC752 /* day3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = day3ViewController.swift; sourceTree = "<group>"; };
+		51C69C081EE0A686004A4ED7 /* SF UI Font License.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "SF UI Font License.rtf"; sourceTree = "<group>"; };
 		72DFC1DA41E5360A19F54899 /* Pods-Conference.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conference.release.xcconfig"; path = "Pods/Target Support Files/Pods-Conference/Pods-Conference.release.xcconfig"; sourceTree = "<group>"; };
 		8212AAFDC97BF5D43E8CE809 /* Pods-Conference.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conference.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Conference/Pods-Conference.debug.xcconfig"; sourceTree = "<group>"; };
 		8BAF33166A7A6E00B324A6D2 /* Pods_Conference.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Conference.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +98,7 @@
 		517643951EDB4849008CC752 /* Conference */ = {
 			isa = PBXGroup;
 			children = (
+				51C69C071EE0A686004A4ED7 /* SFUI */,
 				517643961EDB4849008CC752 /* AppDelegate.swift */,
 				517643AC1EDB5274008CC752 /* ScheduleViewController.swift */,
 				517643AB1EDB51DC008CC752 /* Schedule */,
@@ -117,6 +120,15 @@
 				517643B81EDB6270008CC752 /* day3ViewController.swift */,
 			);
 			name = Schedule;
+			sourceTree = "<group>";
+		};
+		51C69C071EE0A686004A4ED7 /* SFUI */ = {
+			isa = PBXGroup;
+			children = (
+				51C69C081EE0A686004A4ED7 /* SF UI Font License.rtf */,
+			);
+			name = SFUI;
+			path = ../../../../../Downloads/SFUI;
 			sourceTree = "<group>";
 		};
 		F6E15515BCE262DEA15BE795 /* Pods */ = {
@@ -193,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				517643A31EDB4849008CC752 /* LaunchScreen.storyboard in Resources */,
+				51C69C091EE0A686004A4ED7 /* SF UI Font License.rtf in Resources */,
 				517643A01EDB4849008CC752 /* Assets.xcassets in Resources */,
 				5176439E1EDB4849008CC752 /* Main.storyboard in Resources */,
 			);
