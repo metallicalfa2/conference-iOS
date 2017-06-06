@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		515E8AB51EE6C2C500BFA4F4 /* ScheduleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E8AB41EE6C2C500BFA4F4 /* ScheduleViewCell.swift */; };
 		517643971EDB4849008CC752 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517643961EDB4849008CC752 /* AppDelegate.swift */; };
 		517643991EDB4849008CC752 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517643981EDB4849008CC752 /* FirstViewController.swift */; };
 		5176439B1EDB4849008CC752 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5176439A1EDB4849008CC752 /* SecondViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		515E8AB41EE6C2C500BFA4F4 /* ScheduleViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewCell.swift; sourceTree = "<group>"; };
 		517643931EDB4849008CC752 /* Conference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conference.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		517643961EDB4849008CC752 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		517643981EDB4849008CC752 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 		517643AB1EDB51DC008CC752 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
+				515E8AB41EE6C2C500BFA4F4 /* ScheduleViewCell.swift */,
 				517643B41EDB5DC7008CC752 /* DayViewController.swift */,
 				517643B61EDB5E12008CC752 /* Day2ViewController.swift */,
 				517643B81EDB6270008CC752 /* day3ViewController.swift */,
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				517643B91EDB6270008CC752 /* day3ViewController.swift in Sources */,
+				515E8AB51EE6C2C500BFA4F4 /* ScheduleViewCell.swift in Sources */,
 				517643B71EDB5E12008CC752 /* Day2ViewController.swift in Sources */,
 				5176439B1EDB4849008CC752 /* SecondViewController.swift in Sources */,
 				517643B51EDB5DC7008CC752 /* DayViewController.swift in Sources */,
