@@ -36,12 +36,19 @@ extension FilterTableViewController{
 	}
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = table.dequeueReusableCell(withIdentifier: "filterCell", for: indexPath)
+		let cell = table.dequeueReusableCell(withIdentifier: "filterCell", for: indexPath) as! FilterTableViewCell
 		cell.selectionStyle = .none
 		return cell
 	}
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		print(indexPath)
+		let cell = table.cellForRow(at: indexPath) as! FilterTableViewCell
+		if  cell.filterImage?.isHidden == true {
+			cell.filterImage?.isHidden = false
+		}
+		else{
+			 cell.filterImage?.isHidden = true
+		}
+		
 	}
 	
 }

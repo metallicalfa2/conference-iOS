@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="275px" height="44px" viewBox="0 0 275 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>Login btn</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="-2.48949813e-15%" y1="50%" x2="100%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#FF3A00" offset="0%"></stop>
+            <stop stop-color="#FF7F00" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Registration" transform="translate(-50.000000, -350.000000)">
+            <g id="Login-btn" transform="translate(50.000000, 350.000000)">
+                <rect id="Rectangle-2" fill="url(#linearGradient-1)" x="0" y="0" width="275" height="44" rx="22"></rect>
+                <text id="Register" font-family="SourceSansPro-Bold, Source Sans Pro" font-size="16" font-weight="bold" line-spacing="9" fill="#FFFFFF">
+                    <tspan x="109.5" y="33">Register</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

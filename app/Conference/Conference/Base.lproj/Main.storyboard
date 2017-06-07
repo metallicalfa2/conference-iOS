@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="CpI-er-opN">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -48,7 +48,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1879" y="752"/>
+            <point key="canvasLocation" x="1156" y="1602"/>
         </scene>
         <!--Schedule-->
         <scene sceneID="OcZ-Rm-rRF">
@@ -203,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UEi-Wn-Sg2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2048.8000000000002" y="-264.01799100449779"/>
+            <point key="canvasLocation" x="1126" y="-1066"/>
         </scene>
         <!--Day View Controller-->
         <scene sceneID="Nar-lm-8GF">
@@ -343,7 +343,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5gB-xm-RP0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3181.5999999999999" y="-132.68365817091455"/>
+            <point key="canvasLocation" x="2553" y="-224"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="gdj-C9-18Y">
@@ -391,7 +391,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zzp-do-PcU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3234" y="584"/>
+            <point key="canvasLocation" x="2193" y="1621"/>
         </scene>
         <!--Day2 View Controller-->
         <scene sceneID="enP-mw-JBb">
@@ -511,7 +511,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jyT-2m-6ZP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3952.8000000000002" y="-126.38680659670166"/>
+            <point key="canvasLocation" x="4278" y="-1693"/>
         </scene>
         <!--Profile-->
         <scene sceneID="wg7-f3-ORb">
@@ -553,10 +553,121 @@
             </objects>
             <point key="canvasLocation" x="-122" y="924"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Login View Controller-->
+        <scene sceneID="TNW-eg-Dkq">
+            <objects>
+                <viewController id="CpI-er-opN" customClass="LoginViewController" customModule="Conference" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b8p-qk-Rbm"/>
+                        <viewControllerLayoutGuide type="bottom" id="cZg-GH-LKk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vq0-ry-ISj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ABI" translatesAutoresizingMaskIntoConstraints="NO" id="Pbc-tc-UTO">
+                                <rect key="frame" x="42" y="28" width="291" height="131"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registrations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0w3-CC-7n2">
+                                <rect key="frame" x="112" y="167" width="150" height="78"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="78" id="Wb7-MY-j15"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NP5-kO-atJ">
+                                <rect key="frame" x="13" y="619" width="349" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="2Sf-5s-okw"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="You agree with terms and conditions as per this point in your registration">
+                                        <attributes>
+                                            <font key="NSFont" size="12" name=".SFNSText"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your Registration ID" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="ZR4-AE-oMp">
+                                <rect key="frame" x="64" y="296" width="246" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9it-4n-Iml"/>
+                                </constraints>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="join" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rcr-pL-HWM">
+                                <rect key="frame" x="67" y="328" width="240" height="2"/>
+                                <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <imageView multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Login btn" translatesAutoresizingMaskIntoConstraints="NO" id="ucK-j0-Ge0">
+                                <rect key="frame" x="64" y="345" width="243" height="44"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twitter btn Copy" translatesAutoresizingMaskIntoConstraints="NO" id="ejh-Z7-a5E">
+                                <rect key="frame" x="67" y="534" width="240" height="44"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Facebook btn" translatesAutoresizingMaskIntoConstraints="NO" id="Scp-eE-Bfa">
+                                <rect key="frame" x="66" y="467" width="243" height="44"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDD-W1-ZRs">
+                                <rect key="frame" x="175" y="417" width="24" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Pbc-tc-UTO" firstAttribute="leading" secondItem="vq0-ry-ISj" secondAttribute="leadingMargin" constant="26" id="0wV-mQ-G7d"/>
+                            <constraint firstItem="ZR4-AE-oMp" firstAttribute="centerX" secondItem="Rcr-pL-HWM" secondAttribute="centerX" id="25X-tu-ETd"/>
+                            <constraint firstAttribute="bottom" secondItem="Rcr-pL-HWM" secondAttribute="bottom" constant="337" id="2hH-6z-8Dx"/>
+                            <constraint firstItem="ZR4-AE-oMp" firstAttribute="top" secondItem="0w3-CC-7n2" secondAttribute="bottom" constant="51" id="4j9-fZ-17J"/>
+                            <constraint firstItem="ejh-Z7-a5E" firstAttribute="trailing" secondItem="ucK-j0-Ge0" secondAttribute="trailing" id="BPj-fX-ICr"/>
+                            <constraint firstItem="NP5-kO-atJ" firstAttribute="top" secondItem="ejh-Z7-a5E" secondAttribute="bottom" constant="41" id="CG8-C4-bqf"/>
+                            <constraint firstItem="NP5-kO-atJ" firstAttribute="centerX" secondItem="Rcr-pL-HWM" secondAttribute="centerX" id="CvL-Sj-W3C"/>
+                            <constraint firstItem="Rcr-pL-HWM" firstAttribute="leading" secondItem="vq0-ry-ISj" secondAttribute="leadingMargin" constant="51" id="Fsv-BM-Eqg"/>
+                            <constraint firstItem="ejh-Z7-a5E" firstAttribute="leading" secondItem="Rcr-pL-HWM" secondAttribute="leading" id="JqH-KF-7AS"/>
+                            <constraint firstItem="cZg-GH-LKk" firstAttribute="top" secondItem="NP5-kO-atJ" secondAttribute="bottom" constant="8" symbolic="YES" id="NOF-8F-gDo"/>
+                            <constraint firstItem="cZg-GH-LKk" firstAttribute="top" secondItem="0w3-CC-7n2" secondAttribute="bottom" constant="422" id="OYc-xC-JZU"/>
+                            <constraint firstItem="oDD-W1-ZRs" firstAttribute="top" secondItem="ucK-j0-Ge0" secondAttribute="bottom" constant="28" id="OlR-Lo-atl"/>
+                            <constraint firstItem="ucK-j0-Ge0" firstAttribute="leading" secondItem="ZR4-AE-oMp" secondAttribute="leading" id="OwK-B7-muU"/>
+                            <constraint firstItem="ucK-j0-Ge0" firstAttribute="trailing" secondItem="Rcr-pL-HWM" secondAttribute="trailing" id="QuM-d4-mYG"/>
+                            <constraint firstItem="Scp-eE-Bfa" firstAttribute="leading" secondItem="vq0-ry-ISj" secondAttribute="leadingMargin" constant="50" id="RmO-Of-ktZ"/>
+                            <constraint firstItem="ucK-j0-Ge0" firstAttribute="top" secondItem="Rcr-pL-HWM" secondAttribute="bottom" constant="15" id="ZB0-dm-WWR"/>
+                            <constraint firstItem="0w3-CC-7n2" firstAttribute="leading" secondItem="vq0-ry-ISj" secondAttribute="leadingMargin" constant="96" id="abb-sQ-SJP"/>
+                            <constraint firstItem="ejh-Z7-a5E" firstAttribute="top" secondItem="Scp-eE-Bfa" secondAttribute="bottom" constant="23" id="bZg-iw-xdF"/>
+                            <constraint firstItem="oDD-W1-ZRs" firstAttribute="centerX" secondItem="Scp-eE-Bfa" secondAttribute="centerX" id="dWR-k4-2Y0"/>
+                            <constraint firstItem="Pbc-tc-UTO" firstAttribute="centerX" secondItem="0w3-CC-7n2" secondAttribute="centerX" id="e6o-Z8-bZm"/>
+                            <constraint firstItem="Scp-eE-Bfa" firstAttribute="centerX" secondItem="ejh-Z7-a5E" secondAttribute="centerX" id="k9p-6D-BLH"/>
+                            <constraint firstItem="ZR4-AE-oMp" firstAttribute="centerX" secondItem="0w3-CC-7n2" secondAttribute="centerX" id="kR1-tr-JBS"/>
+                            <constraint firstItem="0w3-CC-7n2" firstAttribute="top" secondItem="Pbc-tc-UTO" secondAttribute="bottom" constant="8" symbolic="YES" id="l4u-kF-93E"/>
+                            <constraint firstItem="NP5-kO-atJ" firstAttribute="leading" secondItem="vq0-ry-ISj" secondAttribute="leadingMargin" constant="-3" id="mIH-Dl-7Yt"/>
+                            <constraint firstItem="ZR4-AE-oMp" firstAttribute="leading" secondItem="vq0-ry-ISj" secondAttribute="leadingMargin" constant="48" id="mik-7j-lin"/>
+                            <constraint firstItem="0w3-CC-7n2" firstAttribute="centerX" secondItem="vq0-ry-ISj" secondAttribute="centerX" id="mnY-rG-qiz"/>
+                            <constraint firstItem="Rcr-pL-HWM" firstAttribute="top" secondItem="ZR4-AE-oMp" secondAttribute="bottom" constant="2" id="njs-bX-Pky"/>
+                            <constraint firstItem="Pbc-tc-UTO" firstAttribute="top" secondItem="b8p-qk-Rbm" secondAttribute="bottom" constant="8" symbolic="YES" id="vTT-ce-MRu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="connectWithFb" destination="Scp-eE-Bfa" id="ldq-jP-tMm"/>
+                        <outlet property="connectWithGoogle" destination="ejh-Z7-a5E" id="Uwx-xg-aZl"/>
+                        <outlet property="register" destination="ucK-j0-Ge0" id="7bs-nr-uuz"/>
+                        <outlet property="registrationId" destination="ZR4-AE-oMp" id="4Kg-o6-5nc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rmy-eM-0wM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="207" y="-1066"/>
+        </scene>
+        <!--Tab Bar View Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="TabBarViewController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -691,7 +802,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tcf-tf-utw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4689" y="-126"/>
+            <point key="canvasLocation" x="5089" y="-1636"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qQX-xo-V2T">
@@ -713,11 +824,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ABI" width="265" height="71"/>
         <image name="Cancel" width="18" height="18"/>
+        <image name="Facebook btn" width="275" height="44"/>
+        <image name="Login btn" width="275" height="44"/>
         <image name="Maps" width="24" height="24"/>
         <image name="Profile " width="25" height="25"/>
         <image name="Schedule" width="18" height="19"/>
         <image name="Search Icon" width="20" height="21"/>
+        <image name="Twitter btn Copy" width="275" height="44"/>
         <image name="tick" width="28" height="28"/>
     </resources>
 </document>
