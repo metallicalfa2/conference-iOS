@@ -32,6 +32,8 @@ extension Day2ViewController: UITableViewDelegate, UITableViewDataSource{
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "schedule-cell-2", for: indexPath)
+		cell.selectionStyle = .none
+		//cell.view.dropShadow()
 		return cell
 	}
 	

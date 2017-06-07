@@ -16,4 +16,5 @@ class ScheduleViewCell: UITableViewCell {
 	@IBOutlet weak var leftBar: UIView!
 	@IBOutlet weak var location: UILabel!
 	@IBOutlet weak var view: UIView!
+	
 }
