@@ -10,6 +10,14 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Calibri.ttf">
+            <string>Calibri</string>
+        </array>
+        <array key="Tahoma.ttf">
+            <string>Tahoma</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Maps-->
         <scene sceneID="hNz-n2-bh7">
@@ -204,7 +212,7 @@
             <objects>
                 <navigationController id="fSs-rx-BYn" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Schedule" image="Schedule" selectedImage="Schedule" id="p8M-8h-qWx"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="coE-yG-Lpv">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="coE-yG-Lpv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -386,8 +394,8 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="359" height="70"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Travelling Salesman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFL-Ig-Nnx">
-                                                                    <rect key="frame" x="19" y="6" width="140" height="20"/>
-                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                                    <rect key="frame" x="19" y="6" width="148" height="20"/>
+                                                                    <fontDescription key="fontDescription" name="Tahoma" family="Tahoma" pointSize="17"/>
                                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -406,11 +414,11 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Judy Mathers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEy-gc-3YC">
-                                                                    <rect key="frame" x="19" y="29" width="90.5" height="16"/>
+                                                                    <rect key="frame" x="19" y="31" width="93" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="cKF-6S-J6p"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                                    <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="17"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.54000000000000004" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -427,7 +435,7 @@
                                                                         <constraint firstAttribute="height" constant="13" id="DXz-x3-YnT"/>
                                                                         <constraint firstAttribute="width" constant="152" id="axh-FN-Boa"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                                                                    <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="14"/>
                                                                     <color key="textColor" white="0.0" alpha="0.54000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -436,7 +444,7 @@
                                                             <constraints>
                                                                 <constraint firstItem="5ap-H3-5rY" firstAttribute="top" secondItem="scf-OI-qWh" secondAttribute="top" id="2IU-ef-6op"/>
                                                                 <constraint firstItem="0e2-Kw-mcu" firstAttribute="top" secondItem="scf-OI-qWh" secondAttribute="top" constant="14" id="BcX-Nu-qE9"/>
-                                                                <constraint firstItem="iEy-gc-3YC" firstAttribute="top" secondItem="IFL-Ig-Nnx" secondAttribute="bottom" constant="3" id="EnF-ne-2Ih"/>
+                                                                <constraint firstItem="iEy-gc-3YC" firstAttribute="top" secondItem="IFL-Ig-Nnx" secondAttribute="bottom" constant="5" id="EnF-ne-2Ih"/>
                                                                 <constraint firstAttribute="trailing" secondItem="HBg-id-c2q" secondAttribute="trailing" id="HD5-Gl-T9e"/>
                                                                 <constraint firstItem="0e2-Kw-mcu" firstAttribute="centerY" secondItem="HBg-id-c2q" secondAttribute="centerY" id="Nzt-Zg-kiD"/>
                                                                 <constraint firstItem="iEy-gc-3YC" firstAttribute="leading" secondItem="5ap-H3-5rY" secondAttribute="trailing" constant="14" id="PyE-VV-WBJ"/>
@@ -444,7 +452,7 @@
                                                                 <constraint firstItem="IFL-Ig-Nnx" firstAttribute="top" secondItem="scf-OI-qWh" secondAttribute="top" constant="6" id="Tgu-Ln-5mX"/>
                                                                 <constraint firstItem="5ap-H3-5rY" firstAttribute="leading" secondItem="scf-OI-qWh" secondAttribute="leading" id="UNY-qn-cmj"/>
                                                                 <constraint firstAttribute="bottom" secondItem="HBg-id-c2q" secondAttribute="bottom" id="V7V-Hx-NUr"/>
-                                                                <constraint firstItem="lZY-sg-eNR" firstAttribute="top" secondItem="iEy-gc-3YC" secondAttribute="bottom" constant="6" id="Yvo-64-dcb"/>
+                                                                <constraint firstItem="lZY-sg-eNR" firstAttribute="top" secondItem="iEy-gc-3YC" secondAttribute="bottom" constant="4" id="Yvo-64-dcb"/>
                                                                 <constraint firstItem="IFL-Ig-Nnx" firstAttribute="leading" secondItem="5ap-H3-5rY" secondAttribute="trailing" constant="14" id="dIi-m7-xpB"/>
                                                                 <constraint firstItem="HBg-id-c2q" firstAttribute="top" secondItem="scf-OI-qWh" secondAttribute="top" id="f73-Io-2xp"/>
                                                                 <constraint firstItem="lZY-sg-eNR" firstAttribute="leading" secondItem="iEy-gc-3YC" secondAttribute="leading" id="gaU-TQ-yAp"/>
@@ -516,31 +524,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="clip" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcB-uM-zZu">
-                                <rect key="frame" x="10" y="197.5" width="355" height="203"/>
+                                <rect key="frame" x="10" y="194" width="355" height="170"/>
                                 <string key="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Travelling Salesman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Acn-EJ-Pns">
-                                <rect key="frame" x="10" y="28" width="355" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <rect key="frame" x="10" y="28" width="355" height="21"/>
+                                <fontDescription key="fontDescription" name="Tahoma" family="Tahoma" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time - 10:00 am to 12:00 pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3t-k2-Lh5">
-                                <rect key="frame" x="10" y="56.5" width="355" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="10" y="57" width="355" height="17"/>
+                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile Photo" translatesAutoresizingMaskIntoConstraints="NO" id="oCa-6k-q77">
-                                <rect key="frame" x="10" y="110.5" width="50" height="50"/>
+                                <rect key="frame" x="10" y="107" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="1Ml-we-cqC"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="OC4-1P-K65"/>
@@ -549,19 +557,19 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Karen Elzari" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7DF-Bg-QIZ">
-                                <rect key="frame" x="68" y="110.5" width="281" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <rect key="frame" x="68" y="107" width="281" height="21"/>
+                                <fontDescription key="fontDescription" name="Tahoma" family="Tahoma" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speaker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LvU-BK-c04">
-                                <rect key="frame" x="68" y="134.5" width="297" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="68" y="131" width="297" height="17"/>
+                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gze-jE-Q6E">
-                                <rect key="frame" x="50" y="435.5" width="275" height="44"/>
+                                <rect key="frame" x="50" y="399" width="275" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="gze-jE-Q6E" secondAttribute="height" multiplier="25:4" id="hCP-OI-w9d"/>
                                     <constraint firstAttribute="width" secondItem="gze-jE-Q6E" secondAttribute="height" multiplier="25:4" id="kz1-4e-YJd"/>
@@ -664,7 +672,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Judy Mathers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oM8-aB-D6N">
-                                                                    <rect key="frame" x="19" y="29" width="90.5" height="16"/>
+                                                                    <rect key="frame" x="19" y="29" width="91" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="kcZ-y9-gPy"/>
                                                                     </constraints>
@@ -812,7 +820,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Judy Mathers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IfA-rs-aX9">
-                                                                    <rect key="frame" x="19" y="29" width="90.5" height="16"/>
+                                                                    <rect key="frame" x="19" y="29" width="91" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="0XT-3p-Km2"/>
                                                                     </constraints>
@@ -960,7 +968,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Judy Mathers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZ1-4r-8i8">
-                                                                    <rect key="frame" x="19" y="29" width="90.5" height="16"/>
+                                                                    <rect key="frame" x="19" y="29" width="91" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="B1D-dj-gmR"/>
                                                                     </constraints>
@@ -1109,7 +1117,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Judy Mathers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNE-8h-QY1">
-                                                                    <rect key="frame" x="19" y="29" width="90.5" height="16"/>
+                                                                    <rect key="frame" x="19" y="29" width="91" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="GWy-Be-x3C"/>
                                                                     </constraints>
@@ -1344,7 +1352,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                     <constraint firstAttribute="width" secondItem="ZR4-AE-oMp" secondAttribute="height" multiplier="41:5" id="m7y-Zx-PrQ"/>
                                 </constraints>
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="join" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rcr-pL-HWM">
@@ -1359,7 +1367,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="uTn-Ym-fx4"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <fontDescription key="fontDescription" name="Tahoma" family="Tahoma" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1457,7 +1465,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rUj-5q-bOZ" secondAttribute="height" multiplier="343:44" id="Hho-xJ-S4S"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Tahoma" family="Tahoma" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1470,7 +1478,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                             <constraint firstAttribute="height" constant="30" id="pM6-fW-Qa3"/>
                                         </constraints>
                                         <color key="textColor" red="0.062745098039215685" green="0.094117647058823528" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="join" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EDw-Fb-gXL">
@@ -1494,7 +1502,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                             <constraint firstAttribute="height" constant="30" id="iht-KP-urV"/>
                                         </constraints>
                                         <color key="textColor" red="0.062745098040000002" green="0.094117647060000004" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="join" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NKe-72-sVn">
@@ -1518,7 +1526,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                             <constraint firstAttribute="height" constant="30" id="V7K-g5-Iij"/>
                                         </constraints>
                                         <color key="textColor" red="0.062745098039215685" green="0.094117647058823528" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="join" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0Q-oC-vwK">
@@ -1542,7 +1550,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                             <constraint firstAttribute="height" constant="30" id="JoW-2z-pVj"/>
                                         </constraints>
                                         <color key="textColor" red="0.062745098040000002" green="0.094117647060000004" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="join" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oSJ-zE-yLL">
@@ -1673,7 +1681,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Judy Mathers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRd-a3-2Kd">
-                                                                    <rect key="frame" x="19" y="29" width="90.5" height="16"/>
+                                                                    <rect key="frame" x="19" y="29" width="91" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="jkC-bU-ogH"/>
                                                                     </constraints>
@@ -1775,7 +1783,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="67B-Hn-Oe1" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="BNl-er-dk1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BNl-er-dk1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1791,7 +1799,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VXN-yo-0vI" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My schedule" image="my schedule" id="YHJ-zI-OB5"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="1z0-zt-pDs">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1z0-zt-pDs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1810,7 +1818,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                 <navigationController storyboardIdentifier="profileNav" automaticallyAdjustsScrollViewInsets="NO" id="7dg-S3-Drg" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="Profile " id="cPa-gy-q4n"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="YY2-Wp-JF5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YY2-Wp-JF5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1829,7 +1837,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="y1v-fH-aD5" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Maps" image="Maps" selectedImage="Maps" id="acW-dT-cKf"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="OXo-Mx-n1o">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OXo-Mx-n1o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

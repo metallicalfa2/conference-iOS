@@ -13,6 +13,7 @@
 		510D8D251EF5458100834EE7 /* ScheduleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510D8D241EF5458100834EE7 /* ScheduleDetailsViewController.swift */; };
 		510D8D271EF5806E00834EE7 /* UIViewControllerExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510D8D261EF5806E00834EE7 /* UIViewControllerExtention.swift */; };
 		510D8D2A1EF59A1800834EE7 /* Tahoma.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 510D8D291EF59A1800834EE7 /* Tahoma.ttf */; };
+		510D8D2C1EF5A1C900834EE7 /* Calibri.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 510D8D2B1EF5A1C900834EE7 /* Calibri.ttf */; };
 		515E8AB51EE6C2C500BFA4F4 /* ScheduleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E8AB41EE6C2C500BFA4F4 /* ScheduleViewCell.swift */; };
 		5170CA6C1EEEB61C0031504D /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5170CA6B1EEEB61C0031504D /* MapsViewController.swift */; };
 		5170CA6E1EEEBAB70031504D /* Maps1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5170CA6D1EEEBAB70031504D /* Maps1ViewController.swift */; };
@@ -59,6 +60,7 @@
 		510D8D241EF5458100834EE7 /* ScheduleDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDetailsViewController.swift; sourceTree = "<group>"; };
 		510D8D261EF5806E00834EE7 /* UIViewControllerExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtention.swift; sourceTree = "<group>"; };
 		510D8D291EF59A1800834EE7 /* Tahoma.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Tahoma.ttf; path = ../../../../../Downloads/Tahoma.ttf; sourceTree = "<group>"; };
+		510D8D2B1EF5A1C900834EE7 /* Calibri.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Calibri.ttf; path = ../../../../../Downloads/Calibri.ttf; sourceTree = "<group>"; };
 		515E8AB41EE6C2C500BFA4F4 /* ScheduleViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewCell.swift; sourceTree = "<group>"; };
 		5170CA6B1EEEB61C0031504D /* MapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
 		5170CA6D1EEEBAB70031504D /* Maps1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Maps1ViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		510D8D281EF599EC00834EE7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				510D8D2B1EF5A1C900834EE7 /* Calibri.ttf */,
 				510D8D291EF59A1800834EE7 /* Tahoma.ttf */,
 				5176439F1EDB4849008CC752 /* Assets.xcassets */,
 				510D8D211EF5298D00834EE7 /* GoogleService-Info.plist */,
@@ -325,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				517643A31EDB4849008CC752 /* LaunchScreen.storyboard in Resources */,
+				510D8D2C1EF5A1C900834EE7 /* Calibri.ttf in Resources */,
 				510D8D221EF5298D00834EE7 /* GoogleService-Info.plist in Resources */,
 				517643A01EDB4849008CC752 /* Assets.xcassets in Resources */,
 				510D8D2A1EF59A1800834EE7 /* Tahoma.ttf in Resources */,
