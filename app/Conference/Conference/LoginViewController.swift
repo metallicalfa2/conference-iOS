@@ -73,8 +73,11 @@ class LoginViewController: UIViewController ,GIDSignInUIDelegate,GIDSignInDelega
 			}
 		}
 	}
-	func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {}
+	func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
+		print("fb login completed")
+	}
 	func loginButtonDidLogOut(_ loginButton: LoginButton) {}
+	
 	func segueToLoginDetails(){
 		performSegue(withIdentifier: "loginToLoginDetails", sender: self)
 	}

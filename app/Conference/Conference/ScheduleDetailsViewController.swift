@@ -9,7 +9,18 @@
 import UIKit
 
 class ScheduleDetailsViewController: UIViewController {
-
+	@IBOutlet weak var addToCalendar: UIButton!
+	
+	@IBOutlet weak var info: UILabel!
+	@IBOutlet weak var speakerName: UILabel!
+	
+	@IBOutlet weak var eventName: UILabel!
+	@IBOutlet weak var eventTime: UILabel!
+	@IBOutlet weak var speakerImage: UIImageView!
+	@IBOutlet weak var speakerTitle: UILabel!
+	@IBAction func addToCalendar(_ sender: Any) {
+		self.addCalendarEntry()
+	}
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -15,6 +15,7 @@ class ScheduleViewCell: UITableViewCell {
 	@IBOutlet weak var stack: UIStackView!
 	@IBOutlet weak var leftBar: UIView!
 	@IBOutlet weak var location: UILabel!
-	@IBOutlet weak var view: UIView!
-	
+	@IBOutlet weak var view: UIView!	
+	@IBOutlet weak var calendarButton: UIButton!
+
 }
