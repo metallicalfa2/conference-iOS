@@ -10,9 +10,14 @@ import UIKit
 import GGLSignIn
 import GoogleSignIn
 import Google
+import FacebookCore
+import FacebookLogin
+import FBSDKLoginKit
 
-class LoginViewController: UIViewController ,GIDSignInUIDelegate,GIDSignInDelegate{
-	let userDefaults = UserDefaults.standard
+let userDefaults = UserDefaults.standard
+
+class LoginViewController: UIViewController ,GIDSignInUIDelegate,GIDSignInDelegate,LoginButtonDelegate{
+	// userDefaults for persistant data storage.
 
 	@IBOutlet weak var registrationId: UITextField!
 	
@@ -24,6 +29,7 @@ class LoginViewController: UIViewController ,GIDSignInUIDelegate,GIDSignInDelega
 	}
 
 	@IBAction func facebookSignIn(_ sender: Any) {
+		manageFbLogin()
 	}
 
     override func viewDidLoad() {
@@ -34,18 +40,42 @@ class LoginViewController: UIViewController ,GIDSignInUIDelegate,GIDSignInDelega
 	
 	func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
 		if (error == nil) {
-			let userId = user.userID                  // For client-side use only!
-			let idToken = user.authentication.idToken // Safe to send to the server
-			let fullName = user.profile.name
-			let givenName = user.profile.givenName
-			let familyName = user.profile.familyName
-			let email = user.profile.email
-			print(email as String!)
-			let vc = self.storyboard?.instantiateViewController(withIdentifier: "tabView")
-			self.present(vc!, animated: true, completion: nil)
+			userDefaults.set(true, forKey: "isGoogleLoggedIn")
+			userDefaults.set(user.profile.email as String!, forKey: "email")
+			userDefaults.set(user.profile.name as String!, forKey: "name")
+			segueToLoginDetails()
 		} else {
 			print("\(error.localizedDescription)")
 		}
 	}
+	func manageFbLogin(){
+		let loginManager = LoginManager()
+		loginManager.logIn([.publicProfile, .email ], viewController: self) { (result) in
+			switch result{
+			case .cancelled:
+				print("Cancel button click")
+			case .success:
+				let params = ["fields" : "id, name, first_name, last_name, picture.type(large), email "]
+				let graphRequest = FBSDKGraphRequest.init(graphPath: "/me", parameters: params)
+				let Connection = FBSDKGraphRequestConnection()
+				Connection.add(graphRequest) { (Connection, result, error) in
+					let info = result as! [String : AnyObject]
+					print(info["name"] as! String)
+					userDefaults.set(info["name"] as! String, forKey: "name")
+					userDefaults.set(info["email"] as! String, forKey: "email")
+					userDefaults.set(false, forKey: "isGoogleLoggedIn")
 
+					self.segueToLoginDetails()
+				}
+				Connection.start()
+			default:
+				print("??")
+			}
+		}
+	}
+	func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {}
+	func loginButtonDidLogOut(_ loginButton: LoginButton) {}
+	func segueToLoginDetails(){
+		performSegue(withIdentifier: "loginToLoginDetails", sender: self)
+	}
 }

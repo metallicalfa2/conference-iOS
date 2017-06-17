@@ -44,7 +44,11 @@ extension DayViewController: UITableViewDelegate, UITableViewDataSource,UITableV
 		//cell.view.dropShadow()
 		return cell
 	}
-	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+	 let storyboard = UIStoryboard(name: "Main", bundle: nil)
+		let objSecond = storyboard.instantiateViewController(withIdentifier: "scheduleDetails")
+		navigationController?.pushViewController(objSecond, animated: true)
+	}
 	// This methods will be used for smooth scrolling.
 	func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
 		print("prefetchRowsAt \(indexPaths)")

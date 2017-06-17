@@ -8,5 +8,8 @@ target 'Conference' do
   # Pods for Conference
   pod 'XLPagerTabStrip', '~> 7.0'
   pod 'Google/SignIn'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'FacebookShare'
   
 end

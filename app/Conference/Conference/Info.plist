@@ -23,7 +23,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.178384145142-8mjl3sbi55rkcpi786uc5o0hvf04u1hd</string>
+				<string>com.googleusercontent.apps.675818656106-34cmrg4hlu86julevmeiqenlbo2gn21n</string>
 			</array>
 		</dict>
 		<dict>
@@ -34,9 +34,32 @@
 				<string>rathi.Conference</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>rathi.Conference</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1053193121448888</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>FacebookAppID</key>
+	<string>1053193121448888</string>
+	<key>FacebookDisplayName</key>
+	<string>conference</string>
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<false/>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -75,7 +98,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>FirebaseAppDelegateProxyEnabled</key>
-	<false/>
 </dict>
 </plist>

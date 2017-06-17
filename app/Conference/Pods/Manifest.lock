@@ -1,4 +1,29 @@
 PODS:
+  - Bolts (1.8.4):
+    - Bolts/AppLinks (= 1.8.4)
+    - Bolts/Tasks (= 1.8.4)
+  - Bolts/AppLinks (1.8.4):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.8.4)
+  - FacebookCore (0.2.0):
+    - Bolts (~> 1.8)
+    - FBSDKCoreKit (~> 4.15)
+  - FacebookLogin (0.2.0):
+    - Bolts (~> 1.8)
+    - FacebookCore (~> 0.2)
+    - FBSDKCoreKit (~> 4.15)
+    - FBSDKLoginKit (~> 4.15)
+  - FacebookShare (0.2.0):
+    - Bolts (~> 1.8)
+    - FacebookCore (~> 0.2)
+    - FBSDKCoreKit (~> 4.15)
+    - FBSDKShareKit (~> 4.15)
+  - FBSDKCoreKit (4.20.1):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.20.1):
+    - FBSDKCoreKit
+  - FBSDKShareKit (4.20.1):
+    - FBSDKCoreKit
   - FirebaseAnalytics (3.7.0):
     - FirebaseCore (~> 3.5)
     - FirebaseInstanceID (~> 1.0)
@@ -36,10 +61,20 @@ PODS:
   - XLPagerTabStrip (7.0.0)
 
 DEPENDENCIES:
+  - FacebookCore
+  - FacebookLogin
+  - FacebookShare
   - Google/SignIn
   - XLPagerTabStrip (~> 7.0)
 
 SPEC CHECKSUMS:
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
+  FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
+  FacebookShare: 8e9ee8ea06505e6a1d3d719b0cc63e840fb8aaeb
+  FBSDKCoreKit: 39a3569652983bf8666620dd334804c9057ae9b2
+  FBSDKLoginKit: 17092ff61a18c54ca423aebc18c5acc2e5a4a728
+  FBSDKShareKit: 4f37934d9ee9500d2d35752595816dc35f967478
   FirebaseAnalytics: 0d1b7d81d5021155be37702a94ba1ec16d45365d
   FirebaseCore: 225d40532489835a034b8f4e2c9c87fbf4f615a2
   FirebaseInstanceID: 2d0518b1378fe9d685ef40cbdd63d2fdc1125339
@@ -50,6 +85,6 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
   XLPagerTabStrip: 9be80a66c6b7d60306b2c0a6004965016d68f813
 
-PODFILE CHECKSUM: 024754ee78db54ce0250464710eeda014bcae6cf
+PODFILE CHECKSUM: 58fefdd9c87a9feeeaa6d222dc086398613d4a0d
 
 COCOAPODS: 1.1.1

@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		510D8D1A1EF41D6B00834EE7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 510D8D191EF41D6B00834EE7 /* GoogleService-Info.plist */; };
 		510D8D1E1EF4DFD100834EE7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510D8D1D1EF4DFD100834EE7 /* ProfileViewController.swift */; };
+		510D8D201EF4FB0000834EE7 /* LoginDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510D8D1F1EF4FB0000834EE7 /* LoginDetailsViewController.swift */; };
+		510D8D221EF5298D00834EE7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 510D8D211EF5298D00834EE7 /* GoogleService-Info.plist */; };
+		510D8D251EF5458100834EE7 /* ScheduleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510D8D241EF5458100834EE7 /* ScheduleDetailsViewController.swift */; };
 		515E8AB51EE6C2C500BFA4F4 /* ScheduleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E8AB41EE6C2C500BFA4F4 /* ScheduleViewCell.swift */; };
 		5170CA6C1EEEB61C0031504D /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5170CA6B1EEEB61C0031504D /* MapsViewController.swift */; };
 		5170CA6E1EEEBAB70031504D /* Maps1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5170CA6D1EEEBAB70031504D /* Maps1ViewController.swift */; };
@@ -49,12 +51,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		510D8D111EF3C57600834EE7 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../../Downloads/FacebookSDKs-iOS-4.23.0/Bolts.framework"; sourceTree = "<group>"; };
-		510D8D121EF3C57600834EE7 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../../Downloads/FacebookSDKs-iOS-4.23.0/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
-		510D8D131EF3C57600834EE7 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../../Downloads/FacebookSDKs-iOS-4.23.0/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
-		510D8D141EF3C57600834EE7 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../../../Downloads/FacebookSDKs-iOS-4.23.0/FBSDKShareKit.framework"; sourceTree = "<group>"; };
-		510D8D191EF41D6B00834EE7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		510D8D1D1EF4DFD100834EE7 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		510D8D1F1EF4FB0000834EE7 /* LoginDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDetailsViewController.swift; sourceTree = "<group>"; };
+		510D8D211EF5298D00834EE7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		510D8D231EF5355300834EE7 /* Conference.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Conference.entitlements; sourceTree = "<group>"; };
+		510D8D241EF5458100834EE7 /* ScheduleDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDetailsViewController.swift; sourceTree = "<group>"; };
 		515E8AB41EE6C2C500BFA4F4 /* ScheduleViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewCell.swift; sourceTree = "<group>"; };
 		5170CA6B1EEEB61C0031504D /* MapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
 		5170CA6D1EEEBAB70031504D /* Maps1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Maps1ViewController.swift; sourceTree = "<group>"; };
@@ -102,10 +103,6 @@
 		08B6BD3EDB9AA4641C8D49FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				510D8D111EF3C57600834EE7 /* Bolts.framework */,
-				510D8D121EF3C57600834EE7 /* FBSDKCoreKit.framework */,
-				510D8D131EF3C57600834EE7 /* FBSDKLoginKit.framework */,
-				510D8D141EF3C57600834EE7 /* FBSDKShareKit.framework */,
 				517643B21EDB56BF008CC752 /* XLPagerTabStrip.framework */,
 				8BAF33166A7A6E00B324A6D2 /* Pods_Conference.framework */,
 			);
@@ -124,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				51A205191EE89FBF00A0980B /* LoginViewController.swift */,
+				510D8D1F1EF4FB0000834EE7 /* LoginDetailsViewController.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -180,14 +178,15 @@
 		517643951EDB4849008CC752 /* Conference */ = {
 			isa = PBXGroup;
 			children = (
+				510D8D231EF5355300834EE7 /* Conference.entitlements */,
 				517643961EDB4849008CC752 /* AppDelegate.swift */,
 				513FC1FB1EF28DE90020F9F5 /* Views */,
 				513FC1FC1EF28E1F0020F9F5 /* Controllers */,
 				51C69C071EE0A686004A4ED7 /* SFUI */,
 				513FC1FD1EF28E610020F9F5 /* extentions */,
 				5176439F1EDB4849008CC752 /* Assets.xcassets */,
-				510D8D191EF41D6B00834EE7 /* GoogleService-Info.plist */,
 				517643A41EDB4849008CC752 /* Info.plist */,
+				510D8D211EF5298D00834EE7 /* GoogleService-Info.plist */,
 			);
 			path = Conference;
 			sourceTree = "<group>";
@@ -200,6 +199,7 @@
 				517643B41EDB5DC7008CC752 /* DayViewController.swift */,
 				517643B61EDB5E12008CC752 /* Day2ViewController.swift */,
 				517643B81EDB6270008CC752 /* day3ViewController.swift */,
+				510D8D241EF5458100834EE7 /* ScheduleDetailsViewController.swift */,
 			);
 			name = Schedule;
 			sourceTree = "<group>";
@@ -291,6 +291,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = FS9MJBEMW5;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -319,7 +324,7 @@
 			files = (
 				517643A31EDB4849008CC752 /* LaunchScreen.storyboard in Resources */,
 				51C69C091EE0A686004A4ED7 /* SF UI Font License.rtf in Resources */,
-				510D8D1A1EF41D6B00834EE7 /* GoogleService-Info.plist in Resources */,
+				510D8D221EF5298D00834EE7 /* GoogleService-Info.plist in Resources */,
 				517643A01EDB4849008CC752 /* Assets.xcassets in Resources */,
 				5176439E1EDB4849008CC752 /* Main.storyboard in Resources */,
 			);
@@ -381,7 +386,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5170CA701EEEBCB30031504D /* Maps2ViewController.swift in Sources */,
+				510D8D251EF5458100834EE7 /* ScheduleDetailsViewController.swift in Sources */,
 				51A205181EE81B8C00A0980B /* FilterTableViewCell.swift in Sources */,
+				510D8D201EF4FB0000834EE7 /* LoginDetailsViewController.swift in Sources */,
 				517643B91EDB6270008CC752 /* day3ViewController.swift in Sources */,
 				515E8AB51EE6C2C500BFA4F4 /* ScheduleViewCell.swift in Sources */,
 				51A205151EE80CFB00A0980B /* FilterViewController.swift in Sources */,
@@ -531,17 +538,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Conference/Conference.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = FS9MJBEMW5;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/DerivedData/Conference/Build/Products/Debug-iphoneos/XLPagerTabStrip",
-					"~/Documents/FacebookSDK",
-				);
-				"FRAMEWORK_SEARCH_PATHS[arch=*]" = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/DerivedData/Conference/Build/Products/Debug-iphoneos/XLPagerTabStrip",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(inherited)";
 				INFOPLIST_FILE = Conference/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rathi.Conference;
@@ -556,13 +557,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Conference/Conference.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = FS9MJBEMW5;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/DerivedData/Conference/Build/Products/Debug-iphoneos/XLPagerTabStrip",
-					"~/Documents/FacebookSDK",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Conference/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rathi.Conference;
