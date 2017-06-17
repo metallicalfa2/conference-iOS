@@ -15,6 +15,8 @@ class DayViewController:UIViewController, IndicatorInfoProvider{
 	override func viewDidLoad() {
 		self.tableView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
 		self.tableView.separatorStyle = .none
+		self.tableView.translatesAutoresizingMaskIntoConstraints = false
+		
 		super.viewDidLoad()
 	}
 	func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
@@ -22,25 +24,35 @@ class DayViewController:UIViewController, IndicatorInfoProvider{
 	}
 }
 
-extension DayViewController: UITableViewDelegate, UITableViewDataSource{
+// Extention for tableViewMethods
+extension DayViewController: UITableViewDelegate, UITableViewDataSource,UITableViewDataSourcePrefetching{
 
-	func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-		return 1
+	func numberOfSections(in tableView: UITableView) -> Int {
+		return 2
 	}
-	
+
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
-		return 10
+		return 5
 	}
-	
+	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+		return "Time 10:00 - 11:00 am"
+	}
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+	
 		let cell = tableView.dequeueReusableCell(withIdentifier: "schedule-cell", for: indexPath) as! ScheduleViewCell
-		
 		cell.selectionStyle = .none
-		cell.view.dropShadow()
+		//cell.view.dropShadow()
 		return cell
 	}
 	
-
+	// This methods will be used for smooth scrolling.
+	func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+		print("prefetchRowsAt \(indexPaths)")
+	}
+	
+	func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
+		print("cancelPrefetchingForRowsAt \(indexPaths)")
+	}
 }
 
 

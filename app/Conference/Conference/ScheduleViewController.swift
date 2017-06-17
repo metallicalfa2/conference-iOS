@@ -37,9 +37,9 @@ class ScheduleViewController: ButtonBarPagerTabStripViewController {
 		
 	}
 	override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-		let child_1 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "child1")
-		let child_2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "child2")
-		let child_3 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "child3")
+		let child_1 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "schedule-day-1")
+		let child_2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "schedule-day-2")
+		let child_3 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "schedule-day-3")
 		return [child_1, child_2,child_3]
 	}
 }

@@ -23,17 +23,19 @@ class Day2ViewController:UIViewController, IndicatorInfoProvider{
 extension Day2ViewController: UITableViewDelegate, UITableViewDataSource{
 	
 	func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-		return 1
+		return 5
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
-		return 20
+		return 5
 	}
-	
+	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+		return "Time 10:00 - 11:00 am"
+	}
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "schedule-cell-2", for: indexPath)
 		cell.selectionStyle = .none
-		//cell.view.dropShadow()
+		cell.dropShadow()
 		return cell
 	}
 	
