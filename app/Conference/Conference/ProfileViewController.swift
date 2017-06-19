@@ -11,6 +11,7 @@ import GoogleSignIn
 
 class ProfileViewController: UIViewController {
 	
+	@IBOutlet weak var profileImage: UIImageView!
 	@IBOutlet weak var name: UITextField!
 	@IBOutlet weak var email: UITextField!
 	@IBOutlet weak var titleatCompany: UITextField!
@@ -24,11 +25,16 @@ class ProfileViewController: UIViewController {
 		let vc = self.storyboard?.instantiateViewController(withIdentifier: "profileView")
 		self.present(vc!, animated: true, completion: nil)
 	}
-	
+
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
-		
+		if(GIDSignIn.sharedInstance().currentUser != nil){
+			print("already logged in")
+		}
+		else{
+			print("not logged in")
+		}
     }
 	override func viewWillAppear(_ animated: Bool) {
 		email.text = UserDefaults().string(forKey: "email") ?? "email Address"

@@ -34,7 +34,6 @@ class ScheduleViewController: ButtonBarPagerTabStripViewController {
 		navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
 		navigationController?.navigationBar.shadowImage = UIImage()
 		
-		
 	}
 	override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
 		let child_1 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "schedule-day-1")
