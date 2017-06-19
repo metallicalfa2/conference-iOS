@@ -13,11 +13,14 @@ import Google
 import FacebookCore
 import FacebookLogin
 import FBSDKLoginKit
+import NVActivityIndicatorView
 
 // userDefaults for persistant data storage.
 let userDefaults = UserDefaults.standard
 
 class LoginViewController: UIViewController ,GIDSignInUIDelegate,GIDSignInDelegate,LoginButtonDelegate{
+	let activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView();
+	let loginManager = LoginManager()
 
 	@IBOutlet weak var registrationId: UITextField!
 	
@@ -39,34 +42,49 @@ class LoginViewController: UIViewController ,GIDSignInUIDelegate,GIDSignInDelega
     }
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(true)
-		if (userDefaults.object(forKey: "clientId") != nil){
-			GIDSignIn.sharedInstance().clientID = userDefaults.object(forKey: "clientId") as! String
-			GIDSignIn.sharedInstance().signInSilently()
+		userDefaults.set(false, forKey: "isFacebookLoggedIn")
+		userDefaults.set(false, forKey: "isGoogleLoggedIn")
+		
+		GIDSignIn.sharedInstance().clientID = "675818656106-34cmrg4hlu86julevmeiqenlbo2gn21n.apps.googleusercontent.com"
+		GIDSignIn.sharedInstance().signInSilently()
+		if(FBSDKAccessToken.current() != nil){
+			segueFurther()
 		}
 	}
 
-	func segueToLoginDetails(){
-		performSegue(withIdentifier: "loginToLoginDetails", sender: self)
+	func segueFurther(){
+		if ( (userDefaults.object(forKey: "name") != nil) && (userDefaults.object(forKey: "email") != nil) && (userDefaults.object(forKey: "title") != nil)  && (userDefaults.object(forKey: "company") != nil)  ) {
+				let vc: UIViewController = (self.storyboard?.instantiateViewController(withIdentifier: "tabView"))!
+				self.present(vc, animated: true, completion: nil)
+			}
+		else{
+				performSegue(withIdentifier: "loginToLoginDetails", sender: self)
+		}
 	}
+	
 }
 
 extension LoginViewController{
 	func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
 		if (error == nil) {
 			userDefaults.set(user.profile.imageURL(withDimension: 500), forKey: "googleProfileImageUrl")
-			userDefaults.set(false,forKey:"isFacebookLoggedIn")
 			userDefaults.set(true, forKey: "isGoogleLoggedIn")
 			userDefaults.set(user.profile.email as String!, forKey: "email")
 			userDefaults.set(user.profile.name as String!, forKey: "name")
 			userDefaults.set(signIn.clientID as String!, forKey: "clientId")
-			segueToLoginDetails()
+			segueFurther()
 		} else {
 			print("\(error.localizedDescription)")
 		}
 	}
 	
-	func manageFbLogin(){
-		let loginManager = LoginManager()
+	
+	func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
+		print("fb login completed")
+	}
+	func loginButtonDidLogOut(_ loginButton: LoginButton) {}
+	
+	override func manageFbLogin(){
 		loginManager.logIn([.publicProfile, .email ], viewController: self) { (result) in
 			switch result{
 			case .cancelled:
@@ -82,14 +100,11 @@ extension LoginViewController{
 					let imageObject = dataObject["data"] as! [String:AnyObject]
 					let imageString = imageObject["url"] as! String
 					
-					userDefaults.set(false, forKey: "isGoogleLoggedIn")
 					userDefaults.set(true,forKey:"isFacebookLoggedIn")
 					userDefaults.set(URL(string:imageString), forKey: "facebookProfileImageUrl")
 					userDefaults.set(info["name"] as! String, forKey: "name")
 					userDefaults.set(info["email"] as! String, forKey: "email")
-					userDefaults.set(false, forKey: "isGoogleLoggedIn")
-					
-					self.segueToLoginDetails()
+					self.segueFurther()
 				}
 				Connection.start()
 			default:
@@ -97,9 +112,4 @@ extension LoginViewController{
 			}
 		}
 	}
-	func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
-		print("fb login completed")
-	}
-	func loginButtonDidLogOut(_ loginButton: LoginButton) {}
-	
 }

@@ -7,6 +7,8 @@
 		<string>Calibri.ttf</string>
 		<string>Tahoma.ttf</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Set the Background</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>NSCalendarsUsageDescription</key>

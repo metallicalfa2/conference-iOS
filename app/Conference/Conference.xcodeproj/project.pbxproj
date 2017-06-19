@@ -17,6 +17,7 @@
 		510D8D2E1EF6398D00834EE7 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510D8D2D1EF6398D00834EE7 /* EditProfileViewController.swift */; };
 		510D8D301EF7996100834EE7 /* UIImageViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510D8D2F1EF7996100834EE7 /* UIImageViewExtention.swift */; };
 		510D8D321EF7D2A800834EE7 /* GoogleLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510D8D311EF7D2A800834EE7 /* GoogleLoginController.swift */; };
+		510D8D341EF808FA00834EE7 /* LoaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510D8D331EF808FA00834EE7 /* LoaderController.swift */; };
 		515E8AB51EE6C2C500BFA4F4 /* ScheduleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E8AB41EE6C2C500BFA4F4 /* ScheduleViewCell.swift */; };
 		5170CA6C1EEEB61C0031504D /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5170CA6B1EEEB61C0031504D /* MapsViewController.swift */; };
 		5170CA6E1EEEBAB70031504D /* Maps1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5170CA6D1EEEBAB70031504D /* Maps1ViewController.swift */; };
@@ -67,6 +68,7 @@
 		510D8D2D1EF6398D00834EE7 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		510D8D2F1EF7996100834EE7 /* UIImageViewExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtention.swift; sourceTree = "<group>"; };
 		510D8D311EF7D2A800834EE7 /* GoogleLoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleLoginController.swift; sourceTree = "<group>"; };
+		510D8D331EF808FA00834EE7 /* LoaderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderController.swift; sourceTree = "<group>"; };
 		515E8AB41EE6C2C500BFA4F4 /* ScheduleViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewCell.swift; sourceTree = "<group>"; };
 		5170CA6B1EEEB61C0031504D /* MapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
 		5170CA6D1EEEBAB70031504D /* Maps1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Maps1ViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 		513FC1FC1EF28E1F0020F9F5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				510D8D331EF808FA00834EE7 /* LoaderController.swift */,
 				51A2051B1EE8A2AA00A0980B /* TabBarViewController.swift */,
 				510D8D1C1EF4DFBD00834EE7 /* Login */,
 				510D8D1B1EF4DFB100834EE7 /* Profile */,
@@ -424,6 +427,7 @@
 				517676871EEFCDD0009DB091 /* MySchedule2ViewController.swift in Sources */,
 				517643AD1EDB5274008CC752 /* ScheduleViewController.swift in Sources */,
 				5170CA6C1EEEB61C0031504D /* MapsViewController.swift in Sources */,
+				510D8D341EF808FA00834EE7 /* LoaderController.swift in Sources */,
 				510D8D301EF7996100834EE7 /* UIImageViewExtention.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

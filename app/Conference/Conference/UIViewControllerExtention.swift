@@ -8,6 +8,10 @@
 
 import UIKit
 import EventKit
+import FBSDKLoginKit
+import FacebookLogin
+import Google
+import GoogleSignIn
 
 extension UIViewController {
 	func showAlertMessage(titleStr:String, messageStr:String) {
@@ -51,6 +55,53 @@ extension UIViewController {
 			}
 		}
 	}
+	func manageFbLogin(){
+		let loginManager = LoginManager()
+		loginManager.logIn([.publicProfile, .email ], viewController: self) { (result) in
+			switch result{
+			case .cancelled:
+				print("Cancel button click")
+			case .success:
+				let params = ["fields" : "id, name, first_name, last_name, picture.type(large), email "]
+				let graphRequest = FBSDKGraphRequest.init(graphPath: "/me", parameters: params)
+				let Connection = FBSDKGraphRequestConnection()
+				Connection.add(graphRequest) { (Connection, result, error) in
+					let info = result as! [String : AnyObject]
+					let dataObject = info["picture"] as! [String:AnyObject]
+					let imageObject = dataObject["data"] as! [String:AnyObject]
+					let imageString = imageObject["url"] as! String
+					
+					userDefaults.set(true,forKey:"isFacebookLoggedIn")
+					userDefaults.set(URL(string:imageString), forKey: "facebookProfileImageUrl")
+					userDefaults.set(info["name"] as! String, forKey: "name")
+					userDefaults.set(info["email"] as! String, forKey: "email")
+				}
+				Connection.start()
+			default:
+				print("??")
+			}
+		}
+	}
+	func manageFbLogout(){
+		let loginManager = LoginManager()
+		loginManager.logOut()
+		userDefaults.set(false,forKey:"isFacebookLoggedIn")
+		userDefaults.set(nil, forKey: "facebookProfileImageUrl")
+	}
+	func manageGoogleLogout(){
+		GIDSignIn.sharedInstance().signOut()
+		userDefaults.set(false,forKey:"isGoogleLoggedIn")
+		userDefaults.set(nil, forKey: "isGoogleLoggedIn")
+	}
+	func checkIfBothLoggedOut() -> Bool{
+		if( !UserDefaults().bool(forKey: "isFacebookLoggedIn") && !UserDefaults().bool(forKey: "isGoogleLoggedIn") ){
+			return true
+		}
+		return false
+	}
 	
+
+	
+
 
 }

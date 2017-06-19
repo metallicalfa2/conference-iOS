@@ -58,6 +58,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.9)
   - GTMSessionFetcher/Full (1.1.9):
     - GTMSessionFetcher/Core (= 1.1.9)
+  - NVActivityIndicatorView (3.5.1)
   - XLPagerTabStrip (7.0.0)
 
 DEPENDENCIES:
@@ -65,6 +66,7 @@ DEPENDENCIES:
   - FacebookLogin
   - FacebookShare
   - Google/SignIn
+  - NVActivityIndicatorView
   - XLPagerTabStrip (~> 7.0)
 
 SPEC CHECKSUMS:
@@ -83,8 +85,9 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
+  NVActivityIndicatorView: 075563b3547445ebcff840e3297ce9dd4a23731f
   XLPagerTabStrip: 9be80a66c6b7d60306b2c0a6004965016d68f813
 
-PODFILE CHECKSUM: 58fefdd9c87a9feeeaa6d222dc086398613d4a0d
+PODFILE CHECKSUM: 5474046fd48d58f27cab1bafbe1a7e704f00bb5e
 
 COCOAPODS: 1.1.1
