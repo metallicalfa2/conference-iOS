@@ -23,6 +23,7 @@ class ProfileViewController: UIViewController,GIDSignInUIDelegate,GIDSignInDeleg
 	@IBAction func signOut(_ sender: Any) {
 		manageGoogleLogout()
 		manageFbLogout()
+		clearUserDefaults()
 		segueToLoginView()
 	}
 
@@ -33,6 +34,10 @@ class ProfileViewController: UIViewController,GIDSignInUIDelegate,GIDSignInDeleg
 		GIDSignIn.sharedInstance().delegate = self
 		profileImage.cornerRadius()
 		self.addRecognizer()
+		self.name.isEnabled = false
+		self.email.isEnabled = false
+		self.titleatCompany.isEnabled = false
+		self.company.isEnabled = false
 		
     }
 	override func viewWillAppear(_ animated: Bool) {
@@ -40,29 +45,17 @@ class ProfileViewController: UIViewController,GIDSignInUIDelegate,GIDSignInDeleg
 		name.text = UserDefaults().string(forKey: "name") ?? "Name"
 		titleatCompany.text = UserDefaults().string(forKey: "title") ?? "Title"
 		company.text = UserDefaults().string(forKey: "company") ?? "Company"
-		
-		if(UserDefaults().bool(forKey: "isGoogleLoggedIn") == true){
-			profileImage.imageFromServerURL(url: userDefaults.url(forKey: "googleProfileImageUrl")!)
-			self.GoogleLoggedIn()
-		}
-		else if(userDefaults.object(forKey: "facebookProfileImageUrl") != nil){
-			profileImage.imageFromServerURL(url: userDefaults.url(forKey: "facebookProfileImageUrl")! )
-			self.facebookLoggedIn()
-		}
-		
+		fetchProfileImage()
 	}
 	
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-
 }
 
 extension ProfileViewController{
 	func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
 		if (error == nil) {
-		
 			userDefaults.set(user.profile.imageURL(withDimension: 500), forKey: "googleProfileImageUrl")
 			userDefaults.set(user.profile.email as String!, forKey: "email")
 			userDefaults.set(user.profile.name as String!, forKey: "name")
@@ -98,6 +91,7 @@ extension ProfileViewController{
 			facebookLoggedOut()
 		}
 		if(checkIfBothLoggedOut()){
+			clearUserDefaults()
 			segueToLoginView()
 		}
 	}
@@ -112,6 +106,7 @@ extension ProfileViewController{
 			googleLoggedOut()
 		}
 		if(checkIfBothLoggedOut()){
+			clearUserDefaults()
 			segueToLoginView()
 		}
 	}
@@ -128,4 +123,25 @@ extension ProfileViewController{
 		let vc = self.storyboard?.instantiateViewController(withIdentifier: "loginView")
 		self.present(vc!, animated: true, completion: nil)
 	}
+	func fetchProfileImage(){
+		if(UserDefaults().object(forKey: "manualChosenImage") != nil){
+			let data = UserDefaults().object(forKey: "manualChosenImage")
+			self.profileImage.image = UIImage(data: data as! Data)
+		}
+		else if(UserDefaults().bool(forKey: "isGoogleLoggedIn") == true){
+			self.profileImage.imageFromServerURL(url: userDefaults.url(forKey: "googleProfileImageUrl")!)
+		}
+		else if(userDefaults.object(forKey: "facebookProfileImageUrl") != nil){
+			self.profileImage.imageFromServerURL(url: userDefaults.url(forKey: "facebookProfileImageUrl")! )
+		}
+		
+		if(UserDefaults().bool(forKey: "isGoogleLoggedIn") == true){
+			self.GoogleLoggedIn()
+		}
+		
+		if(UserDefaults().bool(forKey: "isFacebookLoggedIn") == true){
+			self.facebookLoggedIn()
+		}
+	}
+	
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16G12b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="CpI-er-opN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G12b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="L0l-xB-KbK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -238,7 +238,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SrU-gj-JlU" id="NRL-Lo-W5g">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="General Discussion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFQ-VZ-1C0">
@@ -311,7 +311,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCH-dG-XZe">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCH-dG-XZe">
                                 <rect key="frame" x="0.0" y="104" width="375" height="514"/>
                                 <color key="backgroundColor" red="0.97318203410000004" green="1" blue="0.27328422899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </scrollView>
@@ -342,18 +342,16 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="eaa-Ob-pG6"/>
-                    <navigationItem key="navigationItem" title="Schedule" id="ZJv-xi-Ygv">
-                        <barButtonItem key="leftBarButtonItem" id="flK-mB-tjL">
+                    <navigationItem key="navigationItem" title="Schedule" id="Z8t-cP-xOQ">
+                        <barButtonItem key="leftBarButtonItem" id="3yf-Ip-i6H">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <segue destination="67B-Hn-Oe1" kind="presentation" id="8kS-XO-8UB"/>
-                            </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="Search Icon" id="VWV-yS-Bu0">
+                        <barButtonItem key="rightBarButtonItem" image="Search Icon" id="XpW-5V-nLV">
                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="buttonBarOutlet" destination="clZ-9r-Km7" id="CSE-d6-JFV"/>
                         <outlet property="buttonBarView" destination="clZ-9r-Km7" id="iDd-kz-6ud"/>
                         <outlet property="containerView" destination="FCH-dG-XZe" id="HoP-qz-h0j"/>
                     </connections>
@@ -384,7 +382,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="79"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" tableViewCell="9Kq-eB-F9R" id="Px8-Kt-e0i">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="78"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="78.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <stackView contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CIu-db-pHE">
@@ -642,7 +640,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                         <rect key="frame" x="0.0" y="28" width="375" height="79"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" tableViewCell="cEb-Aq-Jew" id="WcU-Lm-Jiq">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="78"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="78.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="krF-ih-SD3">
@@ -790,7 +788,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                         <rect key="frame" x="0.0" y="28" width="375" height="79"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" tableViewCell="EQI-BB-zbi" id="dMH-WF-11z">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="78"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="78.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rkl-98-vvg">
@@ -938,7 +936,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                         <rect key="frame" x="0.0" y="28" width="375" height="79"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" tableViewCell="1hE-8r-FXB" id="fU6-Pr-9LH">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="78"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="78.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oAH-uN-VXg">
@@ -1087,7 +1085,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                         <rect key="frame" x="0.0" y="28" width="375" height="79"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" tableViewCell="qZT-u4-iSW" id="q98-Gf-nsD">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="78"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="78.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <stackView contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="K2E-LS-X4A">
@@ -1226,7 +1224,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile Photo" translatesAutoresizingMaskIntoConstraints="NO" id="cs4-Lq-N9V">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile Photo" translatesAutoresizingMaskIntoConstraints="NO" id="cs4-Lq-N9V">
                                 <rect key="frame" x="125" y="87" width="125" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="125" id="Sq0-QX-fMy"/>
@@ -1337,7 +1335,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2039.0625" y="-0.625"/>
+            <point key="canvasLocation" x="2976.8000000000002" y="-1.3493253373313345"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="TNW-eg-Dkq">
@@ -1352,7 +1350,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ABI" translatesAutoresizingMaskIntoConstraints="NO" id="Pbc-tc-UTO">
-                                <rect key="frame" x="42" y="28" width="291" height="131"/>
+                                <rect key="frame" x="42" y="72" width="291" height="131"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Pbc-tc-UTO" secondAttribute="height" multiplier="291:131" id="5ZI-U4-cUf"/>
                                 </constraints>
@@ -1373,7 +1371,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your Registration ID" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="ZR4-AE-oMp">
-                                <rect key="frame" x="65" y="255" width="246" height="30"/>
+                                <rect key="frame" x="65" y="299" width="246" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="9it-4n-Iml"/>
                                     <constraint firstAttribute="width" secondItem="ZR4-AE-oMp" secondAttribute="height" multiplier="41:5" id="m7y-Zx-PrQ"/>
@@ -1383,14 +1381,14 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="join" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rcr-pL-HWM">
-                                <rect key="frame" x="68" y="287" width="240" height="2"/>
+                                <rect key="frame" x="68" y="331" width="240" height="2"/>
                                 <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="rH7-dk-ib7"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registrations" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0w3-CC-7n2">
-                                <rect key="frame" x="50" y="177" width="275" height="38"/>
+                                <rect key="frame" x="50" y="221" width="275" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="uTn-Ym-fx4"/>
                                 </constraints>
@@ -1399,7 +1397,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCs-VV-dDb">
-                                <rect key="frame" x="50" y="301" width="275" height="44"/>
+                                <rect key="frame" x="50" y="345" width="275" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="TCs-VV-dDb" secondAttribute="height" multiplier="25:4" id="BX1-d8-dJe"/>
                                 </constraints>
@@ -1409,7 +1407,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDD-W1-ZRs">
-                                <rect key="frame" x="50" y="345" width="275" height="143"/>
+                                <rect key="frame" x="50" y="389" width="275" height="99"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1466,6 +1464,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                             <constraint firstItem="0w3-CC-7n2" firstAttribute="trailing" secondItem="TCs-VV-dDb" secondAttribute="trailing" id="zYB-vU-1KU"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="wjf-1B-OkU"/>
                     <connections>
                         <outlet property="registrationId" destination="ZR4-AE-oMp" id="4Kg-o6-5nc"/>
                         <segue destination="cvM-l8-zvM" kind="showDetail" identifier="loginToLoginDetails" action="showViewController:sender:" id="H41-AX-z2U"/>
@@ -1474,12 +1473,12 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rmy-eM-0wM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2145" y="0.0"/>
+            <point key="canvasLocation" x="-1207.2" y="-0.44977511244377816"/>
         </scene>
         <!--Login Details View Controller-->
         <scene sceneID="jfJ-2k-wnI">
             <objects>
-                <viewController id="cvM-l8-zvM" customClass="LoginDetailsViewController" customModule="Conference" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginDetails" id="cvM-l8-zvM" customClass="LoginDetailsViewController" customModule="Conference" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="huV-Qc-CoJ"/>
                         <viewControllerLayoutGuide type="bottom" id="mIi-oj-Ueu"/>
@@ -1573,7 +1572,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                         </constraints>
                                         <color key="textColor" red="0.062745098039215685" green="0.094117647058823528" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="yes" spellCheckingType="yes" returnKeyType="join" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="yes" spellCheckingType="yes" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0Q-oC-vwK">
                                         <rect key="frame" x="0.0" y="32" width="262" height="2"/>
@@ -1597,7 +1596,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                         </constraints>
                                         <color key="textColor" red="0.062745098040000002" green="0.094117647060000004" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="join" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oSJ-zE-yLL">
                                         <rect key="frame" x="0.0" y="32" width="262" height="2"/>
@@ -1653,7 +1652,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fbs-M8-d9F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1078" y="-429"/>
+            <point key="canvasLocation" x="-140" y="-429.53523238380814"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -1674,7 +1673,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="15" y="-19"/>
+            <point key="canvasLocation" x="952.79999999999995" y="-19.340329835082461"/>
         </scene>
         <!--Day3 View Controller-->
         <scene sceneID="KTs-YX-lWI">
@@ -1698,7 +1697,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                         <rect key="frame" x="0.0" y="28" width="375" height="79"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" tableViewCell="YRL-2d-FdO" id="cED-OU-qGo">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="78"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="78.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <stackView contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wDW-wP-PHY">
@@ -1876,7 +1875,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dwH-W2-AkZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1038" y="0.0"/>
+            <point key="canvasLocation" x="1976.8" y="-0.44977511244377816"/>
         </scene>
         <!--Maps-->
         <scene sceneID="w65-Oz-c9T">
@@ -1912,7 +1911,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fBi-kg-ECu">
                                 <rect key="frame" x="105" y="64" width="165" height="165"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile Photo" translatesAutoresizingMaskIntoConstraints="NO" id="xQ2-Wp-hyL">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile Photo" translatesAutoresizingMaskIntoConstraints="NO" id="xQ2-Wp-hyL">
                                         <rect key="frame" x="20" y="20" width="125" height="125"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="125" id="a0v-EU-nJF"/>
@@ -1947,7 +1946,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                         </constraints>
                                         <color key="textColor" red="0.062745098040000002" green="0.094117647060000004" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="join" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HQj-RK-2XM">
                                         <rect key="frame" x="0.0" y="32" width="262" height="2"/>
@@ -1971,7 +1970,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                         </constraints>
                                         <color key="textColor" red="0.062745098040000002" green="0.094117647060000004" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="join" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="myK-mG-In5">
                                         <rect key="frame" x="0.0" y="32" width="262" height="2"/>
@@ -1995,7 +1994,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                         </constraints>
                                         <color key="textColor" red="0.062745098040000002" green="0.094117647060000004" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="join" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zT9-SM-KHl">
                                         <rect key="frame" x="0.0" y="32" width="262" height="2"/>
@@ -2051,7 +2050,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hrb-2L-yMp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4184.0625" y="-0.528169014084507"/>
+            <point key="canvasLocation" x="5122.3999999999996" y="-1.3493253373313345"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yr7-Pu-Iiv">
@@ -2069,7 +2068,25 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OHp-ZS-qmb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3245.5999999999999" y="-0.44977511244377816"/>
+            <point key="canvasLocation" x="4184.8000000000002" y="-0.44977511244377816"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zVo-hA-WLY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L0l-xB-KbK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="w9d-vD-RGK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CpI-er-opN" kind="relationship" relationship="rootViewController" id="bQh-iJ-HkN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="94T-8Q-cPT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2146.4000000000001" y="-0.44977511244377816"/>
         </scene>
     </scenes>
     <resources>

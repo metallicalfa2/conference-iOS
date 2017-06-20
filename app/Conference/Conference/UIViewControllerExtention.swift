@@ -91,7 +91,7 @@ extension UIViewController {
 	func manageGoogleLogout(){
 		GIDSignIn.sharedInstance().signOut()
 		userDefaults.set(false,forKey:"isGoogleLoggedIn")
-		userDefaults.set(nil, forKey: "isGoogleLoggedIn")
+		userDefaults.set(nil, forKey: "googleProfileImageUrl")
 	}
 	func checkIfBothLoggedOut() -> Bool{
 		if( !UserDefaults().bool(forKey: "isFacebookLoggedIn") && !UserDefaults().bool(forKey: "isGoogleLoggedIn") ){
@@ -99,9 +99,22 @@ extension UIViewController {
 		}
 		return false
 	}
+	func clearUserDefaults(){
+		userDefaults.set(nil, forKey: "email")
+		userDefaults.set(nil, forKey: "name")
+	}
+	func hideKeyboard()
+	{
+		let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+			target: self,
+			action: #selector(UIViewController.dismissKeyboard))
+		
+		view.addGestureRecognizer(tap)
+	}
 	
-
-	
-
-
+	func dismissKeyboard()
+	{
+		view.endEditing(true)
+	}
 }
+

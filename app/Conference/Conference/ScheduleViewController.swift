@@ -13,6 +13,7 @@ class ScheduleViewController: ButtonBarPagerTabStripViewController {
 	let purpleInspireColor = UIColor(red:0.13, green:0.03, blue:0.25, alpha:1.0)
 	let blueColor = UIColor(red: 40/255, green: 179/255, blue: 1, alpha: 1)
 		
+	@IBOutlet weak var buttonBarOutlet: ButtonBarView!
 	override func viewDidLoad() {
 		// change selected bar color
 		settings.style.buttonBarBackgroundColor = .white
@@ -24,6 +25,7 @@ class ScheduleViewController: ButtonBarPagerTabStripViewController {
 		settings.style.buttonBarItemTitleColor = .black
 		settings.style.buttonBarLeftContentInset = 0
 		settings.style.buttonBarRightContentInset = 0
+		buttonBarOutlet.dropShadow()
 		changeCurrentIndexProgressive = { [weak self] (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
 			guard changeCurrentIndex == true else { return }
 			oldCell?.label.textColor = .black

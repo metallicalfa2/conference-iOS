@@ -21,6 +21,7 @@ class EditProfileViewController: UIViewController,UIImagePickerControllerDelegat
 	}
 	override func viewDidLoad() {
         super.viewDidLoad()
+		self.hideKeyboard()
 		profileImageView.isUserInteractionEnabled = true
 		let tap = UITapGestureRecognizer(target: self, action: #selector(editImage))
 		profileImageView.addGestureRecognizer(tap)
@@ -28,20 +29,29 @@ class EditProfileViewController: UIViewController,UIImagePickerControllerDelegat
 		picker.delegate = self
     }
 	func editImage(){
-		picker.allowsEditing = false
+		picker.allowsEditing = true
 		picker.sourceType = .photoLibrary
 		picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
 		present(picker, animated: true, completion: nil)
 	}
-	func imagePickerController(_ picker: UIImagePickerController,
-	                           didFinishPickingMediaWithInfo info: [String : Any])
+	func imagePickerController(_ picker: UIImagePickerController,didFinishPickingMediaWithInfo info: [String : Any])
 	{
-		if let chosenImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
-			print(chosenImage)
-			profileImage.image = chosenImage
+		if let chosenImage = info[UIImagePickerControllerEditedImage] as? UIImage{
+			self.profileImage.image = chosenImage
+			let ImageData: NSData = UIImagePNGRepresentation(chosenImage)!	as NSData
+			userDefaults.set(ImageData, forKey: "manualChosenImage")
+		}
+		else if let chosenImage = info[UIImagePickerControllerEditedImage] as? UIImage{
+			self.profileImage.image = chosenImage
+			let ImageData: NSData = UIImagePNGRepresentation(chosenImage)!	as NSData
+			userDefaults.set(ImageData, forKey: "manualChosenImage")
+		}
+		else{
+			print("Error")
 		}
 		dismiss(animated:true, completion: nil)
 	}
+	
 	func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
 		dismiss(animated: true, completion: nil)
 
@@ -50,12 +60,7 @@ class EditProfileViewController: UIViewController,UIImagePickerControllerDelegat
 		name.text = UserDefaults().string(forKey: "name") ?? "Enter Name"
 		titleAtCompnay.text = UserDefaults().string(forKey: "title")
 		company.text = UserDefaults().string(forKey: "company")
-		if(UserDefaults().bool(forKey: "isGoogleLoggedIn") == true){
-			profileImage.imageFromServerURL(url: userDefaults.url(forKey: "googleProfileImageUrl")!)
-		}
-		else if(userDefaults.object(forKey: "facebookProfileImageUrl") != nil){
-			profileImage.imageFromServerURL(url: userDefaults.url(forKey: "facebookProfileImageUrl")! )
-		}
+		fetchProfileImage()
 	}
 
 	@IBAction func donePressed(_ sender: Any) {
@@ -68,5 +73,16 @@ class EditProfileViewController: UIViewController,UIImagePickerControllerDelegat
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+	func fetchProfileImage(){
+		if(UserDefaults().object(forKey: "manualChosenImage") != nil){
+			let data = UserDefaults().object(forKey: "manualChosenImage")
+			self.profileImage.image = UIImage(data: data as! Data)
+		}
+		else if(UserDefaults().bool(forKey: "isGoogleLoggedIn") == true){
+			self.profileImage.imageFromServerURL(url: userDefaults.url(forKey: "googleProfileImageUrl")!)
+		}
+		else if(userDefaults.object(forKey: "facebookProfileImageUrl") != nil){
+			self.profileImage.imageFromServerURL(url: userDefaults.url(forKey: "facebookProfileImageUrl")! )
+		}
+	}
 }

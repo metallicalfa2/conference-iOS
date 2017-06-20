@@ -34,6 +34,7 @@ extension DayViewController: UITableViewDelegate, UITableViewDataSource,UITableV
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
 		return 5
 	}
+	
 	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 		return 30
 	}
@@ -49,6 +50,7 @@ extension DayViewController: UITableViewDelegate, UITableViewDataSource,UITableV
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 		return "Time 10:00 - 11:00 am"
 	}
+	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 	
 		let cell = tableView.dequeueReusableCell(withIdentifier: "schedule-cell", for: indexPath) as! ScheduleViewCell
@@ -58,14 +60,13 @@ extension DayViewController: UITableViewDelegate, UITableViewDataSource,UITableV
 		return cell
 	}
 	
-	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-	 let storyboard = UIStoryboard(name: "Main", bundle: nil)
+		let storyboard = UIStoryboard(name: "Main", bundle: nil)
 		let objSecond = storyboard.instantiateViewController(withIdentifier: "scheduleDetails")
 		navigationController?.pushViewController(objSecond, animated: true)
+		let cell = tableView.cellForRow(at: indexPath) as! ScheduleViewCell
+		cell.calendarButton.imageView?.image = #imageLiteral(resourceName: "calendar completed")
 	}
-	
-	
 	
 	// This methods will be used for smooth scrolling.
 	func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
@@ -75,8 +76,6 @@ extension DayViewController: UITableViewDelegate, UITableViewDataSource,UITableV
 	func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
 		print("cancelPrefetchingForRowsAt \(indexPaths)")
 	}
-	
-	
 	
 }
 

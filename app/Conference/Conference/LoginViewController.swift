@@ -13,7 +13,6 @@ import Google
 import FacebookCore
 import FacebookLogin
 import FBSDKLoginKit
-import NVActivityIndicatorView
 
 // userDefaults for persistant data storage.
 let userDefaults = UserDefaults.standard
@@ -37,17 +36,23 @@ class LoginViewController: UIViewController ,GIDSignInUIDelegate,GIDSignInDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		self.hideKeyboard()
 		GIDSignIn.sharedInstance().uiDelegate = self
 		GIDSignIn.sharedInstance().delegate = self
+	
+		
     }
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(true)
 		userDefaults.set(false, forKey: "isFacebookLoggedIn")
 		userDefaults.set(false, forKey: "isGoogleLoggedIn")
-		
 		GIDSignIn.sharedInstance().clientID = "675818656106-34cmrg4hlu86julevmeiqenlbo2gn21n.apps.googleusercontent.com"
 		GIDSignIn.sharedInstance().signInSilently()
-		if(FBSDKAccessToken.current() != nil){
+		
+		FBSDKProfile.enableUpdates(onAccessTokenChange: true)
+		FBSDKAccessToken.refreshCurrentAccessToken(nil)
+		print(FBSDKAccessToken.current() ?? " \n nil access token \n")
+		if( FBSDKAccessToken.current() != nil){
 			segueFurther()
 		}
 	}
@@ -58,7 +63,8 @@ class LoginViewController: UIViewController ,GIDSignInUIDelegate,GIDSignInDelega
 				self.present(vc, animated: true, completion: nil)
 			}
 		else{
-				performSegue(withIdentifier: "loginToLoginDetails", sender: self)
+			let vc: UIViewController = (self.storyboard?.instantiateViewController(withIdentifier: "loginDetails"))!
+			self.present(vc, animated: true, completion: nil)
 		}
 	}
 	
@@ -90,16 +96,18 @@ extension LoginViewController{
 			case .cancelled:
 				print("Cancel button click")
 			case .success:
-				let params = ["fields" : "id, name, first_name, last_name, picture.type(large), email "]
+				let params = ["fields" : "id, name, first_name, last_name, picture.type(large), email, work"]
 				let graphRequest = FBSDKGraphRequest.init(graphPath: "/me", parameters: params)
 				let Connection = FBSDKGraphRequestConnection()
 				Connection.add(graphRequest) { (Connection, result, error) in
-					//print(result)
+			//		print(result)
 					let info = result as! [String : AnyObject]
+					print(info)
 					let dataObject = info["picture"] as! [String:AnyObject]
 					let imageObject = dataObject["data"] as! [String:AnyObject]
 					let imageString = imageObject["url"] as! String
 					
+					userDefaults.set(FBSDKAccessToken.current().tokenString as String, forKey: "facebookAccessTokenKey")
 					userDefaults.set(true,forKey:"isFacebookLoggedIn")
 					userDefaults.set(URL(string:imageString), forKey: "facebookProfileImageUrl")
 					userDefaults.set(info["name"] as! String, forKey: "name")
@@ -111,5 +119,12 @@ extension LoginViewController{
 				print("??")
 			}
 		}
+	}
+	
+	func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+		if textField == registrationId {
+			self.view.frame = CGRect(x:0, y:-50, width:self.view.frame.size.width, height:self.view.frame.size.height)
+		}
+		return true
 	}
 }
