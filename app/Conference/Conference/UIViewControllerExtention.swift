@@ -23,7 +23,7 @@ extension UIViewController {
 		alert.addAction(okAction)
 		self.present(alert, animated: true, completion: nil)
 	}
-	
+
 	func addCalendarEntry(){
 		let eventStore : EKEventStore = EKEventStore()
 		
@@ -82,6 +82,7 @@ extension UIViewController {
 			}
 		}
 	}
+	
 	func manageFbLogout(){
 		let loginManager = LoginManager()
 		loginManager.logOut()
@@ -116,5 +117,12 @@ extension UIViewController {
 	{
 		view.endEditing(true)
 	}
+	func setTrueGoogleLoggedIn(){
+		userDefaults.set(true, forKey: "isGoogleLoggedIn")
+	}
+	func setTrueFacebookLoggedIn(){
+		userDefaults.set(true, forKey: "isFacebookLoggedIn")
+	}
+	
 }
 

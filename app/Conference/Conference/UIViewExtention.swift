@@ -27,6 +27,10 @@ extension UIView {
 		self.layer.cornerRadius = radius
 		self.layer.masksToBounds = true
 	}
+	func cornerRadiusForTableViewCell(){
+		self.layer.cornerRadius = 2
+//		self.layer.masksToBounds = true
+	}
 }
 extension ButtonBarView{
 	override func dropShadow(scale: Bool = true) {

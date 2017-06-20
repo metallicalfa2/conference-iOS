@@ -55,8 +55,10 @@ extension DayViewController: UITableViewDelegate, UITableViewDataSource,UITableV
 	
 		let cell = tableView.dequeueReusableCell(withIdentifier: "schedule-cell", for: indexPath) as! ScheduleViewCell
 		cell.selectionStyle = .none
-		cell.view.dropShadow()
+		cell.outerViewForCornerRadius.dropShadow()
 		cell.calendarButton.addTarget(self, action: #selector(self.addCalendarEntry), for: .touchUpInside)
+//		cell.layer.shouldRasterize = true
+//		cell.layer.rasterizationScale = UIScreen.main.scal
 		return cell
 	}
 	
@@ -64,8 +66,7 @@ extension DayViewController: UITableViewDelegate, UITableViewDataSource,UITableV
 		let storyboard = UIStoryboard(name: "Main", bundle: nil)
 		let objSecond = storyboard.instantiateViewController(withIdentifier: "scheduleDetails")
 		navigationController?.pushViewController(objSecond, animated: true)
-		let cell = tableView.cellForRow(at: indexPath) as! ScheduleViewCell
-		cell.calendarButton.imageView?.image = #imageLiteral(resourceName: "calendar completed")
+		
 	}
 	
 	// This methods will be used for smooth scrolling.

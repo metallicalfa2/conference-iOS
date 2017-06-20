@@ -39,9 +39,8 @@ class LoginViewController: UIViewController ,GIDSignInUIDelegate,GIDSignInDelega
 		self.hideKeyboard()
 		GIDSignIn.sharedInstance().uiDelegate = self
 		GIDSignIn.sharedInstance().delegate = self
-	
-		
     }
+	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(true)
 		userDefaults.set(false, forKey: "isFacebookLoggedIn")
@@ -53,6 +52,7 @@ class LoginViewController: UIViewController ,GIDSignInUIDelegate,GIDSignInDelega
 		FBSDKAccessToken.refreshCurrentAccessToken(nil)
 		print(FBSDKAccessToken.current() ?? " \n nil access token \n")
 		if( FBSDKAccessToken.current() != nil){
+			userDefaults.set(true, forKey: "isFacebookLoggedIn")
 			segueFurther()
 		}
 	}
@@ -121,10 +121,4 @@ extension LoginViewController{
 		}
 	}
 	
-	func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
-		if textField == registrationId {
-			self.view.frame = CGRect(x:0, y:-50, width:self.view.frame.size.width, height:self.view.frame.size.height)
-		}
-		return true
-	}
 }

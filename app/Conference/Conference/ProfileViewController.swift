@@ -9,6 +9,8 @@
 import UIKit
 import GoogleSignIn
 import Google
+import FacebookLogin
+import FBSDKLoginKit
 
 class ProfileViewController: UIViewController,GIDSignInUIDelegate,GIDSignInDelegate {
 	
@@ -38,7 +40,9 @@ class ProfileViewController: UIViewController,GIDSignInUIDelegate,GIDSignInDeleg
 		self.email.isEnabled = false
 		self.titleatCompany.isEnabled = false
 		self.company.isEnabled = false
-		
+
+		//print(FBSDKAccessToken.current() ?? " \n nil access token \n")
+
     }
 	override func viewWillAppear(_ animated: Bool) {
 		email.text = UserDefaults().string(forKey: "email") ?? "email Address"
@@ -46,6 +50,7 @@ class ProfileViewController: UIViewController,GIDSignInUIDelegate,GIDSignInDeleg
 		titleatCompany.text = UserDefaults().string(forKey: "title") ?? "Title"
 		company.text = UserDefaults().string(forKey: "company") ?? "Company"
 		fetchProfileImage()
+
 	}
 	
     override func didReceiveMemoryWarning() {
@@ -68,6 +73,7 @@ extension ProfileViewController{
 		self.google.image = #imageLiteral(resourceName: "google_plus")
 	}
 	func facebookLoggedIn() {
+		print("facebook logged in \n")
 		userDefaults.set(true,forKey: "isFacebookLoggedIn")
 		self.facebook.image = #imageLiteral(resourceName: "facebook")
 	}

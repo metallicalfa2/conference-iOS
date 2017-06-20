@@ -11,6 +11,3 @@ import GGLSignIn
 import GoogleSignIn
 import Google
 
-class GoogleLoginController{
-	
-}
