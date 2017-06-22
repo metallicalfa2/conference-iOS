@@ -10,5 +10,5 @@ target 'Conference' do
   pod 'Google/SignIn'
   pod 'FacebookCore'
   pod 'FacebookLogin'
-  pod 'FacebookShare'
+  pod 'IQKeyboardManager'
 end

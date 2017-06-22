@@ -73,7 +73,7 @@ extension ProfileViewController{
 		self.google.image = #imageLiteral(resourceName: "google_plus")
 	}
 	func facebookLoggedIn() {
-		print("facebook logged in \n")
+		//print("facebook logged in \n")
 		userDefaults.set(true,forKey: "isFacebookLoggedIn")
 		self.facebook.image = #imageLiteral(resourceName: "facebook")
 	}

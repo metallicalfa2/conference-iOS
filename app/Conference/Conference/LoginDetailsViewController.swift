@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginDetailsViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class LoginDetailsViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate {
 	let picker = UIImagePickerController()
 
 	@IBOutlet weak var name: UITextField!
@@ -24,26 +24,20 @@ class LoginDetailsViewController: UIViewController,UIImagePickerControllerDelega
 		uiImage.addGestureRecognizer(tap)
 		uiImage.cornerRadius()
 		picker.delegate = self
+		
+		name.delegate = self
+		email.delegate = self
+		titleInCompany.delegate = self
+		company.delegate = self
+		
     }
 	
 	override func viewWillAppear(_ animated: Bool) {
-		func fetchProfileImage(){
-			if(UserDefaults().object(forKey: "manualChosenImage") != nil){
-				let data = UserDefaults().object(forKey: "manualChosenImage")
-				self.uiImage.image = UIImage(data: data as! Data)
-			}
-			else if(UserDefaults().bool(forKey: "isGoogleLoggedIn") == true){
-				self.uiImage.imageFromServerURL(url: userDefaults.url(forKey: "googleProfileImageUrl")!)
-			}
-			else if(userDefaults.object(forKey: "facebookProfileImageUrl") != nil){
-				self.uiImage.imageFromServerURL(url: userDefaults.url(forKey: "facebookProfileImageUrl")! )
-			}
-		}
-		
 		name.text = UserDefaults().string(forKey: "name")
 		email.text = UserDefaults().string(forKey: "email")
 		titleInCompany.text = UserDefaults().string(forKey: "title")
 		company.text = UserDefaults().string(forKey: "company")
+		fetchProfileImage()
 	}
 	
 	@IBAction func donePressed(_ sender: Any) {
@@ -79,6 +73,38 @@ class LoginDetailsViewController: UIViewController,UIImagePickerControllerDelega
 	func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
 		dismiss(animated: true, completion: nil)
 		
+	}
+	func fetchProfileImage(){
+		if(UserDefaults().object(forKey: "manualChosenImage") != nil){
+			let data = UserDefaults().object(forKey: "manualChosenImage")
+			self.uiImage.image = UIImage(data: data as! Data)
+		}
+		else if(UserDefaults().bool(forKey: "isGoogleLoggedIn") == true){
+			self.uiImage.imageFromServerURL(url: userDefaults.url(forKey: "googleProfileImageUrl")!)
+		}
+		else if(userDefaults.object(forKey: "facebookProfileImageUrl") != nil){
+			self.uiImage.imageFromServerURL(url: userDefaults.url(forKey: "facebookProfileImageUrl")! )
+		}
+	}
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		if ( textField == self.name)
+		{
+			self.email.becomeFirstResponder()
+			self.name.resignFirstResponder()
+		}
+		else if(textField == self.email){
+			self.titleInCompany.becomeFirstResponder()
+			self.email.resignFirstResponder()
+		}
+		else if(textField == self.titleInCompany){
+			self.company.becomeFirstResponder()
+			self.titleInCompany.resignFirstResponder()
+		}
+		else{
+			textField.resignFirstResponder()
+			donePressed(self)
+		}
+		return true
 	}
 
 }

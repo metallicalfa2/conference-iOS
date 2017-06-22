@@ -7,6 +7,15 @@
 		<string>Calibri.ttf</string>
 		<string>Tahoma.ttf</string>
 	</array>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Schedule</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>scheduletab</string>
+		</dict>
+	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Set the Background</string>
 	<key>CFBundleDevelopmentRegion</key>

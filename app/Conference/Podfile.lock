@@ -13,27 +13,21 @@ PODS:
     - FacebookCore (~> 0.2)
     - FBSDKCoreKit (~> 4.15)
     - FBSDKLoginKit (~> 4.15)
-  - FacebookShare (0.2.0):
-    - Bolts (~> 1.8)
-    - FacebookCore (~> 0.2)
-    - FBSDKCoreKit (~> 4.15)
-    - FBSDKShareKit (~> 4.15)
-  - FBSDKCoreKit (4.20.1):
+  - FBSDKCoreKit (4.23.0):
     - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.20.1):
+  - FBSDKLoginKit (4.23.0):
     - FBSDKCoreKit
-  - FBSDKShareKit (4.20.1):
-    - FBSDKCoreKit
-  - FirebaseAnalytics (3.7.0):
-    - FirebaseCore (~> 3.5)
+  - FirebaseAnalytics (3.9.0):
+    - FirebaseCore (~> 3.6)
     - FirebaseInstanceID (~> 1.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseCore (3.5.1):
+  - FirebaseCore (3.6.0):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseInstanceID (1.0.9)
-  - Google/Core (3.0.3):
+  - FirebaseInstanceID (1.0.10):
+    - FirebaseCore (~> 3.6)
+  - Google/Core (3.1.0):
     - FirebaseAnalytics (~> 3.2)
-  - Google/SignIn (3.0.3):
+  - Google/SignIn (3.1.0):
     - Google/Core
     - GoogleSignIn (~> 4.0)
   - GoogleSignIn (4.0.2):
@@ -53,38 +47,38 @@ PODS:
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMOAuth2 (1.1.4):
     - GTMSessionFetcher (~> 1.1)
-  - GTMSessionFetcher (1.1.9):
-    - GTMSessionFetcher/Full (= 1.1.9)
-  - GTMSessionFetcher/Core (1.1.9)
-  - GTMSessionFetcher/Full (1.1.9):
-    - GTMSessionFetcher/Core (= 1.1.9)
+  - GTMSessionFetcher (1.1.10):
+    - GTMSessionFetcher/Full (= 1.1.10)
+  - GTMSessionFetcher/Core (1.1.10)
+  - GTMSessionFetcher/Full (1.1.10):
+    - GTMSessionFetcher/Core (= 1.1.10)
+  - IQKeyboardManager (4.0.10)
   - XLPagerTabStrip (7.0.0)
 
 DEPENDENCIES:
   - FacebookCore
   - FacebookLogin
-  - FacebookShare
   - Google/SignIn
+  - IQKeyboardManager
   - XLPagerTabStrip (~> 7.0)
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
   FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
-  FacebookShare: 8e9ee8ea06505e6a1d3d719b0cc63e840fb8aaeb
-  FBSDKCoreKit: 39a3569652983bf8666620dd334804c9057ae9b2
-  FBSDKLoginKit: 17092ff61a18c54ca423aebc18c5acc2e5a4a728
-  FBSDKShareKit: 4f37934d9ee9500d2d35752595816dc35f967478
-  FirebaseAnalytics: 0d1b7d81d5021155be37702a94ba1ec16d45365d
-  FirebaseCore: 225d40532489835a034b8f4e2c9c87fbf4f615a2
-  FirebaseInstanceID: 2d0518b1378fe9d685ef40cbdd63d2fdc1125339
-  Google: 813c467362eabc11385f5a5cc9ad0cb651a58f4e
+  FBSDKCoreKit: d7829f5a69901cd7296105328e4c3c3fc7da6518
+  FBSDKLoginKit: 6b92bd65f319d669d2b0730e49db495ef1660566
+  FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
+  FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
+  FirebaseInstanceID: b9eedd6846fb5e1f0f7279e1deaa7a7e4cf8392e
+  Google: 98da4b1a60ed0beb80a290387a28333406a1eb90
   GoogleSignIn: d7ad83f13480e1f30453471d00d19b5293ac46af
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
-  GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
+  GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
+  IQKeyboardManager: 593ee99b88381f4b9ccb22bd680f22606351bd41
   XLPagerTabStrip: 9be80a66c6b7d60306b2c0a6004965016d68f813
 
-PODFILE CHECKSUM: 07d77228478fbc2de985009ce405676e5a2e6c61
+PODFILE CHECKSUM: 7bc12034496e6425da0c9686ccc2bb8ee4a849a5
 
 COCOAPODS: 1.1.1

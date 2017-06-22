@@ -100,7 +100,7 @@ extension LoginViewController{
 				let graphRequest = FBSDKGraphRequest.init(graphPath: "/me", parameters: params)
 				let Connection = FBSDKGraphRequestConnection()
 				Connection.add(graphRequest) { (Connection, result, error) in
-			//		print(result)
+					//print(result)
 					let info = result as! [String : AnyObject]
 					print(info)
 					let dataObject = info["picture"] as! [String:AnyObject]

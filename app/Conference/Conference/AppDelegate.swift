@@ -11,6 +11,7 @@ import GGLSignIn
 import GoogleSignIn
 import Google
 import FBSDKLoginKit
+import IQKeyboardManager
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate{
@@ -19,10 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate{
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		var configureError: NSError?
+		IQKeyboardManager.shared().isEnabled = true
+		IQKeyboardManager.shared().isEnableAutoToolbar = false
+		IQKeyboardManager.shared().shouldShowTextFieldPlaceholder = false
+		IQKeyboardManager.shared().keyboardDistanceFromTextField = 100
 		
-
 		GGLContext.sharedInstance().configureWithError(&configureError)
-		assert(configureError == nil, "Error configuring Google services: \(configureError)")
+		//assert(configureError == nil, "Error configuring Google services: \(configureError)")
 		GIDSignIn.sharedInstance().delegate = self
 		
 		 FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
@@ -70,7 +74,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate{
 	func applicationWillTerminate(_ application: UIApplication) {
 		// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 	}
-
 
 }
 

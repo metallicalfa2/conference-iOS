@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditProfileViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class EditProfileViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate {
 	let picker = UIImagePickerController()
 
 	@IBOutlet weak var profileImageView: UIView!
@@ -27,7 +27,20 @@ class EditProfileViewController: UIViewController,UIImagePickerControllerDelegat
 		profileImageView.addGestureRecognizer(tap)
 		profileImage.cornerRadius()
 		picker.delegate = self
+		
+		name.delegate = self
+		titleAtCompnay.delegate = self
+		company.delegate = self
     }
+	
+	override func viewWillAppear(_ animated: Bool) {
+		name.text = UserDefaults().string(forKey: "name") ?? "Enter Name"
+		titleAtCompnay.text = UserDefaults().string(forKey: "title")
+		company.text = UserDefaults().string(forKey: "company")
+		fetchProfileImage()
+	}
+
+
 	func editImage(){
 		picker.allowsEditing = true
 		picker.sourceType = .photoLibrary
@@ -56,23 +69,13 @@ class EditProfileViewController: UIViewController,UIImagePickerControllerDelegat
 		dismiss(animated: true, completion: nil)
 
 	}
-	override func viewWillAppear(_ animated: Bool) {
-		name.text = UserDefaults().string(forKey: "name") ?? "Enter Name"
-		titleAtCompnay.text = UserDefaults().string(forKey: "title")
-		company.text = UserDefaults().string(forKey: "company")
-		fetchProfileImage()
-	}
-
+	
 	@IBAction func donePressed(_ sender: Any) {
 		userDefaults.set(self.name.text as String!, forKey: "name")
 		userDefaults.set(self.titleAtCompnay.text as String!, forKey: "title")
 		userDefaults.set(self.company.text as String!, forKey: "company")
 		dismiss(animated: true, completion: nil)
 	}
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 	func fetchProfileImage(){
 		if(UserDefaults().object(forKey: "manualChosenImage") != nil){
 			let data = UserDefaults().object(forKey: "manualChosenImage")
@@ -85,4 +88,21 @@ class EditProfileViewController: UIViewController,UIImagePickerControllerDelegat
 			self.profileImage.imageFromServerURL(url: userDefaults.url(forKey: "facebookProfileImageUrl")! )
 		}
 	}
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		if ( textField == self.name)
+		{
+			self.titleAtCompnay.becomeFirstResponder()
+			self.name.resignFirstResponder()
+		}
+		else if(textField == self.titleAtCompnay){
+			self.company.becomeFirstResponder()
+			self.titleAtCompnay.resignFirstResponder()
+		}
+		else{
+			textField.resignFirstResponder()
+			donePressed(self)
+		}
+		return true
+	}
+	
 }

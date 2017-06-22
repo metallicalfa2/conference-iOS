@@ -28,15 +28,15 @@ class DayViewController:UIViewController, IndicatorInfoProvider{
 extension DayViewController: UITableViewDelegate, UITableViewDataSource,UITableViewDataSourcePrefetching{
 
 	func numberOfSections(in tableView: UITableView) -> Int {
-		return 2
+		return 5
 	}
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
-		return 5
+		return 10
 	}
 	
 	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-		return 30
+		return 35
 	}
 	
 	func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
