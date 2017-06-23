@@ -40,9 +40,8 @@ class ProfileViewController: UIViewController,GIDSignInUIDelegate,GIDSignInDeleg
 		self.email.isEnabled = false
 		self.titleatCompany.isEnabled = false
 		self.company.isEnabled = false
-
-		//print(FBSDKAccessToken.current() ?? " \n nil access token \n")
-
+		print(UserDefaults().object(forKey: "manualChosenImage") != nil)
+		
     }
 	override func viewWillAppear(_ animated: Bool) {
 		email.text = UserDefaults().string(forKey: "email") ?? "email Address"
@@ -53,21 +52,23 @@ class ProfileViewController: UIViewController,GIDSignInUIDelegate,GIDSignInDeleg
 
 	}
 	
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-}
-
-extension ProfileViewController{
+	
 	func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
 		if (error == nil) {
+			print(user.profile)
 			userDefaults.set(user.profile.imageURL(withDimension: 500), forKey: "googleProfileImageUrl")
+			userDefaults.set(true, forKey: "isGoogleLoggedIn")
 			userDefaults.set(user.profile.email as String!, forKey: "email")
 			userDefaults.set(user.profile.name as String!, forKey: "name")
+			userDefaults.set(signIn.clientID as String!, forKey: "clientId")
 		} else {
 			print("\(error.localizedDescription)")
 		}
 	}
+}
+
+extension ProfileViewController{
+	
 	func GoogleLoggedIn(){
 		userDefaults.set(true,forKey: "isGoogleLoggedIn")
 		self.google.image = #imageLiteral(resourceName: "google_plus")
@@ -129,15 +130,17 @@ extension ProfileViewController{
 		let vc = self.storyboard?.instantiateViewController(withIdentifier: "loginView")
 		self.present(vc!, animated: true, completion: nil)
 	}
+	
 	func fetchProfileImage(){
 		if(UserDefaults().object(forKey: "manualChosenImage") != nil){
+			print("manual image chosen\n")
 			let data = UserDefaults().object(forKey: "manualChosenImage")
 			self.profileImage.image = UIImage(data: data as! Data)
 		}
-		else if(UserDefaults().bool(forKey: "isGoogleLoggedIn") == true){
+		else if( (UserDefaults().bool(forKey: "isGoogleLoggedIn") == true ) && (userDefaults.url(forKey: "googleProfileImageUrl") != nil) ){
 			self.profileImage.imageFromServerURL(url: userDefaults.url(forKey: "googleProfileImageUrl")!)
 		}
-		else if(userDefaults.object(forKey: "facebookProfileImageUrl") != nil){
+		else if( (UserDefaults().bool(forKey: "isFacebookLoggedIn") == true ) && (userDefaults.url(forKey: "facebookProfileImageUrl") != nil) ){
 			self.profileImage.imageFromServerURL(url: userDefaults.url(forKey: "facebookProfileImageUrl")! )
 		}
 		
@@ -149,5 +152,6 @@ extension ProfileViewController{
 			self.facebookLoggedIn()
 		}
 	}
+	
 	
 }

@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.5.0)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
@@ -53,16 +54,30 @@ PODS:
   - GTMSessionFetcher/Full (1.1.10):
     - GTMSessionFetcher/Core (= 1.1.10)
   - IQKeyboardManager (4.0.10)
+  - PromiseKit (4.2.2):
+    - PromiseKit/Foundation (= 4.2.2)
+    - PromiseKit/QuartzCore (= 4.2.2)
+    - PromiseKit/UIKit (= 4.2.2)
+  - PromiseKit/CorePromise (4.2.2)
+  - PromiseKit/Foundation (4.2.2):
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (4.2.2):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (4.2.2):
+    - PromiseKit/CorePromise
   - XLPagerTabStrip (7.0.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.4)
   - FacebookCore
   - FacebookLogin
   - Google/SignIn
   - IQKeyboardManager
+  - PromiseKit (~> 4.0)
   - XLPagerTabStrip (~> 7.0)
 
 SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
   FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
@@ -77,8 +92,9 @@ SPEC CHECKSUMS:
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
   IQKeyboardManager: 593ee99b88381f4b9ccb22bd680f22606351bd41
+  PromiseKit: 00e8886881f151c7e573d06b437915b0bb2970ec
   XLPagerTabStrip: 9be80a66c6b7d60306b2c0a6004965016d68f813
 
-PODFILE CHECKSUM: 7bc12034496e6425da0c9686ccc2bb8ee4a849a5
+PODFILE CHECKSUM: 1c70ea7059c712ef5401a56f96afe70a2f54754b
 
 COCOAPODS: 1.1.1

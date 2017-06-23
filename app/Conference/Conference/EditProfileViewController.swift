@@ -22,22 +22,23 @@ class EditProfileViewController: UIViewController,UIImagePickerControllerDelegat
 	override func viewDidLoad() {
         super.viewDidLoad()
 		self.hideKeyboard()
-		profileImageView.isUserInteractionEnabled = true
-		let tap = UITapGestureRecognizer(target: self, action: #selector(editImage))
-		profileImageView.addGestureRecognizer(tap)
 		profileImage.cornerRadius()
 		picker.delegate = self
 		
+		profileImageView.isUserInteractionEnabled = true
+		let tap = UITapGestureRecognizer(target: self, action: #selector(editImage))
+		profileImageView.addGestureRecognizer(tap)
+
 		name.delegate = self
 		titleAtCompnay.delegate = self
 		company.delegate = self
+		fetchProfileImage()
     }
 	
 	override func viewWillAppear(_ animated: Bool) {
 		name.text = UserDefaults().string(forKey: "name") ?? "Enter Name"
 		titleAtCompnay.text = UserDefaults().string(forKey: "title")
 		company.text = UserDefaults().string(forKey: "company")
-		fetchProfileImage()
 	}
 
 

@@ -39,7 +39,16 @@ class LoginViewController: UIViewController ,GIDSignInUIDelegate,GIDSignInDelega
 		self.hideKeyboard()
 		GIDSignIn.sharedInstance().uiDelegate = self
 		GIDSignIn.sharedInstance().delegate = self
+		
     }
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(true)
@@ -73,6 +82,7 @@ class LoginViewController: UIViewController ,GIDSignInUIDelegate,GIDSignInDelega
 extension LoginViewController{
 	func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
 		if (error == nil) {
+			print(user.profile)
 			userDefaults.set(user.profile.imageURL(withDimension: 500), forKey: "googleProfileImageUrl")
 			userDefaults.set(true, forKey: "isGoogleLoggedIn")
 			userDefaults.set(user.profile.email as String!, forKey: "email")
