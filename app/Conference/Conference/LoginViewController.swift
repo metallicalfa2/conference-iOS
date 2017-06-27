@@ -101,7 +101,7 @@ extension LoginViewController{
 					let dataObject = info["picture"] as! [String:AnyObject]
 					let imageObject = dataObject["data"] as! [String:AnyObject]
 					let imageString = imageObject["url"] as! String
-					
+
 					if (info["work"] != nil) {
 						let work = info["work"] as! NSArray
 						let workInfo = work[0] as! [String:AnyObject]
@@ -115,6 +115,8 @@ extension LoginViewController{
 					userDefaults.set(FBSDKAccessToken.current().tokenString as String, forKey: "facebookAccessTokenKey")
 					userDefaults.set(true,forKey:"isFacebookLoggedIn")
 					userDefaults.set(URL(string:imageString), forKey: "facebookProfileImageUrl")
+					userDefaults.set(info["first_name"] as! String, forKey: "firstName")
+					userDefaults.set(info["last_name"] as! String, forKey: "lastName")
 					userDefaults.set(info["name"] as! String, forKey: "name")
 					userDefaults.set(info["email"] as! String, forKey: "email")
 					self.segueFurther()

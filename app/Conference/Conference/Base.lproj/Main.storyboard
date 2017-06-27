@@ -1586,7 +1586,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OXo-Mx-n1o">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="OXo-Mx-n1o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1622,22 +1622,38 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                             <constraint firstAttribute="height" constant="125" id="dri-zX-hxN"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p6q-hn-ZFK">
-                                        <rect key="frame" x="130" y="15" width="20" height="20"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CDn-dr-pLm">
+                                        <rect key="frame" x="20" y="20" width="125" height="125"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="edit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyc-vQ-6KW">
+                                                <rect key="frame" x="0.0" y="52" width="125" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="q5r-DG-Rcf"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="0.60127492331288335" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="KDQ-nL-2LW"/>
-                                            <constraint firstAttribute="width" constant="20" id="OCH-vF-3ES"/>
+                                            <constraint firstAttribute="height" constant="125" id="0vn-eM-CVC"/>
+                                            <constraint firstAttribute="width" constant="125" id="9lg-yJ-E1y"/>
+                                            <constraint firstAttribute="trailing" secondItem="eyc-vQ-6KW" secondAttribute="trailing" id="IKH-N2-VRQ"/>
+                                            <constraint firstItem="eyc-vQ-6KW" firstAttribute="leading" secondItem="CDn-dr-pLm" secondAttribute="leading" id="UHA-HE-iAD"/>
+                                            <constraint firstItem="eyc-vQ-6KW" firstAttribute="centerY" secondItem="CDn-dr-pLm" secondAttribute="centerY" id="ddf-tr-hBL"/>
                                         </constraints>
-                                    </imageView>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="165" id="2mu-GF-7pr"/>
                                     <constraint firstItem="xQ2-Wp-hyL" firstAttribute="centerX" secondItem="fBi-kg-ECu" secondAttribute="centerX" id="7ZR-jj-7J5"/>
+                                    <constraint firstItem="CDn-dr-pLm" firstAttribute="leading" secondItem="xQ2-Wp-hyL" secondAttribute="leading" id="9lO-Fq-sa6"/>
+                                    <constraint firstItem="CDn-dr-pLm" firstAttribute="bottom" secondItem="xQ2-Wp-hyL" secondAttribute="bottom" id="Nao-NR-9yW"/>
+                                    <constraint firstItem="CDn-dr-pLm" firstAttribute="top" secondItem="xQ2-Wp-hyL" secondAttribute="top" id="apS-Jh-ITk"/>
                                     <constraint firstAttribute="width" constant="165" id="d8v-1w-vhC"/>
                                     <constraint firstItem="xQ2-Wp-hyL" firstAttribute="top" secondItem="fBi-kg-ECu" secondAttribute="top" constant="20" id="jTJ-ZQ-m1j"/>
-                                    <constraint firstItem="p6q-hn-ZFK" firstAttribute="leading" secondItem="xQ2-Wp-hyL" secondAttribute="trailing" constant="-15" id="quc-Lj-ece"/>
-                                    <constraint firstItem="xQ2-Wp-hyL" firstAttribute="top" secondItem="p6q-hn-ZFK" secondAttribute="bottom" constant="-15" id="tZE-xf-NKp"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="P4V-DB-tmP">
@@ -1746,6 +1762,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="company" destination="hUG-a3-1cd" id="26Q-9Z-lJ4"/>
+                        <outlet property="imageOverlay" destination="CDn-dr-pLm" id="uAj-E3-yrG"/>
                         <outlet property="name" destination="CiO-Uv-awR" id="JW0-Gm-Iq9"/>
                         <outlet property="profileImage" destination="xQ2-Wp-hyL" id="kcI-Ua-K1P"/>
                         <outlet property="profileImageView" destination="fBi-kg-ECu" id="gqs-6J-zle"/>
@@ -1754,7 +1771,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hrb-2L-yMp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4734" y="-19"/>
+            <point key="canvasLocation" x="4733.6000000000004" y="-19.340329835082461"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yr7-Pu-Iiv">
@@ -1763,7 +1780,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="inK-xb-0zJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="inK-xb-0zJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

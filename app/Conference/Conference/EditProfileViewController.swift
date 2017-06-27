@@ -11,6 +11,7 @@ import UIKit
 class EditProfileViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate {
 	let picker = UIImagePickerController()
 
+	@IBOutlet weak var imageOverlay: UIView!
 	@IBOutlet weak var profileImageView: UIView!
 	@IBOutlet weak var profileImage: UIImageView!
 	@IBOutlet weak var company: UITextField!
@@ -28,7 +29,7 @@ class EditProfileViewController: UIViewController,UIImagePickerControllerDelegat
 		profileImageView.isUserInteractionEnabled = true
 		let tap = UITapGestureRecognizer(target: self, action: #selector(editImage))
 		profileImageView.addGestureRecognizer(tap)
-
+		
 		name.delegate = self
 		titleAtCompnay.delegate = self
 		company.delegate = self
@@ -38,8 +39,9 @@ class EditProfileViewController: UIViewController,UIImagePickerControllerDelegat
 		name.text = UserDefaults().string(forKey: "name") ?? "Enter Name"
 		titleAtCompnay.text = UserDefaults().string(forKey: "title")
 		company.text = UserDefaults().string(forKey: "company")
+		imageOverlay.cornerRadius()
 		fetchProfileImage()
-
+		
 	}
 
 
