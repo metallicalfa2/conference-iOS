@@ -1355,19 +1355,42 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="125" id="Api-7K-rF3"/>
                                             <constraint firstAttribute="height" constant="125" id="P1I-aC-Igv"/>
                                             <constraint firstAttribute="width" constant="125" id="rPE-EX-eM0"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="125" id="v4b-Z7-EBI"/>
                                         </constraints>
                                     </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tjf-QN-Ure">
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="edit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Yw-rE-TRP">
+                                                <rect key="frame" x="0.0" y="54.5" width="125" height="17"/>
+                                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="0.60901552914110424" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="8Yw-rE-TRP" firstAttribute="leading" secondItem="tjf-QN-Ure" secondAttribute="leading" id="FnH-VB-ToF"/>
+                                            <constraint firstAttribute="trailing" secondItem="8Yw-rE-TRP" secondAttribute="trailing" id="Vnt-Vv-Wt3"/>
+                                            <constraint firstAttribute="height" constant="125" id="c33-Ae-IUt"/>
+                                            <constraint firstAttribute="width" constant="125" id="dv5-dg-dSr"/>
+                                            <constraint firstItem="8Yw-rE-TRP" firstAttribute="centerY" secondItem="tjf-QN-Ure" secondAttribute="centerY" id="sp9-r7-ihH"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="uvW-Eq-Zca" firstAttribute="top" secondItem="gJG-Gr-RsL" secondAttribute="top" id="0f9-FR-NAg"/>
                                     <constraint firstAttribute="trailing" secondItem="uvW-Eq-Zca" secondAttribute="trailing" id="Fsx-pb-uDL"/>
+                                    <constraint firstItem="tjf-QN-Ure" firstAttribute="leading" secondItem="uvW-Eq-Zca" secondAttribute="leading" id="OAF-p5-Yhb"/>
                                     <constraint firstItem="uvW-Eq-Zca" firstAttribute="leading" secondItem="gJG-Gr-RsL" secondAttribute="leading" id="Y2x-c6-DER"/>
                                     <constraint firstAttribute="height" constant="125" id="YHJ-fv-Y1f"/>
                                     <constraint firstAttribute="width" constant="125" id="heq-KE-c3j"/>
                                     <constraint firstAttribute="bottom" secondItem="uvW-Eq-Zca" secondAttribute="bottom" id="kBn-VN-Nqb"/>
+                                    <constraint firstItem="tjf-QN-Ure" firstAttribute="top" secondItem="uvW-Eq-Zca" secondAttribute="top" id="xVA-Jf-QIS"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1513,7 +1536,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fbs-M8-d9F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-145" y="-347"/>
+            <point key="canvasLocation" x="-146.40000000000001" y="-347.67616191904051"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -1630,7 +1653,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="q5r-DG-Rcf"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
