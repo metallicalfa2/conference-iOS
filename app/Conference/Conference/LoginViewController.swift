@@ -42,14 +42,6 @@ class LoginViewController: UIViewController ,GIDSignInUIDelegate,GIDSignInDelega
 		
     }
 	
-	
-	
-	
-	
-	
-	
-	
-	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(true)
 		userDefaults.set(false, forKey: "isFacebookLoggedIn")
@@ -94,14 +86,8 @@ extension LoginViewController{
 		}
 	}
 	
-	
-	func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
-		print("fb login completed")
-	}
-	func loginButtonDidLogOut(_ loginButton: LoginButton) {}
-	
 	override func manageFbLogin(){
-		loginManager.logIn([.publicProfile, .email ], viewController: self) { (result) in
+		loginManager.logIn([.publicProfile, .email, .custom("user_work_history") ], viewController: self) { (result) in
 			switch result{
 			case .cancelled:
 				print("Cancel button click")
@@ -110,13 +96,22 @@ extension LoginViewController{
 				let graphRequest = FBSDKGraphRequest.init(graphPath: "/me", parameters: params)
 				let Connection = FBSDKGraphRequestConnection()
 				Connection.add(graphRequest) { (Connection, result, error) in
-					//print(result)
 					let info = result as! [String : AnyObject]
-					print(info)
+					//print(info)
 					let dataObject = info["picture"] as! [String:AnyObject]
 					let imageObject = dataObject["data"] as! [String:AnyObject]
 					let imageString = imageObject["url"] as! String
 					
+					if (info["work"] != nil) {
+						let work = info["work"] as! NSArray
+						let workInfo = work[0] as! [String:AnyObject]
+						let workposition = workInfo["position"]! as! [String:AnyObject]
+						let workEmployer = workInfo["employer"]! as! [String:AnyObject]
+						
+						userDefaults.set(workposition["name"] as! String,forKey:"title")
+						userDefaults.set(workEmployer["name"] as! String,forKey:"company")
+
+					}
 					userDefaults.set(FBSDKAccessToken.current().tokenString as String, forKey: "facebookAccessTokenKey")
 					userDefaults.set(true,forKey:"isFacebookLoggedIn")
 					userDefaults.set(URL(string:imageString), forKey: "facebookProfileImageUrl")
@@ -130,5 +125,11 @@ extension LoginViewController{
 			}
 		}
 	}
+	
+	
+	func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
+		print("fb login completed")
+	}
+	func loginButtonDidLogOut(_ loginButton: LoginButton) {}
 	
 }

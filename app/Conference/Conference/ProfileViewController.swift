@@ -23,10 +23,7 @@ class ProfileViewController: UIViewController,GIDSignInUIDelegate,GIDSignInDeleg
 	@IBOutlet weak var google: UIImageView!
 	
 	@IBAction func signOut(_ sender: Any) {
-		manageGoogleLogout()
-		manageFbLogout()
-		clearUserDefaults()
-		segueToLoginView()
+		createSignOutAlert()
 	}
 
 	
@@ -40,8 +37,7 @@ class ProfileViewController: UIViewController,GIDSignInUIDelegate,GIDSignInDeleg
 		self.email.isEnabled = false
 		self.titleatCompany.isEnabled = false
 		self.company.isEnabled = false
-		print(UserDefaults().object(forKey: "manualChosenImage") != nil)
-		
+		//print(UserDefaults().object(forKey: "manualChosenImage") != nil)
     }
 	override func viewWillAppear(_ animated: Bool) {
 		email.text = UserDefaults().string(forKey: "email") ?? "email Address"
@@ -49,7 +45,6 @@ class ProfileViewController: UIViewController,GIDSignInUIDelegate,GIDSignInDeleg
 		titleatCompany.text = UserDefaults().string(forKey: "title") ?? "Title"
 		company.text = UserDefaults().string(forKey: "company") ?? "Company"
 		fetchProfileImage()
-
 	}
 	
 	
@@ -87,40 +82,9 @@ extension ProfileViewController{
 		self.facebook.image = #imageLiteral(resourceName: "facebook_inactive")
 	}
 	
-	func fbClicked(){
-		print("fb image clicked")
-		if(UserDefaults().bool(forKey: "isFacebookLoggedIn") == false){
-			manageFbLogin()
-			facebookLoggedIn()
-		}
-		else{
-			self.manageFbLogout()
-			facebookLoggedOut()
-		}
-		if(checkIfBothLoggedOut()){
-			clearUserDefaults()
-			segueToLoginView()
-		}
-	}
-	
-	func googleClicked(){
-		if(UserDefaults().bool(forKey: "isGoogleLoggedIn") == false){
-			GIDSignIn.sharedInstance().signIn()
-			GoogleLoggedIn()
-		}
-		else{
-			GIDSignIn.sharedInstance().signOut()
-			googleLoggedOut()
-		}
-		if(checkIfBothLoggedOut()){
-			clearUserDefaults()
-			segueToLoginView()
-		}
-	}
-	
 	func addRecognizer(){
-		let fbTapped = UITapGestureRecognizer(target: self, action: #selector(fbClicked))
-		let googleTapped = UITapGestureRecognizer(target: self, action: #selector(googleClicked))
+		let fbTapped = UITapGestureRecognizer(target: self, action: #selector(createFacebookAction))
+		let googleTapped = UITapGestureRecognizer(target: self, action: #selector(createGoogleAction))
 		facebook.isUserInteractionEnabled = true
 		google.isUserInteractionEnabled = true
 		facebook.addGestureRecognizer(fbTapped)
@@ -153,5 +117,85 @@ extension ProfileViewController{
 		}
 	}
 	
+	func createFacebookAction() {
+		let fbvalue = (UserDefaults().bool(forKey: "isFacebookLoggedIn") == false)
+		
+		let alertController = UIAlertController(title: "Facebook", message: fbvalue ? "Would you like to connect your facebook ?" : "Would you like to disconnect your facebook ?", preferredStyle: .alert)
+		
+		let sendButton = UIAlertAction(title: fbvalue ? "Sign in" : "Sign out", style: fbvalue ? .default : .destructive, handler: { (action) -> Void in
+			//print("Ok button tapped")
+			if(fbvalue){
+				self.manageFbLogin()
+				self.facebookLoggedIn()
+			}
+			else{
+				self.manageFbLogout()
+				self.facebookLoggedOut()
+			}
+			if(self.checkIfBothLoggedOut()){
+				self.clearUserDefaults()
+				self.segueToLoginView()
+			}
+		})
+		
+		let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) -> Void in
+			print("Cancel button tapped")
+		})
+		
+		alertController.addAction(sendButton)
+		alertController.addAction(cancelButton)
+		self.navigationController!.present(alertController, animated: true, completion: nil)
+	}
+
+	func createGoogleAction() {
+		let googleValue = (UserDefaults().bool(forKey: "isGoogleLoggedIn") == false)
+		
+		let alertController = UIAlertController(title: "Google", message: googleValue ? "Would you like to connect your Google account ?" : "Would you like to disconnect your Google account ?", preferredStyle: .alert)
+		
+		let sendButton = UIAlertAction(title: googleValue ? "Connect" : "Disconnect", style: googleValue ? .default : .destructive, handler: { (action) -> Void in
+			if(googleValue){
+				GIDSignIn.sharedInstance().signIn()
+				self.GoogleLoggedIn()
+			}
+			else{
+				GIDSignIn.sharedInstance().signOut()
+				self.googleLoggedOut()
+			}
+			if(self.checkIfBothLoggedOut()){
+				self.clearUserDefaults()
+				self.segueToLoginView()
+			}
+		})
+		
+		let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) -> Void in
+			//print("Cancel button tapped")
+		})
+		
+		alertController.addAction(sendButton)
+		alertController.addAction(cancelButton)
+		self.navigationController!.present(alertController, animated: true, completion: nil)
+	}
+	
+	func createSignOutAlert(){
+		let googleValue = (UserDefaults().bool(forKey: "isGoogleLoggedIn") == false)
+		
+		let alertController = UIAlertController(title: "Conference", message: "Would you like to disconnect all your accounts and sign out?", preferredStyle: .alert)
+		
+		let disconnectButton = UIAlertAction(title:"Disconnect", style: googleValue ? .default : .destructive, handler: { (action) -> Void in
+			self.manageGoogleLogout()
+			self.manageFbLogout()
+			self.clearUserDefaults()
+			self.segueToLoginView()
+		})
+		
+		let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) -> Void in
+			//print("Cancel button tapped")
+		})
+		
+		alertController.addAction(disconnectButton)
+		alertController.addAction(cancelButton)
+		self.navigationController!.present(alertController, animated: true, completion: nil)
+
+	}
 	
 }

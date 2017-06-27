@@ -32,13 +32,14 @@ class EditProfileViewController: UIViewController,UIImagePickerControllerDelegat
 		name.delegate = self
 		titleAtCompnay.delegate = self
 		company.delegate = self
-		fetchProfileImage()
     }
 	
 	override func viewWillAppear(_ animated: Bool) {
 		name.text = UserDefaults().string(forKey: "name") ?? "Enter Name"
 		titleAtCompnay.text = UserDefaults().string(forKey: "title")
 		company.text = UserDefaults().string(forKey: "company")
+		fetchProfileImage()
+
 	}
 
 
@@ -48,6 +49,8 @@ class EditProfileViewController: UIViewController,UIImagePickerControllerDelegat
 		picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
 		present(picker, animated: true, completion: nil)
 	}
+	
+	
 	func imagePickerController(_ picker: UIImagePickerController,didFinishPickingMediaWithInfo info: [String : Any])
 	{
 		if let chosenImage = info[UIImagePickerControllerEditedImage] as? UIImage{
