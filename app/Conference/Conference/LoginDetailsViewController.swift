@@ -17,12 +17,12 @@ class LoginDetailsViewController: UIViewController,UIImagePickerControllerDelega
 	@IBOutlet weak var company: UITextField!
 	@IBOutlet weak var viewforImage: UIView!
 	@IBOutlet weak var uiImage: UIImageView!
+	@IBOutlet weak var overlayImage: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-		uiImage.isUserInteractionEnabled = true
+		overlayImage.isUserInteractionEnabled = true
 		let tap = UITapGestureRecognizer(target: self, action: #selector(editImage))
-		uiImage.addGestureRecognizer(tap)
-		uiImage.cornerRadius()
+		overlayImage.addGestureRecognizer(tap)
 		picker.delegate = self
 		
 		name.delegate = self
@@ -37,6 +37,9 @@ class LoginDetailsViewController: UIViewController,UIImagePickerControllerDelega
 		email.text = UserDefaults().string(forKey: "email")
 		titleInCompany.text = UserDefaults().string(forKey: "title")
 		company.text = UserDefaults().string(forKey: "company")
+		overlayImage.cornerRadius()
+		uiImage.cornerRadius()
+
 		fetchProfileImage()
 	}
 	
