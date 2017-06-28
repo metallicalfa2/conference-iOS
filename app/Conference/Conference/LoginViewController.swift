@@ -75,11 +75,18 @@ extension LoginViewController{
 	func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
 		if (error == nil) {
 			print(user.profile)
-			userDefaults.set(user.profile.imageURL(withDimension: 500), forKey: "googleProfileImageUrl")
+			let name = user.profile.name as String!
+			let nameArray = name?.components(separatedBy: " ")
+			print(nameArray)
+			userDefaults.set(nameArray![0], forKey: "firstName")
+			userDefaults.set(nameArray![1], forKey: "lastName")
+		
+				userDefaults.set(user.profile.imageURL(withDimension: 500), forKey: "googleProfileImageUrl")
 			userDefaults.set(true, forKey: "isGoogleLoggedIn")
 			userDefaults.set(user.profile.email as String!, forKey: "email")
 			userDefaults.set(user.profile.name as String!, forKey: "name")
 			userDefaults.set(signIn.clientID as String!, forKey: "clientId")
+			
 			segueFurther()
 		} else {
 			print("\(error.localizedDescription)")

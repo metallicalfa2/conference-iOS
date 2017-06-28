@@ -11,12 +11,13 @@ import UIKit
 class EditProfileViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate {
 	let picker = UIImagePickerController()
 
+	@IBOutlet weak var firstName: UITextField!
+	@IBOutlet weak var lastName: UITextField!
 	@IBOutlet weak var imageOverlay: UIView!
 	@IBOutlet weak var profileImageView: UIView!
 	@IBOutlet weak var profileImage: UIImageView!
 	@IBOutlet weak var company: UITextField!
 	@IBOutlet weak var titleAtCompnay: UITextField!
-	@IBOutlet weak var name: UITextField!
 	@IBAction func cancelPressed(_ sender: Any) {
 		dismiss(animated: true, completion: nil)
 	}
@@ -30,13 +31,15 @@ class EditProfileViewController: UIViewController,UIImagePickerControllerDelegat
 		let tap = UITapGestureRecognizer(target: self, action: #selector(editImage))
 		profileImageView.addGestureRecognizer(tap)
 		
-		name.delegate = self
+		firstName.delegate = self
+		lastName.delegate = self
 		titleAtCompnay.delegate = self
 		company.delegate = self
     }
 	
 	override func viewWillAppear(_ animated: Bool) {
-		name.text = UserDefaults().string(forKey: "name") ?? "Enter Name"
+		firstName.text = UserDefaults().string(forKey: "firstName") ?? "First Name"
+		lastName.text = UserDefaults().string(forKey: "lastName") ?? "Last Name"
 		titleAtCompnay.text = UserDefaults().string(forKey: "title")
 		company.text = UserDefaults().string(forKey: "company")
 		imageOverlay.cornerRadius()
@@ -77,7 +80,8 @@ class EditProfileViewController: UIViewController,UIImagePickerControllerDelegat
 	}
 	
 	@IBAction func donePressed(_ sender: Any) {
-		userDefaults.set(self.name.text as String!, forKey: "name")
+		userDefaults.set(self.firstName.text as String!, forKey: "firstName")
+		userDefaults.set(self.lastName.text as String!, forKey:"lastName")
 		userDefaults.set(self.titleAtCompnay.text as String!, forKey: "title")
 		userDefaults.set(self.company.text as String!, forKey: "company")
 		dismiss(animated: true, completion: nil)
@@ -95,10 +99,14 @@ class EditProfileViewController: UIViewController,UIImagePickerControllerDelegat
 		}
 	}
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-		if ( textField == self.name)
+		if ( textField == self.firstName)
 		{
+			self.lastName.becomeFirstResponder()
+			self.firstName.resignFirstResponder()
+		}
+		else if(textField == self.lastName){
 			self.titleAtCompnay.becomeFirstResponder()
-			self.name.resignFirstResponder()
+			self.lastName.resignFirstResponder()
 		}
 		else if(textField == self.titleAtCompnay){
 			self.company.becomeFirstResponder()

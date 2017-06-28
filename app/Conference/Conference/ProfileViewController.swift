@@ -41,7 +41,9 @@ class ProfileViewController: UIViewController,GIDSignInUIDelegate,GIDSignInDeleg
     }
 	override func viewWillAppear(_ animated: Bool) {
 		email.text = UserDefaults().string(forKey: "email") ?? "email Address"
-		name.text = UserDefaults().string(forKey: "name") ?? "Name"
+		let first = UserDefaults().string(forKey: "firstName") ?? "First"
+		let last = UserDefaults().string(forKey: "lastName") ?? "last"
+		name.text = first+" "+last
 		titleatCompany.text = UserDefaults().string(forKey: "title") ?? "Title"
 		company.text = UserDefaults().string(forKey: "company") ?? "Company"
 		fetchProfileImage()
