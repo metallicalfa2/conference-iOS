@@ -94,16 +94,20 @@ extension UIViewController {
 		userDefaults.set(false,forKey:"isGoogleLoggedIn")
 		userDefaults.set(nil, forKey: "googleProfileImageUrl")
 	}
+	
 	func checkIfBothLoggedOut() -> Bool{
 		if( !UserDefaults().bool(forKey: "isFacebookLoggedIn") && !UserDefaults().bool(forKey: "isGoogleLoggedIn") ){
 			return true
 		}
 		return false
 	}
+	
 	func clearUserDefaults(){
 		userDefaults.set(nil, forKey: "email")
 		userDefaults.set(nil, forKey: "name")
 	}
+	
+	
 	func hideKeyboard()
 	{
 		let tap: UITapGestureRecognizer = UITapGestureRecognizer(
@@ -124,5 +128,23 @@ extension UIViewController {
 		userDefaults.set(true, forKey: "isFacebookLoggedIn")
 	}
 	
+	func isValidEmail(testStr:String) -> Bool {
+		// print("validate calendar: \(testStr)")
+		let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+		
+		let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+		return emailTest.evaluate(with: testStr)
+	}
+	
+	func canOpenURL(string: String?) -> Bool {
+		guard let urlString = string else {return false}
+		guard let url = NSURL(string: urlString) else {return false}
+		if !UIApplication.shared.canOpenURL(url as URL) {return false}
+		
+		//
+		let regEx = "((https|http)://)((\\w|-)+)(([.]|[/])((\\w|-)+))+"
+		let predicate = NSPredicate(format:"SELF MATCHES %@", argumentArray:[regEx])
+		return predicate.evaluate(with: string)
+	}
 }
 

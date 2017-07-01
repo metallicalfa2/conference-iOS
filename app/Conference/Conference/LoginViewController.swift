@@ -77,13 +77,16 @@ extension LoginViewController{
 			print(user.profile)
 			let name = user.profile.name as String!
 			let nameArray = name?.components(separatedBy: " ")
-			print(nameArray)
 			userDefaults.set(nameArray![0], forKey: "firstName")
 			userDefaults.set(nameArray![1], forKey: "lastName")
-		
-				userDefaults.set(user.profile.imageURL(withDimension: 500), forKey: "googleProfileImageUrl")
+			
+			userDefaults.set(user.profile.imageURL(withDimension: 500), forKey: "googleProfileImageUrl")
 			userDefaults.set(true, forKey: "isGoogleLoggedIn")
-			userDefaults.set(user.profile.email as String!, forKey: "email")
+			
+			if(isValidEmail(testStr: user.profile.email)){
+				userDefaults.set(user.profile.email as String!, forKey: "email")
+			}
+
 			userDefaults.set(user.profile.name as String!, forKey: "name")
 			userDefaults.set(signIn.clientID as String!, forKey: "clientId")
 			
@@ -121,11 +124,18 @@ extension LoginViewController{
 					}
 					userDefaults.set(FBSDKAccessToken.current().tokenString as String, forKey: "facebookAccessTokenKey")
 					userDefaults.set(true,forKey:"isFacebookLoggedIn")
-					userDefaults.set(URL(string:imageString), forKey: "facebookProfileImageUrl")
+					
+					if(self.canOpenURL(string: imageString)){
+						userDefaults.set(URL(string:imageString), forKey: "facebookProfileImageUrl")
+					}
+					
 					userDefaults.set(info["first_name"] as! String, forKey: "firstName")
 					userDefaults.set(info["last_name"] as! String, forKey: "lastName")
 					userDefaults.set(info["name"] as! String, forKey: "name")
-					userDefaults.set(info["email"] as! String, forKey: "email")
+					
+					if (self.isValidEmail(testStr: info["email"] as! String)){
+						userDefaults.set(info["email"] as! String, forKey: "email")
+					}
 					self.segueFurther()
 				}
 				Connection.start()
