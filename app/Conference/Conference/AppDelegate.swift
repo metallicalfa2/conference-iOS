@@ -12,6 +12,7 @@ import GoogleSignIn
 import Google
 import FBSDKLoginKit
 import IQKeyboardManager
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate{
@@ -19,15 +20,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate{
 	var window: UIWindow?
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-		var configureError: NSError?
+		//var configureError: NSError?
 		IQKeyboardManager.shared().isEnabled = true
 		IQKeyboardManager.shared().isEnableAutoToolbar = false
 		IQKeyboardManager.shared().shouldShowTextFieldPlaceholder = false
 		IQKeyboardManager.shared().keyboardDistanceFromTextField = 100
 		
-		GGLContext.sharedInstance().configureWithError(&configureError)
-		//assert(configureError == nil, "Error configuring Google services: \(configureError)")
-		GIDSignIn.sharedInstance().delegate = self
+		FIRApp.configure()
+		
+//		GGLContext.sharedInstance().configureWithError(&configureError)
+//		//assert(configureError == nil, "Error configuring Google services: \(configureError)")
+//		GIDSignIn.sharedInstance().delegate = self
 		
 		 FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
 		 return true

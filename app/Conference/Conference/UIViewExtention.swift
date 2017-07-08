@@ -15,7 +15,7 @@ extension UIView {
 		self.layer.masksToBounds = false
 		self.layer.shadowColor = UIColor.black.cgColor
 		self.layer.shadowOpacity = 0.18
-		self.layer.shadowOffset = CGSize(width: 0, height: 0)
+		self.layer.shadowOffset = CGSize(width: 1, height: 1)
 		self.layer.shadowRadius = 2
 		self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
 		self.layer.shouldRasterize = true
@@ -27,6 +27,7 @@ extension UIView {
 		self.layer.cornerRadius = radius
 		self.layer.masksToBounds = true
 	}
+	
 	func cornerRadiusForTableViewCell(){
 		self.layer.cornerRadius = 2
 //		self.layer.masksToBounds = true

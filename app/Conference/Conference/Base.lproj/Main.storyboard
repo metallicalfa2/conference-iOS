@@ -214,7 +214,7 @@
                     <tabBarItem key="tabBarItem" title="Schedule" image="Schedule" selectedImage="Schedule" id="p8M-8h-qWx"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="coE-yG-Lpv">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="coE-yG-Lpv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -1568,7 +1568,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1z0-zt-pDs">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="1z0-zt-pDs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1589,7 +1589,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YY2-Wp-JF5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="YY2-Wp-JF5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1610,7 +1610,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OXo-Mx-n1o">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="OXo-Mx-n1o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1833,7 +1833,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="inK-xb-0zJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="inK-xb-0zJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

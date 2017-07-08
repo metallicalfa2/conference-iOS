@@ -16,7 +16,6 @@
 		510D8D301EF7996100834EE7 /* UIImageViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510D8D2F1EF7996100834EE7 /* UIImageViewExtention.swift */; };
 		510D8D321EF7D2A800834EE7 /* GoogleLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510D8D311EF7D2A800834EE7 /* GoogleLoginController.swift */; };
 		510D8D341EF808FA00834EE7 /* LoaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510D8D331EF808FA00834EE7 /* LoaderController.swift */; };
-		5147946C1EFB9F70001FACE7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5147946B1EFB9F70001FACE7 /* GoogleService-Info.plist */; };
 		5147946F1EFBA056001FACE7 /* Calibri.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5147946D1EFBA056001FACE7 /* Calibri.ttf */; };
 		514794701EFBA056001FACE7 /* Tahoma.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5147946E1EFBA056001FACE7 /* Tahoma.ttf */; };
 		515E8AB51EE6C2C500BFA4F4 /* ScheduleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E8AB41EE6C2C500BFA4F4 /* ScheduleViewCell.swift */; };
@@ -37,6 +36,7 @@
 		517676851EEFCDC7009DB091 /* MySchedule1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517676841EEFCDC7009DB091 /* MySchedule1ViewController.swift */; };
 		517676871EEFCDD0009DB091 /* MySchedule2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517676861EEFCDD0009DB091 /* MySchedule2ViewController.swift */; };
 		517676891EEFCDD5009DB091 /* MySchedule3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517676881EEFCDD5009DB091 /* MySchedule3ViewController.swift */; };
+		51802AF61F11120F0010EA5A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51802AF51F11120F0010EA5A /* GoogleService-Info.plist */; };
 		51A205151EE80CFB00A0980B /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A205141EE80CFB00A0980B /* FilterViewController.swift */; };
 		51A205181EE81B8C00A0980B /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A205171EE81B8C00A0980B /* FilterTableViewCell.swift */; };
 		51A2051A1EE89FBF00A0980B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A205191EE89FBF00A0980B /* LoginViewController.swift */; };
@@ -69,6 +69,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		393DFA5113D3AAFD324B8604 /* Pods-Conference.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conference.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Conference/Pods-Conference.debug.xcconfig"; sourceTree = "<group>"; };
 		510482CD1EF9B0CA001B6C2C /* StackViewExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackViewExtention.swift; sourceTree = "<group>"; };
 		510D8D1D1EF4DFD100834EE7 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		510D8D1F1EF4FB0000834EE7 /* LoginDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDetailsViewController.swift; sourceTree = "<group>"; };
@@ -79,7 +80,6 @@
 		510D8D2F1EF7996100834EE7 /* UIImageViewExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtention.swift; sourceTree = "<group>"; };
 		510D8D311EF7D2A800834EE7 /* GoogleLoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleLoginController.swift; sourceTree = "<group>"; };
 		510D8D331EF808FA00834EE7 /* LoaderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderController.swift; sourceTree = "<group>"; };
-		5147946B1EFB9F70001FACE7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5147946D1EFBA056001FACE7 /* Calibri.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Calibri.ttf; sourceTree = "<group>"; };
 		5147946E1EFBA056001FACE7 /* Tahoma.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tahoma.ttf; sourceTree = "<group>"; };
 		515E8AB41EE6C2C500BFA4F4 /* ScheduleViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewCell.swift; sourceTree = "<group>"; };
@@ -102,6 +102,7 @@
 		517676841EEFCDC7009DB091 /* MySchedule1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySchedule1ViewController.swift; sourceTree = "<group>"; };
 		517676861EEFCDD0009DB091 /* MySchedule2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySchedule2ViewController.swift; sourceTree = "<group>"; };
 		517676881EEFCDD5009DB091 /* MySchedule3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySchedule3ViewController.swift; sourceTree = "<group>"; };
+		51802AF51F11120F0010EA5A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		51A205141EE80CFB00A0980B /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		51A205171EE81B8C00A0980B /* FilterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
 		51A205191EE89FBF00A0980B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -111,7 +112,6 @@
 		51D93B601F06D21600C057A7 /* ConferenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceTests.swift; sourceTree = "<group>"; };
 		51D93B621F06D21600C057A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72DFC1DA41E5360A19F54899 /* Pods-Conference.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conference.release.xcconfig"; path = "Pods/Target Support Files/Pods-Conference/Pods-Conference.release.xcconfig"; sourceTree = "<group>"; };
-		8212AAFDC97BF5D43E8CE809 /* Pods-Conference.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conference.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Conference/Pods-Conference.debug.xcconfig"; sourceTree = "<group>"; };
 		8BAF33166A7A6E00B324A6D2 /* Pods_Conference.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Conference.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -166,9 +166,9 @@
 		510D8D281EF599EC00834EE7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				51802AF51F11120F0010EA5A /* GoogleService-Info.plist */,
 				5147946D1EFBA056001FACE7 /* Calibri.ttf */,
 				5147946E1EFBA056001FACE7 /* Tahoma.ttf */,
-				5147946B1EFB9F70001FACE7 /* GoogleService-Info.plist */,
 				5176439F1EDB4849008CC752 /* Assets.xcassets */,
 				517643A41EDB4849008CC752 /* Info.plist */,
 			);
@@ -299,8 +299,8 @@
 		F6E15515BCE262DEA15BE795 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8212AAFDC97BF5D43E8CE809 /* Pods-Conference.debug.xcconfig */,
 				72DFC1DA41E5360A19F54899 /* Pods-Conference.release.xcconfig */,
+				393DFA5113D3AAFD324B8604 /* Pods-Conference.debug.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -404,7 +404,7 @@
 				517643A01EDB4849008CC752 /* Assets.xcassets in Resources */,
 				5147946F1EFBA056001FACE7 /* Calibri.ttf in Resources */,
 				5176439E1EDB4849008CC752 /* Main.storyboard in Resources */,
-				5147946C1EFB9F70001FACE7 /* GoogleService-Info.plist in Resources */,
+				51802AF61F11120F0010EA5A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,7 +641,7 @@
 		};
 		517643A81EDB4849008CC752 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8212AAFDC97BF5D43E8CE809 /* Pods-Conference.debug.xcconfig */;
+			baseConfigurationReference = 393DFA5113D3AAFD324B8604 /* Pods-Conference.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -682,7 +682,6 @@
 		};
 		51D93B661F06D21600C057A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8212AAFDC97BF5D43E8CE809 /* Pods-Conference.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
