@@ -12,5 +12,8 @@ target 'Conference' do
   pod 'FacebookLogin'
   pod 'IQKeyboardManager'
   pod 'Alamofire', '~> 4.4'
+  pod 'SwiftyJSON'
   pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Eureka'
 end

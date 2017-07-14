@@ -86,6 +86,7 @@ class EditProfileViewController: UIViewController,UIImagePickerControllerDelegat
 		userDefaults.set(self.company.text as String!, forKey: "company")
 		dismiss(animated: true, completion: nil)
 	}
+	
 	func fetchProfileImage(){
 		if(UserDefaults().object(forKey: "manualChosenImage") != nil){
 			let data = UserDefaults().object(forKey: "manualChosenImage")
@@ -98,6 +99,7 @@ class EditProfileViewController: UIViewController,UIImagePickerControllerDelegat
 			self.profileImage.imageFromServerURL(url: userDefaults.url(forKey: "facebookProfileImageUrl")! )
 		}
 	}
+	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		if ( textField == self.firstName)
 		{
@@ -118,5 +120,6 @@ class EditProfileViewController: UIViewController,UIImagePickerControllerDelegat
 		}
 		return true
 	}
+	
 	
 }

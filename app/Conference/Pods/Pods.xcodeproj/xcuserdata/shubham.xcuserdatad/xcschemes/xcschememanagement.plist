@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Eureka.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FBSDKCoreKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -59,6 +64,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>XLPagerTabStrip-XLPagerTabStrip.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -77,22 +87,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>13D39D7DC49F6C5865DC5DAEA43AD3B9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>279AA6726F52A334C45E85774BD21A3D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>44CAD6CE523055ED339E87154473A254</key>
+		<key>3D59C6AF99AFEA7E0E1A9A82F45DAD10</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4883EF6C184470C4125C4C359A605029</key>
+		<key>44CAD6CE523055ED339E87154473A254</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,6 +112,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>675A114988AE198732ED4AD726408964</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>681BE6E3D02A43F9BA63777AC435C8FD</key>
 		<dict>
 			<key>primary</key>
@@ -117,7 +127,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>7407F4E43FAC2838652F2ED23C782A07</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>920140BBFFAEFE3C2ECE9E6A4C93EB9B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -132,7 +152,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F706D407605A191C479CAE2B1D0AD49C</key>
+		<key>FF89D82569C0234D77C6CDEAF571DADE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
