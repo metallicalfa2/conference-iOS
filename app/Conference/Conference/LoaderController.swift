@@ -11,10 +11,10 @@ import UIKit
 class LoaderController: NSObject {
 	
 	static let sharedInstance = LoaderController()
-	private let activityIndicator = UIActivityIndicatorView()
+	fileprivate let activityIndicator = UIActivityIndicatorView()
 	
 	//MARK: - Private Methods -
-	private func setupLoader() {
+	fileprivate func setupLoader() {
 		removeLoader()
 		
 		activityIndicator.hidesWhenStopped = true

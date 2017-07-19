@@ -30,6 +30,11 @@ class networkResource{
 	func postCreateAttendeeString(_ token:String,email:String) -> String{
 		return "https://www.eiseverywhere.com/api/v2/ereg/createAttendee.json?accesstoken="+token+"&eventid=246511&email="+email
 	}
+	
+	func getListSessionString(_ token:String) -> String{
+		return "https://www.eiseverywhere.com/api/v2/ereg/listSessions.json?accesstoken="+token+"&eventid=246511"
+	}
+	
 	func getToken(){
 		Alamofire.request(accessTokenRequest, method: .get).responseJSON { response in
 			print("Error: \(String(describing: response.error))")
@@ -37,7 +42,29 @@ class networkResource{
 			if let json = response.result.value {
 				res = JSON(json)
 				self.token = res["accesstoken"].string!
-				self.getListPages(res["accesstoken"].string!)
+				//self.getListPages(res["accesstoken"].string!)
+				self.listSessions(res["accesstoken"].string!)
+			}
+		}
+	}
+	
+	func listSessions(_ token: String){
+		Alamofire.request(getListSessionString(token), method: .get).responseJSON { response in
+			print("Error: \(String(describing: response.error))")
+			
+			if let json = response.result.value {
+				let data = JSON(json).map{ return $1 }
+				//print(data)
+				data.forEach{ el in
+					let session = sessionModel()
+					print(el["sessiondate"])
+					session.setValues(id: el["sessionid"].string ?? "0", description: "sample desciption", name: el["name"].string ?? "sample name", startTime: el["starttime"].string ?? "stime", endTime: el["endtime"].string ?? "etime", sessiondate: el["sessiondate"].string!)
+					sessionModel.sessionsInstance.append(session)
+				}
+				
+				let notificationName = NSNotification.Name("listSessionsFetched")
+				NotificationCenter.default.post(name: notificationName, object: nil)
+				print(sessionModel.sessionsInstance)
 			}
 		}
 	}
@@ -84,5 +111,6 @@ class networkResource{
 			
 		}
 	}
+	
 	
 }

@@ -13,7 +13,7 @@ import FirebaseDatabase
 
 class DayViewController:UIViewController, IndicatorInfoProvider{
 	@IBOutlet weak var tableView: UITableView!
-	var sessions = [sessionModel]()
+	let sessions = sessionModel.sessionsInstance
 	
 	override func viewDidLoad() {
 		self.tableView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
@@ -21,32 +21,25 @@ class DayViewController:UIViewController, IndicatorInfoProvider{
 		self.tableView.translatesAutoresizingMaskIntoConstraints = false
 		
 		super.viewDidLoad()
-		let session = FIRDatabase.database().reference().child("264511")
+		//let session = FIRDatabase.database().reference().child("264511")
 		
-		session.observe(FIRDataEventType.value, with: { (snapshot) in
-			
-			//if the reference have some values
-			if snapshot.childrenCount > 0 {
-				
-				//clearing the list
-				self.sessions.removeAll()
-				
-				//iterating through all the values
-				for sessions in snapshot.children.allObjects as! [FIRDataSnapshot] {
-					let sessionkey = sessions.key
-					let sessionObject = sessions.value as? [String:AnyObject]
-					let session = sessionModel(id: sessionkey, description:sessionObject?["description"] as? String,name: sessionObject?["name"] as? String)
-					self.sessions.append(session)
-					print(session)
-				}
-				//print(self.sessions)
-				//reloading the tableview
-				self.tableView.reloadData()
-			}
-		})
+		NotificationCenter.default.addObserver(self, selector: #selector(self.reloadTableData), name: NSNotification.Name("listSessionsFetched"), object: nil)
+
 	}
 	func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
 		return IndicatorInfo(title: "Day 1")
+	}
+	
+	func reloadTableData(){
+		print("reloading data")
+		print("sessions variable count is \(sessions.count)")
+		print("sessionInstance count is \(sessionModel.sessionsInstance.count)")
+		
+		if(self.tableView != nil){
+			DispatchQueue.main.async{
+				self.tableView.reloadData()
+			}
+		}
 	}
 }
 
@@ -58,7 +51,8 @@ extension DayViewController: UITableViewDelegate, UITableViewDataSource,UITableV
 	}
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
-		return sessions.count
+		print("sessionModel instance count is \(sessionModel.sessionsInstance.count)")
+		return sessionModel.sessionsInstance.count
 	}
 	
 	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -83,8 +77,8 @@ extension DayViewController: UITableViewDelegate, UITableViewDataSource,UITableV
 		cell.selectionStyle = .none
 		cell.outerViewForCornerRadius.dropShadow()
 		cell.calendarButton.addTarget(self, action: #selector(self.addCalendarEntry), for: .touchUpInside)
-//		cell.layer.shouldRasterize = true
-//		cell.layer.rasterizationScale = UIScreen.main.scal
+		
+		cell.eventName.text = sessionModel.sessionsInstance[indexPath.row].name!
 		return cell
 	}
 	

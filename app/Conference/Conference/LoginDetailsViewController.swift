@@ -59,12 +59,12 @@ class LoginDetailsViewController: UIViewController,UIImagePickerControllerDelega
 	{
 		if let chosenImage = info[UIImagePickerControllerEditedImage] as? UIImage{
 			self.uiImage.image = chosenImage
-			let ImageData: NSData = UIImagePNGRepresentation(chosenImage)!	as NSData
+			let ImageData: Data = UIImagePNGRepresentation(chosenImage)!	as Data
 			userDefaults.set(ImageData, forKey: "manualChosenImage")
 		}
 		else if let chosenImage = info[UIImagePickerControllerEditedImage] as? UIImage{
 			self.uiImage.image = chosenImage
-			let ImageData: NSData = UIImagePNGRepresentation(chosenImage)!	as NSData
+			let ImageData: Data = UIImagePNGRepresentation(chosenImage)!	as Data
 			userDefaults.set(ImageData, forKey: "manualChosenImage")
 		}
 		else{
@@ -83,10 +83,10 @@ class LoginDetailsViewController: UIViewController,UIImagePickerControllerDelega
 			self.uiImage.image = UIImage(data: data as! Data)
 		}
 		else if(UserDefaults().bool(forKey: "isGoogleLoggedIn") == true){
-			self.uiImage.imageFromServerURL(url: userDefaults.url(forKey: "googleProfileImageUrl")!)
+			self.uiImage.imageFromServerURL(userDefaults.url(forKey: "googleProfileImageUrl")!)
 		}
 		else if(userDefaults.object(forKey: "facebookProfileImageUrl") != nil){
-			self.uiImage.imageFromServerURL(url: userDefaults.url(forKey: "facebookProfileImageUrl")! )
+			self.uiImage.imageFromServerURL(userDefaults.url(forKey: "facebookProfileImageUrl")! )
 		}
 	}
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {

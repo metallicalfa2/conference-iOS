@@ -22,7 +22,7 @@ class MySchedule1ViewController: UIViewController,IndicatorInfoProvider{
 }
 extension MySchedule1ViewController: UITableViewDelegate, UITableViewDataSource{
 	
-	func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+	func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
 	}
 	

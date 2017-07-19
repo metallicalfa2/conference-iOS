@@ -60,12 +60,12 @@ class EditProfileViewController: UIViewController,UIImagePickerControllerDelegat
 	{
 		if let chosenImage = info[UIImagePickerControllerEditedImage] as? UIImage{
 			self.profileImage.image = chosenImage
-			let ImageData: NSData = UIImagePNGRepresentation(chosenImage)!	as NSData
+			let ImageData: Data = UIImagePNGRepresentation(chosenImage)!	as Data
 			userDefaults.set(ImageData, forKey: "manualChosenImage")
 		}
 		else if let chosenImage = info[UIImagePickerControllerEditedImage] as? UIImage{
 			self.profileImage.image = chosenImage
-			let ImageData: NSData = UIImagePNGRepresentation(chosenImage)!	as NSData
+			let ImageData: Data = UIImagePNGRepresentation(chosenImage)!	as Data
 			userDefaults.set(ImageData, forKey: "manualChosenImage")
 		}
 		else{
@@ -93,10 +93,10 @@ class EditProfileViewController: UIViewController,UIImagePickerControllerDelegat
 			self.profileImage.image = UIImage(data: data as! Data)
 		}
 		else if(UserDefaults().bool(forKey: "isGoogleLoggedIn") == true){
-			self.profileImage.imageFromServerURL(url: userDefaults.url(forKey: "googleProfileImageUrl")!)
+			self.profileImage.imageFromServerURL(userDefaults.url(forKey: "googleProfileImageUrl")!)
 		}
 		else if(userDefaults.object(forKey: "facebookProfileImageUrl") != nil){
-			self.profileImage.imageFromServerURL(url: userDefaults.url(forKey: "facebookProfileImageUrl")! )
+			self.profileImage.imageFromServerURL(userDefaults.url(forKey: "facebookProfileImageUrl")! )
 		}
 	}
 	

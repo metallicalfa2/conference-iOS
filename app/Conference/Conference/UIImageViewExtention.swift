@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIImageView {
-	public func imageFromServerURL(url: URL) {
+	public func imageFromServerURL(_ url: URL) {
 		
 		URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) -> Void in
 			

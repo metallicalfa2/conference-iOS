@@ -83,7 +83,7 @@ extension LoginViewController{
 			userDefaults.set(user.profile.imageURL(withDimension: 500), forKey: "googleProfileImageUrl")
 			userDefaults.set(true, forKey: "isGoogleLoggedIn")
 			
-			if(isValidEmail(testStr: user.profile.email)){
+			if(isValidEmail(user.profile.email)){
 				userDefaults.set(user.profile.email as String!, forKey: "email")
 			}
 
@@ -125,7 +125,7 @@ extension LoginViewController{
 					userDefaults.set(FBSDKAccessToken.current().tokenString as String, forKey: "facebookAccessTokenKey")
 					userDefaults.set(true,forKey:"isFacebookLoggedIn")
 					
-					if(self.canOpenURL(string: imageString)){
+					if(self.canOpenURL(imageString)){
 						userDefaults.set(URL(string:imageString), forKey: "facebookProfileImageUrl")
 					}
 					
@@ -133,7 +133,7 @@ extension LoginViewController{
 					userDefaults.set(info["last_name"] as! String, forKey: "lastName")
 					userDefaults.set(info["name"] as! String, forKey: "name")
 					
-					if (self.isValidEmail(testStr: info["email"] as! String)){
+					if (self.isValidEmail(info["email"] as! String)){
 						userDefaults.set(info["email"] as! String, forKey: "email")
 					}
 					self.segueFurther()

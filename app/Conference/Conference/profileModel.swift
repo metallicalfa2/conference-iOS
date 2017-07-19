@@ -28,7 +28,7 @@ class profile {
 		self.isFacebookLoggedIn = isFacebookLoggedIn
 	}
 	
-	private init(){
+	fileprivate init(){
 		print("profile initialised. \n")
 	}
 	

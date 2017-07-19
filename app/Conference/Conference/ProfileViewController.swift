@@ -104,10 +104,10 @@ extension ProfileViewController{
 			self.profileImage.image = UIImage(data: data as! Data)
 		}
 		else if( (UserDefaults().bool(forKey: "isGoogleLoggedIn") == true ) && (userDefaults.url(forKey: "googleProfileImageUrl") != nil) ){
-			self.profileImage.imageFromServerURL(url: userDefaults.url(forKey: "googleProfileImageUrl")!)
+			self.profileImage.imageFromServerURL(userDefaults.url(forKey: "googleProfileImageUrl")!)
 		}
 		else if( (UserDefaults().bool(forKey: "isFacebookLoggedIn") == true ) && (userDefaults.url(forKey: "facebookProfileImageUrl") != nil) ){
-			self.profileImage.imageFromServerURL(url: userDefaults.url(forKey: "facebookProfileImageUrl")! )
+			self.profileImage.imageFromServerURL(userDefaults.url(forKey: "facebookProfileImageUrl")! )
 		}
 		
 		if(UserDefaults().bool(forKey: "isGoogleLoggedIn") == true){

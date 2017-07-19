@@ -17,7 +17,7 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate{
 
 	var window: UIWindow?
-
+	let net = networkResource()
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		//var configureError: NSError?
 		IQKeyboardManager.shared().isEnabled = true
@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate{
 		IQKeyboardManager.shared().keyboardDistanceFromTextField = 100
 		
 		FIRApp.configure()
+		net.getToken()
 		
 //		GGLContext.sharedInstance().configureWithError(&configureError)
 //		//assert(configureError == nil, "Error configuring Google services: \(configureError)")

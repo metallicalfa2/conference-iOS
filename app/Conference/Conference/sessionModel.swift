@@ -10,11 +10,11 @@ import UIKit
 
 class sessionModel{
 
-	static let sharedInstance = sessionModel()
+	static var sessionsInstance : [sessionModel] = []
 	
 	var sessionId: String?
 	var description: String?
-	var endtime: Int?
+	var endtime: String?
 	var location:String?
 	var name:String?
 	var sessiondate:String?
@@ -23,13 +23,16 @@ class sessionModel{
 	var starttime: String?
 	var tracks: [String]?
 	
-	init(id: String?, description: String?, name:String?){
+	func setValues(id: String?, description: String?, name:String?, startTime:String? , endTime:String?, sessiondate: String?){
 		self.sessionId = id!
 		self.description = description
 		self.name = name
+		self.starttime = startTime
+		self.endtime = endTime
+		self.sessiondate = sessiondate
 	}
 	
-	private init(){
+	init(){
 		print("session initialised")
 	}
 }

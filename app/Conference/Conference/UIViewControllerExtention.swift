@@ -14,7 +14,7 @@ import Google
 import GoogleSignIn
 
 extension UIViewController {
-	func showAlertMessage(titleStr:String, messageStr:String) {
+	func showAlertMessage(_ titleStr:String, messageStr:String) {
 		let alert = UIAlertController(title: titleStr, message: messageStr, preferredStyle: UIAlertControllerStyle.alert)
 		let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
 			UIAlertAction in
@@ -42,7 +42,7 @@ extension UIViewController {
 				event.addAlarm(EKAlarm.init(relativeOffset: 60.0))
 				do {
 					try eventStore.save(event, span: .thisEvent)
-					self.showAlertMessage(titleStr: "Event Saved", messageStr: "You will be notified before the event")
+					self.showAlertMessage("Event Saved", messageStr: "You will be notified before the event")
 				} catch let specError as NSError {
 					print("A specific error occurred: \(specError)")
 				} catch {
@@ -128,7 +128,7 @@ extension UIViewController {
 		userDefaults.set(true, forKey: "isFacebookLoggedIn")
 	}
 	
-	func isValidEmail(testStr:String) -> Bool {
+	func isValidEmail(_ testStr:String) -> Bool {
 		// print("validate calendar: \(testStr)")
 		let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
 		
@@ -136,9 +136,9 @@ extension UIViewController {
 		return emailTest.evaluate(with: testStr)
 	}
 	
-	func canOpenURL(string: String?) -> Bool {
+	func canOpenURL(_ string: String?) -> Bool {
 		guard let urlString = string else {return false}
-		guard let url = NSURL(string: urlString) else {return false}
+		guard let url = URL(string: urlString) else {return false}
 		if !UIApplication.shared.canOpenURL(url as URL) {return false}
 		
 		//

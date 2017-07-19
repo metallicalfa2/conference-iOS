@@ -27,7 +27,7 @@ class FilterTableViewController: UITableViewController{
 	}
 }
 extension FilterTableViewController{
-	func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+	override func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
 	}
 	

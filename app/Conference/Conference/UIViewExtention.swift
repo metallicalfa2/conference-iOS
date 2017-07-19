@@ -11,7 +11,7 @@ import XLPagerTabStrip
 
 extension UIView {
 	
-	func dropShadow(scale: Bool = true) {		
+	func dropShadow(_ scale: Bool = true) {		
 		self.layer.masksToBounds = false
 		self.layer.shadowColor = UIColor.black.cgColor
 		self.layer.shadowOpacity = 0.18
@@ -34,7 +34,7 @@ extension UIView {
 	}
 }
 extension ButtonBarView{
-	override func dropShadow(scale: Bool = true) {
+	override func dropShadow(_ scale: Bool = true) {
 		self.layer.masksToBounds = false
 		self.layer.shadowColor = UIColor.gray.cgColor
 		self.layer.shadowOpacity = 0.2
