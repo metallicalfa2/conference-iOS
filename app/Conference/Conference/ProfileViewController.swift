@@ -21,11 +21,9 @@ class ProfileViewController: UIViewController,GIDSignInUIDelegate,GIDSignInDeleg
 	@IBOutlet weak var company: UITextField!
 	@IBOutlet weak var facebook: UIImageView!
 	@IBOutlet weak var google: UIImageView!
-	
 	@IBAction func signOut(_ sender: Any) {
 		createSignOutAlert()
 	}
-
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +31,7 @@ class ProfileViewController: UIViewController,GIDSignInUIDelegate,GIDSignInDeleg
 		GIDSignIn.sharedInstance().delegate = self
 		profileImage.cornerRadius()
 		self.addRecognizer()
+		
 		self.name.isEnabled = false
 		self.email.isEnabled = false
 		self.titleatCompany.isEnabled = false
@@ -70,6 +69,7 @@ extension ProfileViewController{
 		userDefaults.set(true,forKey: "isGoogleLoggedIn")
 		self.google.image = #imageLiteral(resourceName: "google_plus")
 	}
+	
 	func facebookLoggedIn() {
 		//print("facebook logged in \n")
 		userDefaults.set(true,forKey: "isFacebookLoggedIn")

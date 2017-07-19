@@ -27,6 +27,9 @@ class networkResource{
 		return "https://www.eiseverywhere.com/api/v2/ereg/listQuestions.json?accesstoken="+token+"&eventid=246511&pageid="+id
 	}
 	
+	func postCreateAttendeeString(_ token:String,email:String) -> String{
+		return "https://www.eiseverywhere.com/api/v2/ereg/createAttendee.json?accesstoken="+token+"&eventid=246511&email="+email
+	}
 	func getToken(){
 		Alamofire.request(accessTokenRequest, method: .get).responseJSON { response in
 			print("Error: \(String(describing: response.error))")
@@ -65,6 +68,17 @@ class networkResource{
 					let notificationName = NSNotification.Name("listQuestionsFetched")
 					NotificationCenter.default.post(name: notificationName, object: nil)
 				}
+				
+			}
+			
+		}
+	}
+	
+	func createAttendee(_ email:String){
+		Alamofire.request(postCreateAttendeeString(token, email: email), method: .post).responseJSON { response in
+			print("Error: \(String(describing: response.error))")
+			if let json = response.result.value {
+				print(json)
 				
 			}
 			

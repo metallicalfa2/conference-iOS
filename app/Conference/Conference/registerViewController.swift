@@ -15,6 +15,7 @@ class registerViewController: FormViewController{
 	var string = ""
 	var index = 0
 	let section = Section("Enter Details")
+	var spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -27,7 +28,7 @@ class registerViewController: FormViewController{
 	
 	func listPagesFetched(){
 		let pages = networkResource.listPages.map{ $1 }.sorted(by: { (Int($0["pageid"].string!)!) < (Int($1["pageid"].string!)!) })
-		//print(pages)
+		print(pages)
 		if let pageid = pages[index]["pageid"].string{
 			string = pageid
 		}
@@ -49,14 +50,17 @@ class registerViewController: FormViewController{
 			print(form[0].removeAll())
 			for el in pages {
 				section <<< EmailRow () {
-					$0.title = el["fieldname"].string
+					$0.title = el["name"].string
+					$0.tag = el["fieldname"].string
 				}
 			}
 		}
 		else{
 			for el in pages {
 				section <<< EmailRow () {
-					$0.title = el["fieldname"].string
+					$0.title = el["name"].string
+					$0.tag = el["fieldname"].string
+
 				}
 			}
 			form +++ section
@@ -70,12 +74,26 @@ class registerViewController: FormViewController{
 	func donepressed(){
 		self.index += 1
 		print(index)
+		
+		if let email: EmailRow = form.rowBy(tag: "email"), let emailValue = email.value {
+			if( index == 1){
+				net.createAttendee(emailValue)
+			}
+		}
+		
 		listPagesFetched()
 		listQuestionsFetched()
 		print("done pressed")
 	}
 	
+	func backpressed(){
+		self.index -= 1
+		print("index is \(index)")
+		
+	}
 	
-	
+	func loader(){
+		spinner.startAnimating()
+	}
 
 }

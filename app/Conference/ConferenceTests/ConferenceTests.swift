@@ -27,8 +27,7 @@ class ConferenceTests: XCTestCase {
 		let input = "testthisemail@gmail.com"
 		let expectedOutput = true
 		let emailFunction = loginController.isValidEmail(testStr: input)
-		XCTAssertEqual(emailFunction, expectedOutput,
-		               "email address should be correct")
+		XCTAssertEqual(emailFunction, expectedOutput, "email address should be correct")
 	}
 	
 	func test_ifCanOpenUrl(){
@@ -38,6 +37,6 @@ class ConferenceTests: XCTestCase {
 		XCTAssertEqual(canOpenUrlFunction,expectedOutput,"image url from the social account should be fine")
 		
 	}
-
+	
     
 }

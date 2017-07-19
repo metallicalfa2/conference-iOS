@@ -9,6 +9,9 @@
 import UIKit
 
 class sessionModel{
+
+	static let sharedInstance = sessionModel()
+	
 	var sessionId: String?
 	var description: String?
 	var endtime: Int?
@@ -26,4 +29,10 @@ class sessionModel{
 		self.name = name
 	}
 	
+	private init(){
+		print("session initialised")
+	}
 }
+
+
+
