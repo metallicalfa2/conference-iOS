@@ -20,7 +20,7 @@ target 'Conference' do
   pod 'SwiftyJSON'
 
   target 'ConferenceTests' do
-    inherit! :search_paths
+    inherit! :complete
     # Pods for testing
   end
 
