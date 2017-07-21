@@ -15,22 +15,39 @@ class Day2ViewController:UIViewController, IndicatorInfoProvider{
 		self.tableView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
 		self.tableView.separatorStyle = .none
 		super.viewDidLoad()
+		
+		NotificationCenter.default.addObserver(self, selector: #selector(self.reloadTableData), name: NSNotification.Name("sessionFetched"), object: nil)
+
 	}
 	func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
 		return IndicatorInfo(title: "Day 2")
+	}
+	
+	func reloadTableData(){
+		print("reloading data")
+		print("sessions variable count is \(sessionModel.sessionsDay2.count)")
+		print("sessionInstance count is \(sessionModel.sessionsDay2.count)")
+		
+		if(self.tableView != nil){
+			DispatchQueue.main.async{
+				self.tableView.reloadData()
+			}
+		}
 	}
 }
 extension Day2ViewController: UITableViewDelegate, UITableViewDataSource,UITableViewDataSourcePrefetching{
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
-		return 2
+		return 1
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
-		return 5
+		print("sessionModel instance count is \(sessionModel.sessionsDay1.count)")
+		return sessionModel.sessionsDay2.count
 	}
+	
 	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-		return 30
+		return 35
 	}
 	
 	func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -44,23 +61,24 @@ extension Day2ViewController: UITableViewDelegate, UITableViewDataSource,UITable
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 		return "Time 10:00 - 11:00 am"
 	}
+	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		
 		let cell = tableView.dequeueReusableCell(withIdentifier: "schedule-cell-2", for: indexPath) as! ScheduleViewCell
 		cell.selectionStyle = .none
-		cell.view.dropShadow()
+		cell.outerViewForCornerRadius.dropShadow()
 		cell.calendarButton.addTarget(self, action: #selector(self.addCalendarEntry), for: .touchUpInside)
+		
+		cell.eventName.text = sessionModel.sessionsDay1[indexPath.row].name!
 		return cell
 	}
 	
-	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-	 let storyboard = UIStoryboard(name: "Main", bundle: nil)
+		let storyboard = UIStoryboard(name: "Main", bundle: nil)
 		let objSecond = storyboard.instantiateViewController(withIdentifier: "scheduleDetails")
 		navigationController?.pushViewController(objSecond, animated: true)
+		
 	}
-	
-	
 	
 	// This methods will be used for smooth scrolling.
 	func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
@@ -70,7 +88,5 @@ extension Day2ViewController: UITableViewDelegate, UITableViewDataSource,UITable
 	func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
 		print("cancelPrefetchingForRowsAt \(indexPaths)")
 	}
-	
-	
 	
 }

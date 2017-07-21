@@ -59,12 +59,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Conference.xcscheme</key>
+		<key>Pods-Conference-ConferenceTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-ConferenceTests.xcscheme</key>
+		<key>Pods-Conference.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -122,6 +122,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>680AE0A66DD11351E59C72B544E05641</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>681BE6E3D02A43F9BA63777AC435C8FD</key>
 		<dict>
 			<key>primary</key>
@@ -148,11 +153,6 @@
 			<true/>
 		</dict>
 		<key>B1C4AAFAF49036C7007633DAA3C806AD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C78837A9EC5D6A05063FE3973004A6E2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

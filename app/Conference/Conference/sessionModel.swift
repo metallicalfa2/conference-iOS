@@ -10,7 +10,9 @@ import UIKit
 
 class sessionModel{
 
-	static var sessionsInstance : [sessionModel] = []
+	static var sessionsDay1 : [sessionModel] = []
+	static var sessionsDay2 : [sessionModel] = []
+	static var sessionsDay3 : [sessionModel] = []
 	
 	var sessionId: String?
 	var description: String?
@@ -22,18 +24,26 @@ class sessionModel{
 	var speakers: [String]?
 	var starttime: String?
 	var tracks: [String]?
+	var sessionKey: String?
+	var speakerId:String?
 	
-	func setValues(id: String?, description: String?, name:String?, startTime:String? , endTime:String?, sessiondate: String?){
+	init (id: String?, description: String?, name:String?, startTime:String? , endTime:String?, sessiondate: String?, sessionKey: String?, speakerId:String?){
 		self.sessionId = id!
 		self.description = description
 		self.name = name
 		self.starttime = startTime
 		self.endtime = endTime
 		self.sessiondate = sessiondate
+		self.sessionKey = sessionKey
+		self.speakerId = speakerId
 	}
 	
-	init(){
-		print("session initialised")
+	func setSpeakers(_ speakers:[String]?){
+		self.speakers = speakers
+	}
+	
+	func setTracks(_ tracks:[String]?){
+		self.tracks = tracks
 	}
 }
 

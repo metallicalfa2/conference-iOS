@@ -13,7 +13,7 @@ import FirebaseDatabase
 
 class DayViewController:UIViewController, IndicatorInfoProvider{
 	@IBOutlet weak var tableView: UITableView!
-	let sessions = sessionModel.sessionsInstance
+	//let sessions = sessionModel.
 	
 	override func viewDidLoad() {
 		self.tableView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
@@ -23,7 +23,7 @@ class DayViewController:UIViewController, IndicatorInfoProvider{
 		super.viewDidLoad()
 		//let session = FIRDatabase.database().reference().child("264511")
 		
-		NotificationCenter.default.addObserver(self, selector: #selector(self.reloadTableData), name: NSNotification.Name("listSessionsFetched"), object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(self.reloadTableData), name: NSNotification.Name("sessionFetched"), object: nil)
 
 	}
 	func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
@@ -32,8 +32,8 @@ class DayViewController:UIViewController, IndicatorInfoProvider{
 	
 	func reloadTableData(){
 		print("reloading data")
-		print("sessions variable count is \(sessions.count)")
-		print("sessionInstance count is \(sessionModel.sessionsInstance.count)")
+		print("sessions variable count is \(sessionModel.sessionsDay1.count)")
+		print("sessionInstance count is \(sessionModel.sessionsDay1.count)")
 		
 		if(self.tableView != nil){
 			DispatchQueue.main.async{
@@ -51,8 +51,8 @@ extension DayViewController: UITableViewDelegate, UITableViewDataSource,UITableV
 	}
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
-		print("sessionModel instance count is \(sessionModel.sessionsInstance.count)")
-		return sessionModel.sessionsInstance.count
+		print("sessionModel instance count is \(sessionModel.sessionsDay1.count)")
+		return sessionModel.sessionsDay1.count
 	}
 	
 	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -78,7 +78,7 @@ extension DayViewController: UITableViewDelegate, UITableViewDataSource,UITableV
 		cell.outerViewForCornerRadius.dropShadow()
 		cell.calendarButton.addTarget(self, action: #selector(self.addCalendarEntry), for: .touchUpInside)
 		
-		cell.eventName.text = sessionModel.sessionsInstance[indexPath.row].name!
+		cell.eventName.text = sessionModel.sessionsDay1[indexPath.row].name!
 		return cell
 	}
 	

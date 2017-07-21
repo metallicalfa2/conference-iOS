@@ -1,6 +1,6 @@
 //
-//  ConferenceTests.swift
-//  ConferenceTests
+//  tests.swift
+//  tests
 //
 //  Created by SKIXY-MACBOOK on 21/07/17.
 //  Copyright © 2017 shubhamrathi. All rights reserved.
@@ -8,9 +8,7 @@
 
 import XCTest
 
-@testable import Conference
-
-class ConferenceTests: XCTestCase {
+class tests: XCTestCase {
     
     override func setUp() {
         super.setUp()

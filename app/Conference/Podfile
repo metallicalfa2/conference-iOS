@@ -20,8 +20,18 @@ target 'Conference' do
   pod 'SwiftyJSON'
 
   target 'ConferenceTests' do
-    inherit! :complete
     # Pods for testing
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'XLPagerTabStrip', '~> 7.0'
+  pod 'Google/SignIn'
+  pod 'IQKeyboardManager'
+  pod 'Alamofire', '~> 4.4'
+  pod 'Firebase'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Eureka'
+  pod 'SwiftyJSON'
   end
 
 end
