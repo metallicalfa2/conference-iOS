@@ -44,6 +44,13 @@ class networkResource{
 		return "https://www.eiseverywhere.com/api/v2/global/listTracks.json?accesstoken="+token
 	}
 
+	func getListSpeakers(_ token:String) -> String{
+		return "https://www.eiseverywhere.com/api/v2/ereg/listSpeakers.json?accesstoken="+token+"&eventid=246511"
+	}
+	
+	func getSpeaker(_ token:String, speakerId:String) -> String{
+		return "https://www.eiseverywhere.com/api/v2/ereg/getSpeaker.json?accesstoken="+token+"&eventid=246511&speakerid="+speakerId
+	}
 	
 	func getToken(){
 		Alamofire.request(accessTokenRequest, method: .get).responseJSON { response in
@@ -55,6 +62,7 @@ class networkResource{
 				token = res["accesstoken"].string!
 				self.listSessions(res["accesstoken"].string!)
 				self.getTracks(token)
+				self.listSpeakers(token)
 			}
 		}
 	}
@@ -104,6 +112,37 @@ class networkResource{
 			}
 		}
 	}
+	
+	func listSpeakers(_ token:String){
+		Alamofire.request(getListSpeakers(token),method: .get).responseJSON { response in
+			print("Error in fetching tracks: \(String(describing: response.error))")
+			
+			if let json = response.result.value {
+				let data = JSON(json).map{ return $1 }
+				data.forEach{ el in
+					self.getSpeaker(el)
+				}
+			}
+			
+		}
+	}
+	
+	func getSpeaker(_ speaker:JSON){
+		Alamofire.request(getSpeaker(token, speakerId: speaker["speakerid"].string! ),method: .get).responseJSON { response in
+			print("Error in fetching tracks: \(String(describing: response.error))")
+			
+			if let json = response.result.value {
+				let data = JSON(json)
+				print(data)
+				
+				let ids = ["2"]
+				let speaker = speakersModel(data["fname"].string ?? "name", mname: data["mname"].string ?? "" , lname: data["lname"].string ?? "" , email: data["email"].string! , title: data["title"].string!, company: data["companies"]["eng"].string! , bio: data["bio"].string!, sessionIds: ids)
+				
+				speakersModel.speakers.append(speaker)
+			}
+		}
+	}
+	
 	
 	func getTracks(_ token:String){
 		Alamofire.request(getTracksString(token),method: .get).responseJSON { response in
