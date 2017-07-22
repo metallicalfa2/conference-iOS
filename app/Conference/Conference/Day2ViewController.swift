@@ -34,6 +34,19 @@ class Day2ViewController:UIViewController, IndicatorInfoProvider{
 			}
 		}
 	}
+	
+	func getSpeakerDetails(_ arrayOfSpeakerIds:[String]) -> String{
+		var test = ""
+		if(arrayOfSpeakerIds.count > 0){
+			let id=arrayOfSpeakerIds[0]
+			let model = speakersModel.speakers.filter{ $0.id == id }
+			if(model.count > 0){
+				test = model[0].fname ?? "speaker name"
+				print("name of the speaker is \(test)")
+			}
+		}
+		return test
+	}
 }
 extension Day2ViewController: UITableViewDelegate, UITableViewDataSource,UITableViewDataSourcePrefetching{
 	
@@ -68,16 +81,15 @@ extension Day2ViewController: UITableViewDelegate, UITableViewDataSource,UITable
 		cell.selectionStyle = .none
 		cell.outerViewForCornerRadius.dropShadow()
 		cell.calendarButton.addTarget(self, action: #selector(self.addCalendarEntry), for: .touchUpInside)
-		
-		cell.eventName.text = sessionModel.sessionsDay1[indexPath.row].name!
+		cell.speaker.text = self.getSpeakerDetails(sessionModel.sessionsDay2[indexPath.row].speakers!)
+		cell.eventName.text = sessionModel.sessionsDay2[indexPath.row].name!
 		return cell
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let storyboard = UIStoryboard(name: "Main", bundle: nil)
-		let objSecond = storyboard.instantiateViewController(withIdentifier: "scheduleDetails")
-		navigationController?.pushViewController(objSecond, animated: true)
-		
+		let next = (UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "scheduleDetails") as? ScheduleDetailsViewController)!
+		next.session = sessionModel.sessionsDay2[indexPath.row]
+		navigationController?.pushViewController(next, animated: true)
 	}
 	
 	// This methods will be used for smooth scrolling.

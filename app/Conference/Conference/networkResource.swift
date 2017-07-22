@@ -92,12 +92,16 @@ class networkResource{
 			
 			if let json = response.result.value {
 				let data = JSON(json)
+				//print(data)
 				let tracks = data["session_tracks"].map{ return $1.string! }
 				let speakers = data["speakers"].map{return $1["speakerid"].string!}
-				
+				//print(speakers)
 				session.setSpeakers(speakers)
 				session.setTracks(tracks)
-				session.description = data["description"]["eng"].string
+				session.description = data["descriptions"]["eng"].string
+				session.name = data["reportname"].string!
+				
+				//print(data["reportname"].string)
 				
 				if(session.sessiondate == "2017-07-14" ){
 					sessionModel.sessionsDay1.append(session)
@@ -136,9 +140,12 @@ class networkResource{
 				print(data)
 				
 				let ids = ["2"]
-				let speaker = speakersModel(data["fname"].string ?? "name", mname: data["mname"].string ?? "" , lname: data["lname"].string ?? "" , email: data["email"].string! , title: data["title"].string!, company: data["companies"]["eng"].string! , bio: data["bio"].string!, sessionIds: ids)
+				let speakerIndividual = speakersModel(data["fname"].string ?? "name", mname: data["mname"].string ?? "" , lname: data["lname"].string ?? "" , email: data["email"].string ?? "" , title: data["title"].string! , company: data["company"].string ?? "" , bio: data["bio"].string ?? "", sessionIds: ids, id: data["speakerid"].string ?? "", image: data["image"].string ?? "")
+		
+				speakersModel.speakers.append(speakerIndividual)
 				
-				speakersModel.speakers.append(speaker)
+				let notificationName = NSNotification.Name("sessionFetched")
+				NotificationCenter.default.post(name: notificationName, object: nil)
 			}
 		}
 	}
@@ -159,7 +166,7 @@ class networkResource{
 	}
 	
 	
-	func getListPages(_ token: String){
+	func getListPages(){
 		Alamofire.request(getListPagesString(token), method: .get).responseJSON { response in
 			print("Error in getListPages: \(String(describing: response.error))")
 			if let json = response.result.value {
@@ -191,15 +198,17 @@ class networkResource{
 		}
 	}
 	
-	func createAttendee(_ email:String){
+	func createAttendee(_ email:String) -> String{
+		var test = ""
 		Alamofire.request(postCreateAttendeeString(token, email: email), method: .post).responseJSON { response in
 			print("Error: \(String(describing: response.error))")
 			if let json = response.result.value {
-				//print(json)
-				
+				test = JSON(json)["attendeeid"].string!
+				print(test)
 			}
 			
 		}
+		return test
 	}
 	
 	

@@ -52,6 +52,7 @@
 		51D0C92A1F221E37007BE591 /* tracksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D0C9291F221E37007BE591 /* tracksModel.swift */; };
 		51D0C92C1F2220B2007BE591 /* speakersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D0C92B1F2220B2007BE591 /* speakersModel.swift */; };
 		51D0C9341F226F86007BE591 /* ConferenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D0C9331F226F86007BE591 /* ConferenceTests.swift */; };
+		51D0C93D1F239DF5007BE591 /* speakerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D0C93C1F239DF5007BE591 /* speakerDetailsViewController.swift */; };
 		81C79B437320598F188A4C32 /* Pods_Conference_ConferenceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8C79E0F919CC6423AA07B2C /* Pods_Conference_ConferenceTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -132,6 +133,7 @@
 		51D0C9311F226F86007BE591 /* ConferenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConferenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		51D0C9331F226F86007BE591 /* ConferenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceTests.swift; sourceTree = "<group>"; };
 		51D0C9351F226F86007BE591 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51D0C93C1F239DF5007BE591 /* speakerDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = speakerDetailsViewController.swift; sourceTree = "<group>"; };
 		632488E9E26FE41EB719649A /* Pods_ConferenceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConferenceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83DDCDFCA7BF4F4C8D677D2E /* Pods_Conference.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Conference.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		917F3A0728DC801DBD4C4417 /* Pods-Conference.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conference.release.xcconfig"; path = "Pods/Target Support Files/Pods-Conference/Pods-Conference.release.xcconfig"; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 			children = (
 				510D8D331EF808FA00834EE7 /* LoaderController.swift */,
 				51A2051B1EE8A2AA00A0980B /* TabBarViewController.swift */,
+				51D0C93B1F239DC7007BE591 /* speakers */,
 				510D8D1C1EF4DFBD00834EE7 /* Login */,
 				510D8D1B1EF4DFB100834EE7 /* Profile */,
 				517643AB1EDB51DC008CC752 /* Schedule */,
@@ -278,8 +281,8 @@
 			isa = PBXGroup;
 			children = (
 				517643961EDB4849008CC752 /* AppDelegate.swift */,
-				51802AFA1F114C2A0010EA5A /* Model */,
 				510D8D281EF599EC00834EE7 /* Resources */,
+				51802AFA1F114C2A0010EA5A /* Model */,
 				51802AF71F113D8A0010EA5A /* Services */,
 				513FC1FB1EF28DE90020F9F5 /* Views */,
 				513FC1FC1EF28E1F0020F9F5 /* Controllers */,
@@ -367,6 +370,14 @@
 				51D0C9351F226F86007BE591 /* Info.plist */,
 			);
 			path = ConferenceTests;
+			sourceTree = "<group>";
+		};
+		51D0C93B1F239DC7007BE591 /* speakers */ = {
+			isa = PBXGroup;
+			children = (
+				51D0C93C1F239DF5007BE591 /* speakerDetailsViewController.swift */,
+			);
+			name = speakers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -590,6 +601,7 @@
 				51802B1B1F17F6850010EA5A /* registerViewController.swift in Sources */,
 				51A205181EE81B8C00A0980B /* FilterTableViewCell.swift in Sources */,
 				51D0C92A1F221E37007BE591 /* tracksModel.swift in Sources */,
+				51D0C93D1F239DF5007BE591 /* speakerDetailsViewController.swift in Sources */,
 				510D8D201EF4FB0000834EE7 /* LoginDetailsViewController.swift in Sources */,
 				517643B91EDB6270008CC752 /* day3ViewController.swift in Sources */,
 				515E8AB51EE6C2C500BFA4F4 /* ScheduleViewCell.swift in Sources */,
@@ -859,6 +871,7 @@
 				51D0C93A1F226F86007BE591 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

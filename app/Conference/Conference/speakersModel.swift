@@ -11,6 +11,7 @@ import UIKit
 class speakersModel{
 	static var speakers : [speakersModel] = []
 	
+	var id:String?
 	var fname:String?
 	var mname:String?
 	var lname:String?
@@ -20,8 +21,9 @@ class speakersModel{
 	var bio:String?
 	var session: [sessionModel]?
 	var sessionIds: [String]?
+	var image: String?
 	
-	init(_ fname:String,mname:String,lname:String,email:String,title:String,company:String,bio:String,sessionIds:[String]) {
+	init(_ fname:String,mname:String,lname:String,email:String,title:String,company:String,bio:String,sessionIds:[String],id: String, image:String?) {
 		self.fname = fname
 		self.mname = mname
 		self.lname = lname
@@ -30,5 +32,7 @@ class speakersModel{
 		self.company = company
 		self.bio = bio
 		self.sessionIds	= sessionIds
+		self.id = id
+		self.image = image
 	}
 }

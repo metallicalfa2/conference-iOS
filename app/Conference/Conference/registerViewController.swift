@@ -19,7 +19,7 @@ class registerViewController: FormViewController{
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		net.getToken()
+		net.getListPages()
 
 		NotificationCenter.default.addObserver(self, selector: #selector(self.listPagesFetched), name: NSNotification.Name("listPagesFetched"), object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(self.listQuestionsFetched), name: NSNotification.Name("listQuestionsFetched"), object: nil)
@@ -28,22 +28,24 @@ class registerViewController: FormViewController{
 	
 	func listPagesFetched(){
 		let pages = networkResource.listPages.map{ $1 }.sorted(by: { (Int($0["pageid"].string!)!) < (Int($1["pageid"].string!)!) })
-		print(pages)
-		if let pageid = pages[index]["pageid"].string{
-			string = pageid
-		}
-		if let page = pages[index]["page"].string {
-			self.title = page
-			let rightButton = UIBarButtonItem(title: "next", style: .plain, target: self, action: #selector(donepressed))
-			rightButton.title = "next"
-			self.navigationItem.rightBarButtonItem = rightButton
-		}
+		//print(pages)
 		
+		if(index < 3){
+			if let pageid = pages[index]["pageid"].string{
+				string = pageid
+			}
+			if let page = pages[index]["page"].string {
+				self.title = page
+				let rightButton = UIBarButtonItem(title: "next", style: .plain, target: self, action: #selector(donepressed))
+				rightButton.title = "next"
+				self.navigationItem.rightBarButtonItem = rightButton
+			}
+		}
 	}
 	
 	func listQuestionsFetched(){
 		let pages = networkResource.listQuestions.flatMap{ $0 }.map{ $1 }.filter{ $0["pageid"].string == string }
-		print(pages)
+		//print(pages)
 		
 
 		if(index > 0 ){
@@ -72,15 +74,19 @@ class registerViewController: FormViewController{
 	}
 	
 	func donepressed(){
+		var id = ""
 		self.index += 1
-		print(index)
 		
 		if let email: EmailRow = form.rowBy(tag: "email"), let emailValue = email.value {
 			if( index == 1){
-				net.createAttendee(emailValue)
+				id = net.createAttendee(emailValue)
+				print(" id is \(id)")
 			}
 		}
-		
+		if(index == 3){
+			let vc: UIViewController = (self.storyboard?.instantiateViewController(withIdentifier: "tabView"))!
+			self.present(vc, animated: true, completion: nil)
+		}
 		listPagesFetched()
 		listQuestionsFetched()
 		print("done pressed")
@@ -89,7 +95,6 @@ class registerViewController: FormViewController{
 	func backpressed(){
 		self.index -= 1
 		print("index is \(index)")
-		
 	}
 	
 	func loader(){

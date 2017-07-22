@@ -11,6 +11,8 @@ import XLPagerTabStrip
 import Firebase
 import FirebaseDatabase
 
+var currentSpeaker : speakersModel?
+
 class DayViewController:UIViewController, IndicatorInfoProvider{
 	@IBOutlet weak var tableView: UITableView!
 	//let sessions = sessionModel.
@@ -32,14 +34,27 @@ class DayViewController:UIViewController, IndicatorInfoProvider{
 	
 	func reloadTableData(){
 		print("reloading data")
-		print("sessions variable count is \(sessionModel.sessionsDay1.count)")
-		print("sessionInstance count is \(sessionModel.sessionsDay1.count)")
+		//print("sessions variable count is \(sessionModel.sessionsDay1.count)")
+		//print("sessionInstance count is \(sessionModel.sessionsDay1.count)")
 		
 		if(self.tableView != nil){
 			DispatchQueue.main.async{
 				self.tableView.reloadData()
 			}
 		}
+	}
+	
+	func getSpeakerDetails(_ arrayOfSpeakerIds:[String]) -> String{
+		var test = ""
+		if(arrayOfSpeakerIds.count > 0){
+			let id=arrayOfSpeakerIds[0]
+			let model = speakersModel.speakers.filter{ $0.id == id }
+			if(model.count > 0){
+				test = model[0].fname ?? "speaker name"
+				print("name of the speaker is \(test)")
+			}
+		}
+		return test
 	}
 }
 
@@ -51,7 +66,7 @@ extension DayViewController: UITableViewDelegate, UITableViewDataSource,UITableV
 	}
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
-		print("sessionModel instance count is \(sessionModel.sessionsDay1.count)")
+		//print("sessionModel instance count is \(sessionModel.sessionsDay1.count)")
 		return sessionModel.sessionsDay1.count
 	}
 	
@@ -77,15 +92,16 @@ extension DayViewController: UITableViewDelegate, UITableViewDataSource,UITableV
 		cell.selectionStyle = .none
 		cell.outerViewForCornerRadius.dropShadow()
 		cell.calendarButton.addTarget(self, action: #selector(self.addCalendarEntry), for: .touchUpInside)
-		
+		cell.speaker.text = self.getSpeakerDetails(sessionModel.sessionsDay1[indexPath.row].speakers!)
 		cell.eventName.text = sessionModel.sessionsDay1[indexPath.row].name!
 		return cell
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let storyboard = UIStoryboard(name: "Main", bundle: nil)
-		let objSecond = storyboard.instantiateViewController(withIdentifier: "scheduleDetails")
-		navigationController?.pushViewController(objSecond, animated: true)
+		
+		let next = (UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "scheduleDetails") as? ScheduleDetailsViewController)!
+		next.session = sessionModel.sessionsDay1[indexPath.row]
+		navigationController?.pushViewController(next, animated: true)
 		
 	}
 	

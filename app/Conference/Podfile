@@ -21,7 +21,7 @@ target 'Conference' do
 
   target 'ConferenceTests' do
     # Pods for testing
-  
+	pod 'Firebase'
   end
 
 end
