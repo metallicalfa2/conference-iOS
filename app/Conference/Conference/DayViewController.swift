@@ -10,6 +10,7 @@ import UIKit
 import XLPagerTabStrip
 import Firebase
 import FirebaseDatabase
+import SVProgressHUD
 
 var currentSpeaker : speakersModel?
 
@@ -23,8 +24,13 @@ class DayViewController:UIViewController, IndicatorInfoProvider{
 		self.tableView.translatesAutoresizingMaskIntoConstraints = false
 		
 		super.viewDidLoad()
-		//let session = FIRDatabase.database().reference().child("264511")
+		if(sessionModel.sessionsDay1.count == 0){
+			DispatchQueue.main.async( execute:{
+				SVProgressHUD.show(withStatus: "Loading")
+			})
+		}
 		
+		//let session = FIRDatabase.database().reference().child("264511")
 		NotificationCenter.default.addObserver(self, selector: #selector(self.reloadTableData), name: NSNotification.Name("sessionFetched"), object: nil)
 
 	}
@@ -40,6 +46,7 @@ class DayViewController:UIViewController, IndicatorInfoProvider{
 		if(self.tableView != nil){
 			DispatchQueue.main.async{
 				self.tableView.reloadData()
+				SVProgressHUD.dismiss()
 			}
 		}
 	}

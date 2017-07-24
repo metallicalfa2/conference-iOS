@@ -554,8 +554,9 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile Photo" translatesAutoresizingMaskIntoConstraints="NO" id="oCa-6k-q77">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oCa-6k-q77">
                                 <rect key="frame" x="10" y="107" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.74803481869999999" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="1Ml-we-cqC"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="OC4-1P-K65"/>
@@ -2293,7 +2294,6 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
         <image name="Login btn" width="275" height="44"/>
         <image name="Maps" width="24" height="24"/>
         <image name="Profile " width="25" height="25"/>
-        <image name="Profile Photo" width="186" height="186"/>
         <image name="Schedule" width="18" height="19"/>
         <image name="Search Icon" width="20" height="21"/>
         <image name="Twitter btn Copy" width="275" height="44"/>

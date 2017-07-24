@@ -128,6 +128,10 @@ extension UIViewController {
 		userDefaults.set(true, forKey: "isFacebookLoggedIn")
 	}
 	
+	func returnIfGoogleAndFacebookSet() -> Bool{
+		return ( UserDefaults().bool(forKey: "isFacebookLoggedIn") || UserDefaults().bool(forKey: "isGoogleLoggedIn") )
+	}
+	
 	func isValidEmail(_ testStr:String) -> Bool {
 		// print("validate calendar: \(testStr)")
 		let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"

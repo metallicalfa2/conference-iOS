@@ -17,11 +17,11 @@ target 'Conference' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Eureka'
+  pod 'SVProgressHUD'
   pod 'SwiftyJSON'
 
   target 'ConferenceTests' do
     # Pods for testing
-	pod 'Firebase'
   end
 
 end

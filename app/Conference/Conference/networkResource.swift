@@ -137,7 +137,7 @@ class networkResource{
 			
 			if let json = response.result.value {
 				let data = JSON(json)
-				print(data)
+				//print(data)
 				
 				let ids = ["2"]
 				let speakerIndividual = speakersModel(data["fname"].string ?? "name", mname: data["mname"].string ?? "" , lname: data["lname"].string ?? "" , email: data["email"].string ?? "" , title: data["title"].string! , company: data["company"].string ?? "" , bio: data["bio"].string ?? "", sessionIds: ids, id: data["speakerid"].string ?? "", image: data["image"].string ?? "")
@@ -204,7 +204,7 @@ class networkResource{
 			print("Error: \(String(describing: response.error))")
 			if let json = response.result.value {
 				test = JSON(json)["attendeeid"].string!
-				print(test)
+				//print(test)
 			}
 			
 		}

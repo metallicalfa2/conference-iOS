@@ -32,7 +32,7 @@ class ScheduleDetailsViewController: UIViewController {
 		speakerImage.isUserInteractionEnabled = true
 		let tap = UITapGestureRecognizer(target: self, action: #selector(segueToSpeaker))
 		speakerImage.addGestureRecognizer(tap)
-		
+		speakerImage.cornerRadius()
     }
 	override func viewWillAppear(_ animated: Bool) {
 		self.insertSessionDetailsFromDataModel()
@@ -45,8 +45,9 @@ class ScheduleDetailsViewController: UIViewController {
 	func insertSessionDetailsFromDataModel(){
 		eventName.text = session!.name
 		info.text = session!.description
+		eventTime.text = ( session!.starttime ?? "" ) + " - " + ( session!.endtime ?? "" )
 		getSpeakerDetails(session!.speakers!)
-		
+
 	}
 	
 	func getSpeakerDetails(_ arrayOfSpeakerIds:[String]){

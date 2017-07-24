@@ -9,6 +9,7 @@
 import UIKit
 import Eureka
 import SwiftyJSON
+import SVProgressHUD
 
 class registerViewController: FormViewController{
 	let net = networkResource()
@@ -18,6 +19,10 @@ class registerViewController: FormViewController{
 	var spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
 
 	override func viewDidLoad() {
+//		DispatchQueue.main.async( execute:{
+//			SVProgressHUD.show(withStatus: "Loading")
+//		})
+//		
 		super.viewDidLoad()
 		net.getListPages()
 
@@ -27,6 +32,8 @@ class registerViewController: FormViewController{
 	}
 	
 	func listPagesFetched(){
+		SVProgressHUD.dismiss()
+		
 		let pages = networkResource.listPages.map{ $1 }.sorted(by: { (Int($0["pageid"].string!)!) < (Int($1["pageid"].string!)!) })
 		//print(pages)
 		

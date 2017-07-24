@@ -65,6 +65,7 @@ PODS:
   - GTMSessionFetcher/Full (1.1.11):
     - GTMSessionFetcher/Core (= 1.1.11)
   - IQKeyboardManager (4.0.10)
+  - SVProgressHUD (2.1.2)
   - SwiftyJSON (3.1.4)
   - XLPagerTabStrip (7.0.0)
 
@@ -78,6 +79,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Google/SignIn
   - IQKeyboardManager
+  - SVProgressHUD
   - SwiftyJSON
   - XLPagerTabStrip (~> 7.0)
 
@@ -100,9 +102,10 @@ SPEC CHECKSUMS:
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
   IQKeyboardManager: 593ee99b88381f4b9ccb22bd680f22606351bd41
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   XLPagerTabStrip: 9be80a66c6b7d60306b2c0a6004965016d68f813
 
-PODFILE CHECKSUM: dbf587dc825a8baa7e6734c72a981c6afd749263
+PODFILE CHECKSUM: 2cda62b193f2faf7cb90f9577088085f639b2d2f
 
 COCOAPODS: 1.1.1

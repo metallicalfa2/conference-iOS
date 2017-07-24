@@ -26,7 +26,7 @@ class SpeakerDetailsViewController: UIViewController{
 	
 	public func insertDetails(){
 		name.text = (speakerModel?.fname)! + " " + (speakerModel?.lname)!
-		email.text = speakerModel?.email
+		email.text = speakerModel?.company
 		bio.text = speakerModel?.bio
 		titleSpeaker.text = speakerModel?.title
 		image.imageFromServerURL(URL(string: "https://www.eiseverywhere.com/image.php?acc=7157&id="+(speakerModel?.image)!)!)

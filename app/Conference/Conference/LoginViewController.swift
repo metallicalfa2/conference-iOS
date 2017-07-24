@@ -13,6 +13,7 @@ import Google
 import FacebookCore
 import FacebookLogin
 import FBSDKLoginKit
+import SVProgressHUD
 
 // userDefaults for persistant data storage.
 let userDefaults = UserDefaults.standard
@@ -35,15 +36,24 @@ class LoginViewController: UIViewController ,GIDSignInUIDelegate,GIDSignInDelega
 	}
 
     override func viewDidLoad() {
+		
+		
         super.viewDidLoad()
 		self.hideKeyboard()
 		GIDSignIn.sharedInstance().uiDelegate = self
 		GIDSignIn.sharedInstance().delegate = self
 		
+		
     }
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(true)
+		if(returnIfGoogleAndFacebookSet()){
+			DispatchQueue.main.async( execute:{
+				SVProgressHUD.show(withStatus: "Loading")
+			})
+		}
+		
 		userDefaults.set(false, forKey: "isFacebookLoggedIn")
 		userDefaults.set(false, forKey: "isGoogleLoggedIn")
 		GIDSignIn.sharedInstance().clientID = "675818656106-34cmrg4hlu86julevmeiqenlbo2gn21n.apps.googleusercontent.com"
@@ -53,19 +63,33 @@ class LoginViewController: UIViewController ,GIDSignInUIDelegate,GIDSignInDelega
 		FBSDKAccessToken.refreshCurrentAccessToken(nil)
 		print(FBSDKAccessToken.current() ?? " \n nil access token \n")
 		if( FBSDKAccessToken.current() != nil){
+			print(FBSDKAccessToken.current())
 			userDefaults.set(true, forKey: "isFacebookLoggedIn")
 			segueFurther()
 		}
+		
+	}
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(true)
+		
+		DispatchQueue.main.async( execute:{
+			SVProgressHUD.dismiss()
+		})
 	}
 
 	func segueFurther(){
 		if ( (userDefaults.object(forKey: "name") != nil) && (userDefaults.object(forKey: "email") != nil) && (userDefaults.object(forKey: "title") != nil)  && (userDefaults.object(forKey: "company") != nil)  ) {
+			DispatchQueue.main.async( execute:{
 				let vc: UIViewController = (self.storyboard?.instantiateViewController(withIdentifier: "tabView"))!
 				self.present(vc, animated: true, completion: nil)
-			}
+			})
+		}
 		else{
-			let vc: UIViewController = (self.storyboard?.instantiateViewController(withIdentifier: "loginDetails"))!
-			self.present(vc, animated: true, completion: nil)
+			DispatchQueue.main.async( execute:{
+				let vc: UIViewController = (self.storyboard?.instantiateViewController(withIdentifier: "loginDetails"))!
+				self.present(vc, animated: true, completion: nil)
+			})
 		}
 	}
 	
