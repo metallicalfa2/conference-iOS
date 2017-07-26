@@ -62,6 +62,7 @@ class LoginViewController: UIViewController ,GIDSignInUIDelegate,GIDSignInDelega
 		FBSDKProfile.enableUpdates(onAccessTokenChange: true)
 		FBSDKAccessToken.refreshCurrentAccessToken(nil)
 		print(FBSDKAccessToken.current() ?? " \n nil access token \n")
+		
 		if( FBSDKAccessToken.current() != nil){
 			print(FBSDKAccessToken.current())
 			userDefaults.set(true, forKey: "isFacebookLoggedIn")
@@ -73,9 +74,9 @@ class LoginViewController: UIViewController ,GIDSignInUIDelegate,GIDSignInDelega
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(true)
 		
-		DispatchQueue.main.async( execute:{
-			SVProgressHUD.dismiss()
-		})
+//		DispatchQueue.main.async( execute:{
+//			SVProgressHUD.dismiss()
+//		})
 	}
 
 	func segueFurther(){

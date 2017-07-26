@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import SVProgressHUD
 
 var token:String = ""
 
@@ -53,20 +54,35 @@ class networkResource{
 	}
 	
 	func getToken(){
+		DispatchQueue.main.async(execute: {
+			SVProgressHUD.setDefaultMaskType(.gradient)
+			SVProgressHUD.show(withStatus: "loading")
+		})
+		
 		Alamofire.request(accessTokenRequest, method: .get).responseJSON { response in
 			print("Error in fetching token: \(String(describing: response.error))")
+			
 			let res: JSON
 			if let json = response.result.value {
 				res = JSON(json)
-				//print(res)
-				token = res["accesstoken"].string!
-				self.listSessions(res["accesstoken"].string!)
-				self.getTracks(token)
-				self.listSpeakers(token)
+				print(res)
+				if res["accesstoken"].string != nil {
+					token = res["accesstoken"].string!
+					self.listSessions(res["accesstoken"].string!)
+					self.getTracks(token, withCompletion: self.dismissHUD)
+					self.listSpeakers(token)
+					//self.getListPages()
+				}
+				
 			}
 		}
 	}
 	
+	func dismissHUD(){
+		print("length of the tracks model is \(tracksModel.tracks.count) ")
+		DispatchQueue.main.async(execute: {SVProgressHUD.dismiss()})	
+	
+	}
 	func listSessions(_ token: String){
 		Alamofire.request(getListSessionString(token), method: .get).responseJSON { response in
 			print("Error in fetching listSessions: \(String(describing: response.error))")
@@ -75,7 +91,7 @@ class networkResource{
 				let data = JSON(json).map{ return $1 }
 				
 				data.forEach{ el in
-					let session = sessionModel(id: el["sessionid"].string ?? "0", description: "sample desciption", name: el["name"].string ?? "sample name", startTime: el["starttime"].string ?? "stime", endTime: el["endtime"].string ?? "etime", sessiondate: el["sessiondate"].string!, sessionKey: el["sessionkey"].string!, speakerId: "")
+					let session = sessionModel(id: el["sessionid"].string ?? "0", description: "sample desciption", name: el["name"].string ?? "sample name", startTime: el["starttime"].string ?? "stime", endTime: el["endtime"].string ?? "etime", sessiondate: el["sessiondate"].string ?? "-1", sessionKey: el["sessionkey"].string ?? "-1", speakerId: "")
 					
 					self.getSession(token,session: session)
 				}
@@ -151,7 +167,7 @@ class networkResource{
 	}
 	
 	
-	func getTracks(_ token:String){
+	func getTracks(_ token:String,withCompletion completion: @escaping () -> Void ){
 		Alamofire.request(getTracksString(token),method: .get).responseJSON { response in
 			print("Error in fetching tracks: \(String(describing: response.error))")
 			
@@ -161,6 +177,7 @@ class networkResource{
 					let track = tracksModel(el["track_name"].string!, track_id:el["track_id"].string!)
 					tracksModel.tracks.append(track)
 				}
+				completion()
 			}
 		}
 	}
@@ -184,7 +201,7 @@ class networkResource{
 	
 	func getListQuestions(_ id:String){
 		Alamofire.request(getListQuestionsString(token, id: id), method: .get).responseJSON { response in
-			print("Error: \(String(describing: response.error))")
+			print("Error in list questions: \(String(describing: response.error))")
 			if let json = response.result.value {
 				networkResource.listQuestions.append(JSON(json))
 				
@@ -204,7 +221,11 @@ class networkResource{
 			print("Error: \(String(describing: response.error))")
 			if let json = response.result.value {
 				test = JSON(json)["attendeeid"].string!
-				//print(test)
+				print(test)
+				DispatchQueue.main.async(execute:{
+					SVProgressHUD.dismiss()
+					SVProgressHUD.showSuccess(withStatus: "Your attendee id is " + test)
+				})
 			}
 			
 		}

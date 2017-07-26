@@ -86,6 +86,12 @@ class registerViewController: FormViewController{
 		
 		if let email: EmailRow = form.rowBy(tag: "email"), let emailValue = email.value {
 			if( index == 1){
+				DispatchQueue.main.async(
+					execute: {
+						SVProgressHUD.show(withStatus: "registering")
+					}
+				)
+				
 				id = net.createAttendee(emailValue)
 				print(" id is \(id)")
 			}
